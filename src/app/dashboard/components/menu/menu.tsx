@@ -16,6 +16,9 @@ export default function Menu() {
           <li>
             <Link href="/dashboard/history">History</Link>
           </li>
+          <li>
+            <Link href="/dashboard/settings">Settings</Link>
+          </li>
         </ul>
       </nav>
     </aside>

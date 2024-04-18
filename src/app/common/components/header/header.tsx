@@ -12,6 +12,7 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
 
+  console.log(loadingUser, "loadingUser");
   return (
     <header className="border-b py-2 px-4 sm:px-6">
       <div className="flex justify-between items-center">
@@ -44,10 +45,10 @@ export default function Header() {
               </button>
             ) : (
               <>
-                {pathname.includes("register") && (
+                {!pathname.includes("login") && (
                   <Link href="/login">Log in</Link>
                 )}
-                {pathname.includes("login") && (
+                {!pathname.includes("register") && (
                   <Link href="/register">Sign Up</Link>
                 )}
               </>

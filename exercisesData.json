@@ -1,0 +1,3299 @@
+[
+  {
+    "name": "Rickshaw Carry",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/742/Male/m/742_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/742/Male/m/742_2.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": "Other"
+  },
+  {
+    "name": "Single-Leg Press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50m-single-leg-leg-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50m-single-leg-leg-press-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Landmine twist",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-129s-landmine-twist-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-129s-landmine-twist-m3-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Weighted pull-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-96c-weighted-pull-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-96c-weighted-pull-up-m2-square-600x600.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Other"
+  },
+  {
+    "name": "T-Bar Row with Handle",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/1931/Male/m/1931_1.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/october/1931_2sm.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Other"
+  },
+  {
+    "name": "Palms-down wrist curl over bench",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-62e-palms-down-wrist-curl-over-bench-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-62e-palms-down-wrist-curl-over-bench-m2-square-600x600.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Atlas Stones",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/659/Male/m/659_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/659/Male/m/659_2.jpg",
+    "muscle_gp": "Lower Back",
+    "equipment": "Other"
+  },
+  {
+    "name": "Dumbbell front raise to lateral raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-61d-dumbbell-front-raise-to-lateral-raise-m2-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-61d-dumbbell-front-raise-to-lateral-raise-m3-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Clean from Blocks",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/746/Male/m/746_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/746/Male/m/746_2.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Incline Hammer Curls",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/882/Male/m/882_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/882/Male/m/882_2.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Straight-bar wrist roll-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-116s-straight-bar-wrist-roll-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-116s-straight-bar-wrist-roll-up-m3-square-600x600.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": ""
+  },
+  {
+    "name": "Barbell glute bridge",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-114s-barbell-glute-bridge-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-114s-barbell-glute-bridge-m2-square-600x600.jpg",
+    "muscle_gp": "Glutes",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Clean and press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-27b-clean-and-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-27b-clean-and-press-m5-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Triceps dip",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-1m-triceps-dip-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-1m-triceps-dip-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Dumbbell farmer's walk",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-30d-dumbbell-farmers-walk-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-30d-dumbbell-farmers-walk-m5-square-600x600.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": "Other"
+  },
+  {
+    "name": "Palms-up wrist curl over bench",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Barbell Full Squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Barbell deficit deadlift",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lower Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Barbell Deadlift",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Single-arm palm-in dumbbell shoulder press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Romanian Deadlift With Dumbbells",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Tire flip",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Other"
+  },
+  {
+    "name": "Clean Deadlift",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Elbow plank",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Bottoms Up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-63a-lying-leg-lift-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Barbell back squat to box",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-72e-barbell-back-squat-to-box-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Clean and jerk",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-26b-clean-and-jerk-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Single-arm kettlebell push-press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-67k-single-arm-kettlebell-push-press-m2-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-67k-single-arm-kettlebell-push-press-m3-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Push-press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-39b-push-press-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Suspended ab fall-out",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-158s-suspended-ab-fall-out-m2-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Military press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Power snatch-",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Sumo deadlift",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Hang Clean",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Dumbbell V-Sit Cross Jab",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Reverse Band Box Squat",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/753/Male/m/753_2.jpg",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": ""
+  },
+  {
+    "name": "Standing palms-in shoulder press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Standing cable low-to-high twist",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Decline EZ-bar skullcrusher",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-47n-decline-ez-bar-skullcrusher-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-47n-decline-ez-bar-skullcrusher-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "E-Z Curl Bar"
+  },
+  {
+    "name": "Standing behind-the-back wrist curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-14b-standing-behind-the-back-wrist-curl-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Seated finger curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Wide-grip barbell curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Dumbbell spell caster",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Dumbbell floor press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Lying Face Down Plate Neck Resistance",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Neck",
+    "equipment": "Other"
+  },
+  {
+    "name": "Pullups",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lats",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Decline reverse crunch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Dumbbell Bench Press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Jumping rope",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Seated barbell shoulder press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "EZ-bar spider curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-18n-barbell-spider-curl-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Smith machine shrug",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Traps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Smith Machine Calf Raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Calves",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Romanian Deadlift from Deficit",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Power Snatch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Pushups",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Barbell walking lunge",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Front Squats With Two Kettlebells",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/511/Male/m/511_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/511/Male/m/511_2.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Spider crawl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Power Clean from Blocks",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Single Leg Push-off",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Other"
+  },
+  {
+    "name": "Hip Circles (Prone)",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abductors",
+    "equipment": ""
+  },
+  {
+    "name": "Reverse-grip bent-over row",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Seated Two-Arm Palms-Up Low-Pulley Wrist Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Back extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lower Back",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Close-grip bench press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Cocoons",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Cross-Body Crunch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Dumbbell Flyes",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Hammer Curls",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-7d-hammer-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-7d-hammer-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Incline dumbbell bench press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-3n-incline-dumbbell-bench-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-3n-incline-dumbbell-bench-press-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Low-cable cross-over",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-5c-low-cable-cross-over-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-5c-low-cable-cross-over-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Single-arm high-cable side bend",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-107c-single-arm-high-cable-side-bend-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-107c-single-arm-high-cable-side-bend-m2-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Seated Dumbbell Press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50e-seated-dumbbell-shoulder-press-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Standing dumbbell shoulder press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-104d-standing-dumbbell-shoulder-press-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Single Leg Push-off",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/818/Male/m/818_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/818/Male/m/818_2.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Other"
+  },
+  {
+    "name": "Hip Circles (Prone)",
+    "image": "https://www.bodybuilding.com/images/2020/may/874_1.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/may/874_2.jpg",
+    "muscle_gp": "Abductors",
+    "equipment": ""
+  },
+  {
+    "name": "Reverse-grip bent-over row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-02b-reverse-grip-bent-over-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-02b-reverse-grip-bent-over-row-m2-square-600x600.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Seated Two-Arm Palms-Up Low-Pulley Wrist Curl",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/7/Male/m/7_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/7/Male/m/7_2.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Back extension",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-16m-back-extension-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-16m-back-extension-m2-square-600x600.jpg",
+    "muscle_gp": "Lower Back",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Close-grip bench press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-82e-close-grip-bench-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-82e-close-grip-bench-press-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Cocoons",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-170a-cocoon-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-170a-cocoon-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Cross-Body Crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-176a-elbow-to-knee-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-176a-elbow-to-knee-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Dumbbell Flyes",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-31e-dumbbell-chest-fly-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Hammer Curls",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Incline dumbbell bench press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-3n-incline-dumbbell-bench-press-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Seated Dumbbell Press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50e-seated-dumbbell-shoulder-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50e-seated-dumbbell-shoulder-press-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Standing dumbbell shoulder press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-104d-standing-dumbbell-shoulder-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-104d-standing-dumbbell-shoulder-press-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "EZ-Bar Curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2020-xdb-46s-standing-ez-bar-curl-m1-crop-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "E-Z Curl Bar"
+  },
+  {
+    "name": "Olympic Squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Natural Glute Ham Raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Axle Deadlift",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lower Back",
+    "equipment": "Other"
+  },
+  {
+    "name": "Zottman Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": ""
+  },
+  {
+    "name": "Glute ham raise-",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "None"
+  },
+  {
+    "name": "Single-arm lateral raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Power Partials",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Leverage Shrug",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/898/Male/m/898_1.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/898_2.jpg",
+    "muscle_gp": "Traps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Cable V-bar push-down",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-17c-cable-v-bar-push-down-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-17c-cable-v-bar-push-down-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Wrist Roller",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/142/Male/m/142_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/142/Male/m/142_2.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": "Other"
+  },
+  {
+    "name": "Incline dumbbell reverse fly",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2020-xdb-13n-incline-dumbbell-reverse-fly-m1-crop-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Stair climber",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Elbow-to-knee crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-176a-elbow-to-knee-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-176a-elbow-to-knee-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Kettlebell Pistol Squat",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/521/Male/m/521_2.jpg",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Overhead dumbbell front raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-17d-overhead-dumbbell-front-raise-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Biceps curl to shoulder press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Weighted bench dip",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Barbell Hip Thrust",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Glutes",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Forward lunge",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Barbell Bench Press - Medium Grip",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Chest dip",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Other"
+  },
+  {
+    "name": "Seated dumbbell shoulder press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50e-seated-dumbbell-shoulder-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50e-seated-dumbbell-shoulder-press-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Barbell Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "EZ-Bar Skullcrusher",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-94s-ez-bar-skullcrusher-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-94s-ez-bar-skullcrusher-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "E-Z Curl Bar"
+  },
+  {
+    "name": "One-Arm Dumbbell Row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-13e-single-arm-bench-dumbbell-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-13e-single-arm-bench-dumbbell-row-m2-square-600x600.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Alternating standing shoulder press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-93d-alternating-standing-shoulder-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-93d-alternating-standing-shoulder-press-m3-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Concentration curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-8e-concentration-curl-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Decline Crunch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Decline Dumbbell Flyes",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-31n-decline-dumbbell-chest-fly-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Single-arm incline rear delt raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Alternating dumbbell front raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Hanging toes-to-bar",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Narrow-stance squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Kneeling cable oblique crunch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Reverse Grip Triceps Pushdown",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-19c-reverse-grip-cable-straight-bar-push-down-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Bear crawl sled drag",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Other"
+  },
+  {
+    "name": "Rocky Pull-Ups/Pulldowns",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lats",
+    "equipment": "Other"
+  },
+  {
+    "name": "Snatch-Grip Behind-The-Neck Overhead Press",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/4571/Male/m/4571_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/4571/Male/m/4571_2.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Box Squat with Bands",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/666/Male/m/666_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/666/Male/m/666_2.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Flexor Incline Dumbbell Curls",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/285/Male/m/285_1.jpg",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Seated One-Arm Dumbbell Palms-Up Wrist Curl",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/386/Male/m/386_1.jpg",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Thigh adductor",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Adductors",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Machine Bicep Curl",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/899/Male/m/899_2.jpg",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Seated Palms-Down Barbell Wrist Curl",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/389/Male/m/389_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/389/Male/m/389_2.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": ""
+  },
+  {
+    "name": "Single-arm incline rear delt raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-14n-single-arm-incline-rear-delt-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-14n-single-arm-incline-rear-delt-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Alternating dumbbell front raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-14d-alternating-dumbbell-front-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-14d-alternating-dumbbell-front-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Hanging toes-to-bar",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-128c-hanging-toes-to-bar-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-128c-hanging-toes-to-bar-m2-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Narrow-stance squat",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-30a-narrow-stance-squat-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-30a-narrow-stance-squat-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Kneeling cable oblique crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-36c-kneeling-cable-oblique-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-36c-kneeling-cable-oblique-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Reverse Grip Triceps Pushdown",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-19c-reverse-grip-cable-straight-bar-push-down-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-19c-reverse-grip-cable-straight-bar-push-down-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Bear crawl sled drag",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2020-xdb-153s-bear-crawl-sled-drag-m1-crop-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2020-xdb-153s-bear-crawl-sled-drag-m4-crop-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Other"
+  },
+  {
+    "name": "Rocky Pull-Ups/Pulldowns",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/279/Male/m/279_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/279/Male/m/279_2.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Other"
+  },
+  {
+    "name": "Snatch-Grip Behind-The-Neck Overhead Press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Box Squat with Bands",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Flexor Incline Dumbbell Curls",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Seated One-Arm Dumbbell Palms-Up Wrist Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Machine Bicep Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Seated Palms-Down Barbell Wrist Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": ""
+  },
+  {
+    "name": "Car driver",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Other"
+  },
+  {
+    "name": "Alternating Deltoid Raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Hanging Oblique Knee Raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-120c-hanging-oblique-crunch-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-120c-hanging-oblique-crunch-m2-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Bodyweight Flyes",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-182s-double-bar-roll-out-chest-fly-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-182s-double-bar-roll-out-chest-fly-m2-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "E-Z Curl Bar"
+  },
+  {
+    "name": "Standing Calf Raises",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-117s-standing-calf-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-117s-standing-calf-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Calves",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Push-Ups - Close Triceps Position",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-104a-close-push-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-104a-close-push-up-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "One-Arm Long Bar Row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-124s-single-arm-landmine-bent-over-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-124s-single-arm-landmine-bent-over-row-m3-square-600x600.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Overhead cable curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Single-dumbbell front raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-18d-single-dumbbell-front-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-18d-single-dumbbell-front-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Incline cable chest fly",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-10c-incline-cable-chest-fly-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-10c-incline-cable-chest-fly-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Single-leg depth squat",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-68e-single-leg-depth-squat-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-68e-single-leg-depth-squat-m4-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Bands"
+  },
+  {
+    "name": "Dumbbell suitcase crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50d-dumbbell-suitcase-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50d-dumbbell-suitcase-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Medicine Ball"
+  },
+  {
+    "name": "Plate Twist",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/106/Male/m/106_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/106/Male/m/106_2.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Single-leg cable hip extension",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-43c-single-leg-cable-hip-extension-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-43c-single-leg-cable-hip-extension-m2-square-600x600.jpg",
+    "muscle_gp": "Glutes",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Weighted Jump Squat",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/887/Male/m/887_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/887/Male/m/887_2.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Squat with Chains",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Gorilla Chin/Crunch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Kneeling cable triceps extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Kneeling Cable Crunch With Alternating Oblique Twists",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cables"
+  },
+  {
+    "name": "Bicycling",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Other"
+  },
+  {
+    "name": "Arnold press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Weighted Crunches",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50d-dumbbell-suitcase-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50d-dumbbell-suitcase-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Single-arm cable triceps extension",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-31c-single-arm-cable-triceps-extension-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-31c-single-arm-cable-triceps-extension-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Barbell roll-out",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-48b-barbell-roll-out-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-48b-barbell-roll-out-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Kneeling cable crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-35c-kneeling-cable-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-35c-kneeling-cable-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Exercise Ball Pull-In",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Exercise Ball"
+  },
+  {
+    "name": "Hanging leg raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-9m-hanging-leg-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-9m-hanging-leg-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Barbell Ab Rollout - On Knees",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-48b-barbell-roll-out-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-48b-barbell-roll-out-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Barbell Squat",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50b-barbell-back-squat-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-50b-barbell-back-squat-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Decline barbell bench press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-34n-decline-barbell-bench-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-34n-decline-barbell-bench-press-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Dumbbell Bicep Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Dumbbell Goblet Squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Dumbbell squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Barbell front squat",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-51b-barbell-front-squat-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-51b-barbell-front-squat-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Close-grip pull-down",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lats",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Triceps Pushdown - Rope Attachment",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Cables"
+  },
+  {
+    "name": "Side-to-side box skip",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-69e-side-to-side-box-skip-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-69e-side-to-side-box-skip-m3-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Smith machine shoulder press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-alt-31t-smith-machine-shoulder-press-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Seated triceps press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Dumbbell Lying Supination",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": ""
+  },
+  {
+    "name": "Pull-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-92c-pull-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-92c-pull-up-m2-square-600x600.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Wide-grip bench press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-84e-wide-grip-bench-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-84e-wide-grip-bench-press-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Close-grip EZ-bar curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-47s-close-grip-ez-bar-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-47s-close-grip-ez-bar-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "T-Bar Row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/3381_1.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/3381_2.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Other"
+  },
+  {
+    "name": "Bent Over Two-Arm Long Bar Row",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/18/Male/m/18_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/18/Male/m/18_2.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Muscle Up",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lats",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Machine shoulder press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Incline EZ-bar skullcrusher",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Alternating sit-through with crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-124s-single-arm-landmine-bent-over-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-124s-single-arm-landmine-bent-over-row-m3-square-600x600.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Other"
+  },
+  {
+    "name": "Wide-Grip Decline Barbell Bench Press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Rower",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Snatch Deadlift",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Front Plate Raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Other"
+  },
+  {
+    "name": "Decline Close-Grip Bench To Skull Crusher",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/288/Male/m/288_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/288/Male/m/288_2.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Lying Leg Curls",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-20m-lying-leg-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-20m-lying-leg-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Cross-body hammer curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-4d-cross-body-hammer-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-4d-cross-body-hammer-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Shotgun row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-37c-shotgun-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-37c-shotgun-row-m2-square-600x600.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Ab Roller",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-2s-ab-wheel-roll-out-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-2s-ab-wheel-roll-out-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Reverse-grip incline dumbbell bench press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-4n-reverse-grip-incline-dumbbell-bench-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-4n-reverse-grip-incline-dumbbell-bench-press-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Leg Press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-44m-leg-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-44m-leg-press-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Stiff-Legged Dumbbell Deadlift",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-9d-dumbbell-stiff-legged-deadlift-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-9d-dumbbell-stiff-legged-deadlift-m2-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Cable Crossover",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Barbell Incline Bench Press Medium-Grip",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Incline Dumbbell Flyes",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Seated Cable Rows",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Tricep Dumbbell Kickback",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-76d-single-arm-triceps-kick-back-m2-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-76d-single-arm-triceps-kick-back-m3-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Otis-Up",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Mountain climber",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-201a-mountain-climber-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-201a-mountain-climber-m3-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Ab bicycle",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-73a-ab-cycle-m2-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-73a-ab-cycle-m3-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Barbell forward lunge",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-43b-barbell-forward-lunge-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-43b-barbell-forward-lunge-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "3/4 sit-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-149a-34-sit-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-149a-34-sit-up-m3-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Exercise ball leg curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-21s-exercise-ball-leg-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-21s-exercise-ball-leg-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Exercise Ball"
+  },
+  {
+    "name": "Glute bridge",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-59a-glute-bridge-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-59a-glute-bridge-m2-square-600x600.jpg",
+    "muscle_gp": "Glutes",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Close-Grip Front Lat Pulldown",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-73c-close-grip-pull-down-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-73c-close-grip-pull-down-m2-square-600x600.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Dip Machine",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/146/Male/m/146_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/146/Male/m/146_2.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Incline dumbbell row",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Dumbbell Lunges",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Single-arm standing shoulder press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Preacher Curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-55s-ez-bar-preacher-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-55s-ez-bar-preacher-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Reverse crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-263a-reverse-crunch-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-263a-reverse-crunch-m2-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Standing Dumbbell Triceps Extension",
+    "image": "https://www.bodybuilding.com/images/2020/june/345_1.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/june/345_2.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Elliptical trainer",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-22m-elliptical-trainer-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-22m-elliptical-trainer-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Bodyweight squat",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-27a-bodyweight-squat-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-27a-bodyweight-squat-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Bent Over Two-Dumbbell Row With Palms In",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/17/Male/m/17_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/17/Male/m/17_2.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Hex-bar deadlift",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-123s-hex-bar-deadlift-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-123s-hex-bar-deadlift-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Other"
+  },
+  {
+    "name": "Narrow-stance leg press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-46m-wide-stance-leg-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-46m-wide-stance-leg-press-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Single-leg glute bridge",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-61a-single-leg-glute-bridge-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-61a-single-leg-glute-bridge-m3-square-600x600.jpg",
+    "muscle_gp": "Glutes",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Barbell Curls Lying Against An Incline",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/300/Male/m/300_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/300/Male/m/300_2.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Standing Hip Circles",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/873/Male/m/873_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/873/Male/m/873_2.jpg",
+    "muscle_gp": "Abductors",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Clam",
+    "image": "https://www.bodybuilding.com/images/2020/april/2843_1.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/april/2843_2.jpg",
+    "muscle_gp": "Abductors",
+    "equipment": ""
+  },
+  {
+    "name": "Narrow Stance Hack Squats",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Seated Close-Grip Concentration Barbell Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Dumbbell Lying Pronation",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": ""
+  },
+  {
+    "name": "Smith machine box squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Drop Push",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Other"
+  },
+  {
+    "name": "Upside-down pull-up",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Other"
+  },
+  {
+    "name": "Reverse Barbell Preacher Curls",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "E-Z Curl Bar"
+  },
+  {
+    "name": "Close-grip EZ-bar bench press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "E-Z Curl Bar"
+  },
+  {
+    "name": "Incline Push-Up",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Hyperextensions With No Hyperextension Bench",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lower Back",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Dumbbell front raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-13d-dumbbell-front-raise-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Parallel Bar Dip",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-1m-triceps-dip-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-1m-triceps-dip-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Stairmaster",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-51m-stair-climber-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-51m-stair-climber-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Double Leg Butt Kick",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/778/Male/m/778_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/778/Male/m/778_2.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": ""
+  },
+  {
+    "name": "Groiners",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Adductors",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Neck Press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Broad jump",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Machine Squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "V-bar pull-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2020-xdb-140c-v-bar-pull-up-m1-crop-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Lats",
+    "equipment": ""
+  },
+  {
+    "name": "Ring dip",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Standing One-Arm Cable Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Burpee",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-38a-burpee-m4-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Double-arm triceps kick-back",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-75d-double-arm-triceps-kick-back-m2-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-75d-double-arm-triceps-kick-back-m3-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Dumbbell reverse lunge",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-83d-dumbbell-reverse-lunge-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Seated Calf Raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-13m-machine-seated-calf-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-13m-machine-seated-calf-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Calves",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Standing dumbbell shrug",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-115d-standing-dumbbell-shrug-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-115d-standing-dumbbell-shrug-m2-square-600x600.jpg",
+    "muscle_gp": "Traps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Calf Press On The Leg Press Machine",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Calves",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Barbell step-up",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Feet-elevated bench dip",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Bent Over Barbell Row",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Crunches",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Dumbbell Alternate Bicep Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Bent-over dumbbell rear delt row",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "External Rotation with Cable",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Cables"
+  },
+  {
+    "name": "Handstand push-up",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Single-arm dumbbell preacher curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-53s-single-arm-dumbbell-preacher-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-53s-single-arm-dumbbell-preacher-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Step-up with knee raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-70e-step-up-with-knee-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-70e-step-up-with-knee-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Glutes",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Smith machine back squat",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-18t-smith-machine-back-squat-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-18t-smith-machine-back-squat-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Incline dumbbell front raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Alternate Incline Dumbbell Curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-26n-alternating-incline-dumbbell-biceps-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-26n-alternating-incline-dumbbell-biceps-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Standing dumbbell upright row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-125d-standing-dumbbell-upright-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-125d-standing-dumbbell-upright-row-m2-square-600x600.jpg",
+    "muscle_gp": "Traps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Single-arm cable front raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-42c-single-arm-cable-front-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-42c-single-arm-cable-front-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Two-Arm Kettlebell Military Press",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/530/Male/m/530_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/530/Male/m/530_2.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Incline cable chest press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-11c-incline-cable-chest-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-11c-incline-cable-chest-press-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Rope climb",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lats",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Single-arm dumbbell preacher curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Step-up with knee raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-70e-step-up-with-knee-raise-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Glutes",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Incline dumbbell front raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-11n-incline-dumbbell-front-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-11n-incline-dumbbell-front-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Rope climb",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-155s-rope-climb-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-155s-rope-climb-m3-square-600x600.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Trail Running/Walking",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Standing Bradford press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Neutral-grip dumbbell bench press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Cable Chest Press",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/870/Male/m/870_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/870/Male/m/870_2.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Standing concentration curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-23d-standing-concentration-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-23d-standing-concentration-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Wide-Grip Rear Pull-Up",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/191/Male/m/191_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/191/Male/m/191_2.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Kettlebell pass-through lunge",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-57k-kettlebell-pass-through-lunge-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-57k-kettlebell-pass-through-lunge-m4-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Hands-elevated push-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-18e-hands-elevated-push-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-18e-hands-elevated-push-up-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Deadlift with Bands",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/677/Male/m/677_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/677/Male/m/677_2.jpg",
+    "muscle_gp": "Lower Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Straight-arm rope pull-down",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-105c-straight-arm-rope-pull-down-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-105c-straight-arm-rope-pull-down-m2-600x600.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Barbell Shoulder Press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-48e-seated-barbell-shoulder-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-48e-seated-barbell-shoulder-press-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Power clean",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-25b-power-clean-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-25b-power-clean-m4-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Hang Snatch",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/690/Male/m/690_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/690/Male/m/690_2.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Kettlebell sumo deadlift high pull",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-49k-kettlebell-sumo-deadlift-high-pull-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-49k-kettlebell-sumo-deadlift-high-pull-m3-square-600x600.jpg",
+    "muscle_gp": "Traps",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Calf-Machine Shoulder Shrug",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/184/Male/m/184_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/184/Male/m/184_2.jpg",
+    "muscle_gp": "Traps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Bench Press - Powerlifting",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/663/Male/m/663_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/663/Male/m/663_2.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Rocking Standing Calf Raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Calves",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Goblet Squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Behind-the-head skullcrusher",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-56e-behind-the-head-skullcrusher-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-56e-behind-the-head-skullcrusher-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Seated palms-up wrist curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-65e-seated-palms-up-wrist-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-65e-seated-palms-up-wrist-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Reverse Cable Curl",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/141/Male/m/141_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/141/Male/m/141_2.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Dumbbell side bend",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-102d-dumbbell-side-bend-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-102d-dumbbell-side-bend-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Lat pull-down",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-72c-lat-pull-down-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Lats",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Side Lateral Raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-77d-dumbbell-lateral-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-77d-dumbbell-lateral-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Alternating incline dumbbell biceps curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-26n-alternating-incline-dumbbell-biceps-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-26n-alternating-incline-dumbbell-biceps-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Kettlebell One-Legged Deadlift",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-4k-single-leg-kettlebell-deadlift-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Alternate Hammer Curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-3d-alternating-hammer-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-3d-alternating-hammer-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Decline Push-Up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-20e-feet-elevated-push-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-20e-feet-elevated-push-up-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Captain's chair knee raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-5m-captains-chair-knee-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-5m-captains-chair-knee-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Triceps Pushdown",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-17c-cable-v-bar-push-down-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-17c-cable-v-bar-push-down-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Low cable overhead triceps extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Single-arm cable cross-over",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Seated dumbbell biceps curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Battle ropes",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Other"
+  },
+  {
+    "name": "Dead bug reach",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Deadlift with Chains",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lower Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Rope Crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-35c-kneeling-cable-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-35c-kneeling-cable-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Palms-Up Dumbbell Wrist Curl Over A Bench",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Kettlebell thruster",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Glutes",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Single-Arm Push-Up",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Band Hip Adductions",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/850/Male/m/850_2.jpg",
+    "image1": "",
+    "muscle_gp": "Adductors",
+    "equipment": "Bands"
+  },
+  {
+    "name": "Single-arm kettlebell clean",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-80k-single-arm-kettlebell-clean-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-80k-single-arm-kettlebell-clean-m2-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Preacher Hammer Dumbbell Curl",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/155/Male/m/155_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/155/Male/m/155_2.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Alternating Kettlebell Press",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/504/Male/m/504_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/504/Male/m/504_2.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Split Squat with Dumbbells",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-61e-dumbbell-bulgarian-split-squat-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-61e-dumbbell-bulgarian-split-squat-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Standing One-Arm Dumbbell Curl Over Incline Bench",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": ""
+  },
+  {
+    "name": "Standing Olympic Plate Hand Squeeze",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Other"
+  },
+  {
+    "name": "Sledgehammer swing",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Kneeling Squat",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/697/Male/m/697_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/697/Male/m/697_2.jpg",
+    "muscle_gp": "Glutes",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Single-arm kettlebell snatch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Close-grip barbell curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-20b-close-grip-barbell-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-20b-close-grip-barbell-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Box jump",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Other"
+  },
+  {
+    "name": "Standing cable crunch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Leverage Incline Chest Press",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/893/Male/m/893_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/893/Male/m/893_2.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Standing barbell overhead triceps extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Lying cable triceps extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Kettlebell Turkish Get-Up (Squat style)",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/527/Male/m/527_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/527/Male/m/527_2.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": ""
+  },
+  {
+    "name": "Crunch - Hands Overhead",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/113/Male/m/113_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/113/Male/m/113_2.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Cable Internal Rotation",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/315/Male/m/315_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/315/Male/m/315_2.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Leg Extensions",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-18m-leg-extension-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-18m-leg-extension-m2-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Standing One-Arm Dumbbell Curl Over Incline Bench",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/339/Male/m/339_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/339/Male/m/339_2.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": ""
+  },
+  {
+    "name": "Standing Olympic Plate Hand Squeeze",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/6/Male/m/6_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/6/Male/m/6_2.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": "Other"
+  },
+  {
+    "name": "Sledgehammer swing",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-186s-sledghehammer-swing-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-186s-sledghehammer-swing-m3-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Single-arm kettlebell snatch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-79k-single-arm-kettlebell-snatch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-79k-single-arm-kettlebell-snatch-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Box jump",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-75e-box-jump-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-75e-box-jump-m3-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Other"
+  },
+  {
+    "name": "Standing cable crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-34c-standing-cable-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-34c-standing-cable-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Standing barbell overhead triceps extension",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-60b-standing-barbell-overhead-triceps-extension-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-60b-standing-barbell-overhead-triceps-extension-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Lying cable triceps extension",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-62c-lying-cable-triceps-extension-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-62c-lying-cable-triceps-extension-m2-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Close push-up to wide push-up",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Single-arm dumbbell triceps extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Butterfly",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Decline dumbbell bench press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-33n-decline-dumbbell-bench-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-33n-decline-dumbbell-bench-press-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "V-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-76a-v-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-76a-v-up-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Seated face pull",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Barbell Bulgarian split squat",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2020-xdb-60e-barbell-bulgarian-split-squat-m1-crop-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2020-xdb-60e-barbell-bulgarian-split-squat-m2-crop-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Reverse-grip lat pull-down",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-74c-reverse-grip-lat-pull-down-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-74c-reverse-grip-lat-pull-down-m2-square-600x600.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Standing Biceps Cable Curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-22c-cable-straight-bar-biceps-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-22c-cable-straight-bar-biceps-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Single-arm cable seated row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-82c-single-arm-cable-seated-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-82c-single-arm-cable-seated-row-m2-square-600x600.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Single-arm kettlebell row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-12e-single-arm-dumbbell-bench-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-12e-single-arm-dumbbell-bench-press-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Scissors Jump",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-42a-alternating-lunge-jump-m4-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-42a-alternating-lunge-jump-m5-square-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Wide Stance Stiff Legs",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/744/Male/m/744_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/744/Male/m/744_2.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Rack Pull with Bands",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/741/Male/m/741_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/741/Male/m/741_2.jpg",
+    "muscle_gp": "Lower Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Drag curl",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-11b-drag-curl-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-11b-drag-curl-m2-square-600x600.jpg",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Close push-up to wide push-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-105a-close-push-up-to-wide-push-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-105a-close-push-up-to-wide-push-up-m4-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Single-arm dumbbell triceps extension",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-130d-single-arm-dumbbell-triceps-extension-m2-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-130d-single-arm-dumbbell-triceps-extension-m3-square-600x600.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Butterfly",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-53m-machine-chest-fly-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-53m-machine-chest-fly-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Seated face pull",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-70c-seated-face-pull-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-70c-seated-face-pull-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Rack Pull with Bands",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lower Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Drag curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Hang Clean - Below the Knees",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Decline oblique crunch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "None"
+  },
+  {
+    "name": "Dumbbell external shoulder rotation",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Single-arm bent-over cable rear delt fly",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-48c-single-arm-cable-rear-delt-fly-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-48c-single-arm-cable-rear-delt-fly-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Clean",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/669/Male/m/669_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/669/Male/m/669_2.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Single-arm incline lateral raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-24n-single-arm-incline-lateral-raise-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Decline bar press sit-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-44n-decline-press-sit-up-m1-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Barbell rear delt bent-over row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-03b-barbell-rear-delt-bent-over-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-03b-barbell-rear-delt-bent-over-row-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Calf Press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-117s-standing-calf-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-117s-standing-calf-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Calves",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Kettlebell alternating renegade row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-11k-kettlebell-alternating-renegade-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-11k-kettlebell-alternating-renegade-row-m2-square-600x600.jpg",
+    "muscle_gp": "Middle Back",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Bosu Ball Cable Crunch With Side Bends",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/932/Male/m/932_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/932/Male/m/932_2.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Stomach Vacuum",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/243/Male/m/243_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/243/Male/m/243_2.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Hammer Grip Incline DB Bench Press",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/60/Male/m/60_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/60/Male/m/60_2.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Wide-grip hands-elevated push-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-19e-wide-grip-hands-elevated-push-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-19e-wide-grip-hands-elevated-push-up-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Decline Dumbbell Triceps Extension",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/167/Male/m/167_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/167/Male/m/167_2.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Jumping jack-",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Push-Ups With Feet On An Exercise Ball",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Seated cable shoulder press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Barbell hack squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Feet-elevated push-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-20e-feet-elevated-push-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-20e-feet-elevated-push-up-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Good Morning",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-09b-barbell-good-morning-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-09b-barbell-good-morning-m2-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Leverage Chest Press",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-65m-machine-chest-press-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-65m-machine-chest-press-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Gironda Sternum Chins",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/292/Male/m/292_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/292/Male/m/292_2.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Other"
+  },
+  {
+    "name": "Exercise ball crunch",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-23s-exercise-ball-crunch-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-23s-exercise-ball-crunch-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Exercise Ball"
+  },
+  {
+    "name": "Seated rear delt fly",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-47e-seated-rear-delt-fly-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-47e-seated-rear-delt-fly-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Standing face pull",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-40c-standing-face-pull-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-40c-standing-face-pull-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Glute Ham Raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-25m-glute-ham-raise-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-25m-glute-ham-raise-m2-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Russian twist",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-262a-russian-twist-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-262a-russian-twist-m2-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Seated Flat Bench Leg Pull-In",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Weight Bench"
+  },
+  {
+    "name": "Barbell shrug",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Traps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Seated Flat Bench Leg Pull-In",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/93/Male/m/93_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/93/Male/m/93_2.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Weight Bench"
+  },
+  {
+    "name": "Barbell shrug",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-04b-barbell-shrug-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-04b-barbell-shrug-m2-square-600x600.jpg",
+    "muscle_gp": "Traps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Standing cable rear delt row",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Flat Bench Lying Leg Raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-63a-lying-leg-lift-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-63a-lying-leg-lift-m2-square-600x600.jpg",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Hack Squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Dumbbell skullcrusher",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Man-maker",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Pallof press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Other"
+  },
+  {
+    "name": "Knees tucked crunch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Straight-arm dumbbell pull-over",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-26e-straight-arm-dumbbell-pull-over-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-26e-straight-arm-dumbbell-pull-over-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Arms-crossed jump squat",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-43a-arms-crossed-jump-squat-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Decline Smith Press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Band Skull Crusher",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/1211/Male/m/1211_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/1211/Male/m/1211_2.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": ""
+  },
+  {
+    "name": "Side Wrist Pull",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/442/Male/m/442_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/442/Male/m/442_2.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "None"
+  },
+  {
+    "name": "Isometric Wipers",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-122a-typewriter-push-up-m2-square-600x600.jpg",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Skating",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Other"
+  },
+  {
+    "name": "Cable cross-over",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-1c-cable-cross-over-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-1c-cable-cross-over-m2-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Treadmill running",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "One Arm Pronated Dumbbell Triceps Extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Single-arm kettlebell clean and jerk",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Kettlebells"
+  },
+  {
+    "name": "Side To Side Chins",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lats",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Incline Dumbbell Bench With Palms Facing In",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Seated palms-down wrist curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Standing leg swing",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-83s-standing-leg-swing-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-83s-standing-leg-swing-m2-square-600x600.jpg",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Clock push-up",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-103a-clock-push-up-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-103a-clock-push-up-m6-square-600x600.jpg",
+    "muscle_gp": "Chest",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Machine seated row",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-91m-machine-seated-row-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-91m-machine-seated-row-m2-square-600x600.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Lying Face Up Plate Neck Resistance",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/26/Male/m/26_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/26/Male/m/26_2.jpg",
+    "muscle_gp": "Neck",
+    "equipment": "Other"
+  },
+  {
+    "name": "Weighted sissy squat",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-180s-weighted-sissy-squat-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-180s-weighted-sissy-squat-m2-600x600.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Other"
+  },
+  {
+    "name": "Jog In Place",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": ""
+  },
+  {
+    "name": "Dumbbell Raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Palms-Down Dumbbell Wrist Curl Over A Bench",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "One Arm Supinated Dumbbell Triceps Extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Jog In Place",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/2963_1.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/2963_2.jpg",
+    "muscle_gp": "Quadriceps",
+    "equipment": ""
+  },
+  {
+    "name": "Dumbbell Raise",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/327/Male/m/327_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/327/Male/m/327_2.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Palms-Down Dumbbell Wrist Curl Over A Bench",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/4/Male/m/4_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/4/Male/m/4_2.jpg",
+    "muscle_gp": "Forearms",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "One Arm Supinated Dumbbell Triceps Extension",
+    "image": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/362/Male/m/362_1.jpg",
+    "image1": "https://www.bodybuilding.com/exercises/exerciseImages/sequences/362/Male/m/362_2.jpg",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Stationary bike",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Dumbbell bent-over row",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Barbell thruster",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Flutter Kicks",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Glutes",
+    "equipment": "Weight Bench"
+  },
+  {
+    "name": "Dumbbell sumo squat",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Barbell upright row",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Superman",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Lower Back",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Straight-Arm Pulldown",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-104c-straight-arm-bar-pull-down-m1-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/2019-xdb-104c-straight-arm-bar-pull-down-m2-600x600.jpg",
+    "muscle_gp": "Lats",
+    "equipment": "Cable"
+  },
+  {
+    "name": "Barbell stiff-legged deadlift",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Standing One-Arm Dumbbell Triceps Extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Dumbbells"
+  },
+  {
+    "name": "Smith machine bench press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Seated Side Lateral Raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Dumbbell Lying Rear Lateral Raise",
+    "image": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-13n-incline-dumbbell-reverse-fly-m1-square-600x600.jpg",
+    "image1": "https://www.bodybuilding.com/images/2020/xdb/cropped/xdb-13n-incline-dumbbell-reverse-fly-m2-square-600x600.jpg",
+    "muscle_gp": "Shoulders",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Dumbbell preacher curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Biceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Front Raise And Pullover",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Dumbbell seated box jump",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Middle Back Shrug",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Incline face-down bar front raise",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Shoulders",
+    "equipment": "E-Z Curl Bar"
+  },
+  {
+    "name": "Butt-Ups",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Abdominals",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Band Good Morning (Pull Through)",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Bands"
+  },
+  {
+    "name": "Bodyweight Reverse Lunge",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Seated One-Arm Dumbbell Palms-Down Wrist Curl",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Dumbbell"
+  },
+  {
+    "name": "Glute Kickback",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Glutes",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Treadmill jogging",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Plate Pinch",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Forearms",
+    "equipment": "Other"
+  },
+  {
+    "name": "Yates Row Reverse Grip",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Middle Back",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Linear Acceleration Wall Drill",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Hamstrings",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Reverse-grip bench press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Barbell"
+  },
+  {
+    "name": "Leverage Decline Chest Press",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Chest",
+    "equipment": "Machine"
+  },
+  {
+    "name": "Chain Handle Extension",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Triceps",
+    "equipment": "Other"
+  }
+]

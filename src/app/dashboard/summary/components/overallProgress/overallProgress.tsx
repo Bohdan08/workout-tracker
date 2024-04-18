@@ -65,12 +65,15 @@ const data = [
   },
 ];
 
+const CHART_STYLE =
+  "rounded border-2 p-4 h-[400px] lg:w-[400px] xl:w-[500px] 2xl:w-[600px] max-w-full";
+
 export default function OverallProgress() {
   return (
     <div>
       <h2>Monthly Progress</h2>
-      <div className="flex flex-between space-x-5 mt-5">
-        <div className="rounded border-2 p-4 h-[400px] w-[600px]">
+      <div className="flex flex-col lg:flex-row flex-between lg:space-x-5 space-y-5 lg:space-y-0 mt-5">
+        <div className={CHART_STYLE}>
           <ResponsiveContainer className="responsive-container">
             <LineChart
               width={800}
@@ -81,11 +84,7 @@ export default function OverallProgress() {
             >
               <XAxis dataKey="name" angle={0} minTickGap={10} />
               <Tooltip />
-              {/* <XAxis dataKey="name" angle={0} minTickGap={10} /> */}
-              {/* <YAxis
-              type="number"
-              domain={[0, (dataMax) => Math.ceil(dataMax * 1.2)]}
-            /> */}
+
               {/* <Tooltip /> */}
               {/* <Legend
               onClick={({ dataKey }) => {
@@ -132,7 +131,7 @@ export default function OverallProgress() {
           </ResponsiveContainer>
         </div>
 
-        <div className="rounded border-2 p-4 h-[400px] w-[600px]">
+        <div className={CHART_STYLE}>
           <ResponsiveContainer className="responsive-container">
             <BarChart
               width={800}
