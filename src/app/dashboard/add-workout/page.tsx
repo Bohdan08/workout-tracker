@@ -25,6 +25,7 @@ import {
   deleteExerciseSet,
   modifyExercise,
   modifyExerciseSet,
+  resetWorkout,
 } from "../../lib/store/features/newWorkout/newWorkoutSlice";
 import WorkoutSummaryCard from "./components/summaryCard/summaryCard";
 import ActionModal from "../../common/components/actionModal";
@@ -37,6 +38,7 @@ import {
 import { useAuth } from "../../context/authContext";
 import { EXERCISE_TYPES } from "../../common/enums";
 import { API_STATUS } from "../../common/constants";
+import addWorkout from "@/src/firebase/firestore/addWorkout";
 
 export enum ACTION_ITEMS {
   SET = "SET",
@@ -65,7 +67,7 @@ export default function Page() {
   const [deleteViewModal, setDeleteViewModal] = useState(false);
   const [saveWorkoutViewModal, setSaveWorkoutViewModal] = useState(false);
 
-  const [apiStatus, setApiStatus] = useState(API_STATUS.ERROR);
+  const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
   const [apiError, setApiError] = useState("");
 
   const [deleteItemInfo, setDeleteItemInfo] = useState<{
@@ -133,56 +135,29 @@ export default function Page() {
   });
 
   const handleSaveWorkout = async () => {
+    closeSaveWorkoutViewModal();
     setApiStatus(API_STATUS.LOADING);
-    // get user ref
-    // const userRef = doc(database, usersCollection, user?.uid as string);
-    // console.log(userRef, "userRef");
-    // userRef.firestore()
-    // try {
-    //   database.collection("users").doc(this.username).collection("booksList").add({
-    //     password: this.password,
-    //     name: this.name,
-    //     rollno: this.rollno,
-    //   });
-    // } catch (err) {
-    //   console.error(err);
-    // }
-    try {
-      const userRef = doc(
-        database,
-        usersCollection,
-        user?.uid as string,
-        workoutsCollection,
-        uuid()
-      );
 
-      const workoutId = getTimeEpoch();
+    const { error, errorMessage } = await addWorkout(
+      user?.uid as string,
+      exercises
+    );
 
-      // console.log(userRef, "userRef");
+    console.log(error, "error");
+    console.log(errorMessage, "errorMessage");
 
-      // await addDoc(userRef as any, { workout1: exercises });
-      await setDoc(
-        userRef,
-        {
-          [workoutId]: {
-            date: serverTimestamp(),
-            exercises,
-          },
-        },
-        { merge: true }
-      ).then(() => {
-        console.log("ADDED");
-      });
-    } catch (err) {
-      console.log(err, "ERROR");
+    if (error) {
+      setApiStatus(API_STATUS.ERROR);
+      setApiError(errorMessage);
     }
+
+    setApiStatus(API_STATUS.SUCCESS);
+    dispatch(resetWorkout());
   };
 
   const unfinishedFields = exercises?.filter(
     ({ title }) => title.trim() === ""
   );
-
-  // console.log(unfinishedFields, "fieldsFinished", exercises);
 
   return (
     <>
@@ -197,6 +172,7 @@ export default function Page() {
               <p className="font-semibold text-xl">Error!</p>
               <div className="text-lg mt-3">
                 <p> Sorry, we couldn&apos;t save your workout... </p>
+                {apiError && <p> Reason: {apiError} </p>}
                 <p>Please try again later.</p>
               </div>
             </Alert>
@@ -217,7 +193,7 @@ export default function Page() {
               </Button>
             </Alert>
           ) : null}
-          
+
           {apiStatus === API_STATUS.IDLE || apiStatus === API_STATUS.ERROR ? (
             <>
               <div className="mb-5">
