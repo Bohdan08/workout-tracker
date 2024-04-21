@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config";
-import parseFirebaseErorrMessage from "@/src/app/lib/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
+import parseFirebaseErorrMessage from "@/src/app/utils/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
 
 export default async function signIn(email: string, password: string) {
   let result = null,

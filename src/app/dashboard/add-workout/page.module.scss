@@ -1,0 +1,12 @@
+.exerciseSelect input {
+  box-shadow: none !important;
+}
+
+.saveWorkoutTooltipContainer [data-testid="flowbite-tooltip-target"] {
+  width: 100%;
+}
+
+.hiddenTooltip [data-testid="flowbite-tooltip"] {
+  display: none !important;
+  width: 0 !important;
+}

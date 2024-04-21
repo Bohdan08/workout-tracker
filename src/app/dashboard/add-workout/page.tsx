@@ -1,101 +1,102 @@
 "use client";
 import {
-  Dropdown,
   Label,
-  Select,
   TextInput,
   Card,
   Button,
   Textarea,
   Tooltip,
-  Modal,
+  Spinner,
+  Alert,
 } from "flowbite-react";
+import Select from "react-select";
+import { v4 as uuid } from "uuid";
 import React, { useState } from "react";
-import {
-  HiPlus,
-  HiMinus,
-  HiTrash,
-  HiOutlineExclamationCircle,
-} from "react-icons/hi";
+import { HiPlus, HiMinus, HiTrash, HiCheckCircle } from "react-icons/hi";
 import exercisesData from "../../../../exercisesData.json";
+import useAppSelector from "../../hooks/useAppSelector";
 
-export enum WEIGHT_METRICS {
-  LBS = "LBS",
-  KG = "KG",
-}
+import styles from "./page.module.scss";
+import { useDispatch } from "react-redux";
+import {
+  addExercise,
+  addExerciseSet,
+  deleteExercise,
+  deleteExerciseSet,
+  modifyExercise,
+  modifyExerciseSet,
+} from "../../lib/store/features/newWorkout/newWorkoutSlice";
+import WorkoutSummaryCard from "./components/summaryCard/summaryCard";
+import ActionModal from "../../common/components/actionModal";
+import { addDoc, doc, serverTimestamp, setDoc } from "firebase/firestore";
+import {
+  database,
+  usersCollection,
+  workoutsCollection,
+} from "@/src/firebase/config";
+import { useAuth } from "../../context/authContext";
+import { EXERCISE_TYPES } from "../../common/enums";
+import { API_STATUS } from "../../common/constants";
 
 export enum ACTION_ITEMS {
   SET = "SET",
   EXERCISE = "EXERCISE",
 }
 
-const createSetTemplate = () => ({
-  id: Math.random(),
-  reps: undefined,
-  weight: undefined,
-});
+const getTimeEpoch = () => {
+  return new Date().getTime().toString();
+};
 
-const createExerciseTemplate = () => ({
-  id: Math.random(),
-  hidden: false,
-  metrics: WEIGHT_METRICS.LBS,
-  title: "",
-  sets: [createSetTemplate()],
-  notes: "",
-});
+type Options = Record<string, string | number | boolean>;
+
+const identifyExerciseType = (exerciseName: string) => {
+  if (exerciseName.toLocaleLowerCase().includes("running")) {
+    return EXERCISE_TYPES.CARDIO;
+  }
+
+  return EXERCISE_TYPES.STENGTH;
+};
 
 export default function Page() {
-  const [openModal, setOpenModal] = useState(false);
+  const { user } = useAuth();
+  const { exercises } = useAppSelector((store) => store.newWorkout);
+  const dispatch = useDispatch();
+  // console.log(user, "user");
+  const [deleteViewModal, setDeleteViewModal] = useState(false);
+  const [saveWorkoutViewModal, setSaveWorkoutViewModal] = useState(false);
+
+  const [apiStatus, setApiStatus] = useState(API_STATUS.ERROR);
+  const [apiError, setApiError] = useState("");
+
   const [deleteItemInfo, setDeleteItemInfo] = useState<{
     type?: string;
-    exerciseId?: number;
-    setId?: number;
+    exerciseId?: string;
+    setId?: string;
   }>({});
 
-  const [exercises, setExercises] = useState([createExerciseTemplate()]);
+  const closeDeleteViewModal = () => setDeleteViewModal(false);
+  const closeSaveWorkoutViewModal = () => setSaveWorkoutViewModal(false);
 
-  const addExercise = () => {
-    setExercises([...exercises, createExerciseTemplate()]);
+  const handleAddExercise = () => dispatch(addExercise());
+  const handleDeleteExercise = (exerciseId: string) =>
+    dispatch(deleteExercise(exerciseId));
+
+  const handleAddSet = (exerciseId: string) =>
+    dispatch(addExerciseSet(exerciseId));
+
+  const handleDeleteSet = (exerciseId: string, setId: string) =>
+    dispatch(deleteExerciseSet({ exerciseId, setId }));
+
+  const handleModifyExercise = (exerciseId: string, options: Options) => {
+    console.log(options, "OPTION");
+    dispatch(modifyExercise({ exerciseId, options }));
   };
 
-  const deleteExercise = (exerciseId: number) => {
-    setExercises(exercises.filter((obj) => obj.id !== exerciseId));
-  };
-
-  const addSet = (exerciseId: number) => {
-    setExercises(
-      exercises.map((obj) =>
-        obj.id !== exerciseId
-          ? obj
-          : { ...obj, sets: [...obj.sets, createSetTemplate()] }
-      )
-    );
-  };
-
-  // const findExerciseById = (reqId: number) => {
-  //   const currIndex = exercises.findIndex((obj) => obj.id === reqId);
-
-  //   if (currIndex !== -1) {
-  //     return exercises[currIndex];
-  //   }
-  // };
-
-  const deleteSet = (exerciseId: number, setId: number) => {
-    setExercises(
-      exercises.map((obj) =>
-        obj.id !== exerciseId
-          ? obj
-          : { ...obj, sets: obj.sets?.filter((setObj) => setObj.id !== setId) }
-      )
-    );
-    // const currExercise = findExerciseById(exerciseId);
-    // if (currExercise?.sets) {
-    //   let modifeidExercise = currExercise.sets.filter(
-    //     (obj) => obj.id === setId
-    //   );
-
-    // }
-  };
+  const handleModifySet = (
+    exerciseId: string,
+    setId: string,
+    options: Options
+  ) => dispatch(modifyExerciseSet({ exerciseId, setId, options }));
 
   const handleDeleteItem = () => {
     if (
@@ -103,109 +104,195 @@ export default function Page() {
       deleteItemInfo.setId &&
       deleteItemInfo.exerciseId
     ) {
-      deleteSet(deleteItemInfo.exerciseId, deleteItemInfo.setId);
+      handleDeleteSet(deleteItemInfo.exerciseId, deleteItemInfo.setId);
     } else {
-      deleteExercise(deleteItemInfo.exerciseId as number);
+      handleDeleteExercise(deleteItemInfo.exerciseId as string);
     }
 
     // reset delete info
-    setOpenModal(false);
+    setDeleteViewModal(false);
     setDeleteItemInfo({});
   };
 
-  const toogleView = (exerciseId: number) => {
-    setExercises(
-      exercises.map((obj) =>
-        obj.id !== exerciseId ? obj : { ...obj, hidden: !obj.hidden }
-      )
-    );
+  const convertDataToSelectOptions = () => {
+    // exclude already added exercises by user
+    const exludedExercises = exercises.map((obj) => obj.title);
+
+    return exercisesData
+      .filter((obj) => !exludedExercises.includes(obj.name))
+      .map((obj) => ({
+        ...obj,
+        value: obj.name.toLowerCase().split(" ").join("-"),
+        label: obj.name,
+      }));
   };
 
-  const changeExerciseField = (
-    exerciseId: number,
-    key: string,
-    value: string | number
-  ) => {
-    setExercises(
-      exercises.map((obj) =>
-        obj.id !== exerciseId ? obj : { ...obj, [key]: value }
-      )
-    );
+  const convertStringToSelectValue = (label: string) => ({
+    value: label.toLowerCase().split(" ").join("-"),
+    label,
+  });
+
+  const handleSaveWorkout = async () => {
+    setApiStatus(API_STATUS.LOADING);
+    // get user ref
+    // const userRef = doc(database, usersCollection, user?.uid as string);
+    // console.log(userRef, "userRef");
+    // userRef.firestore()
+    // try {
+    //   database.collection("users").doc(this.username).collection("booksList").add({
+    //     password: this.password,
+    //     name: this.name,
+    //     rollno: this.rollno,
+    //   });
+    // } catch (err) {
+    //   console.error(err);
+    // }
+    try {
+      const userRef = doc(
+        database,
+        usersCollection,
+        user?.uid as string,
+        workoutsCollection,
+        uuid()
+      );
+
+      const workoutId = getTimeEpoch();
+
+      // console.log(userRef, "userRef");
+
+      // await addDoc(userRef as any, { workout1: exercises });
+      await setDoc(
+        userRef,
+        {
+          [workoutId]: {
+            date: serverTimestamp(),
+            exercises,
+          },
+        },
+        { merge: true }
+      ).then(() => {
+        console.log("ADDED");
+      });
+    } catch (err) {
+      console.log(err, "ERROR");
+    }
   };
 
-  // console.log(exercises, "exercises");
-
-  const DeleteExerciseButton = ({ exerciseId }: { exerciseId: number }) => (
-    <Tooltip content="Delete this exercise">
-      <button
-        onClick={() => {
-          setOpenModal(true);
-          setDeleteItemInfo({
-            type: ACTION_ITEMS.EXERCISE,
-            exerciseId,
-          });
-        }}
-      >
-        <HiTrash color="red" />
-      </button>
-    </Tooltip>
+  const unfinishedFields = exercises?.filter(
+    ({ title }) => title.trim() === ""
   );
+
+  // console.log(unfinishedFields, "fieldsFinished", exercises);
+
   return (
     <>
       <div>
-        <h1>New Workout</h1>
-        <div className="max-w-md">
-          {exercises.map(({ hidden, title, sets, id: exerciseId }) => {
-            return (
-              <div className="mt-5" key={exerciseId}>
-                <Card className={`${hidden ? "h-12" : ""}`}>
-                  <div>
-                    {hidden ? (
-                      <div className="flex items-center justify-between">
-                        <h3>{title}</h3>
-                        <div className="flex space-x-2">
-                          <Tooltip
-                            content="Expand Exercise"
-                            className="w-36 text-center"
-                          >
-                            <button
-                              title="Expand Exercise"
-                              className="relative top-[2px]"
-                              onClick={() => toogleView(exerciseId)}
-                            >
-                              <HiPlus />
-                            </button>
-                          </Tooltip>
-                          <DeleteExerciseButton exerciseId={exerciseId} />
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="flex items-center justify-end space-x-2">
-                        <Tooltip
-                          content="Hide Exercise"
-                          className="w-32 text-center"
-                        >
-                          <button
-                            title="Hide Exercise"
-                            onClick={() => toogleView(exerciseId)}
-                          >
-                            <HiMinus />
-                          </button>
-                        </Tooltip>
-                        <DeleteExerciseButton exerciseId={exerciseId} />
-                      </div>
-                    )}
-                  </div>
-                  {!hidden && (
-                    <form className="flex max-w-md flex-col gap-4">
-                      <div>
-                        <div className="mb-2 block">
-                          <Label htmlFor="exercise">
-                            Exercise {exercises.length}
-                          </Label>
+        <h1 className="text-3xl font-medium">New Workout</h1>
+        <div className="max-w-md mt-5">
+          {apiStatus === API_STATUS.ERROR ? (
+            <Alert
+              color="failure"
+              className="text-center flex flex-col justify-center items-center mb-5"
+            >
+              <p className="font-semibold text-xl">Error!</p>
+              <div className="text-lg mt-3">
+                <p> Sorry, we couldn&apos;t save your workout... </p>
+                <p>Please try again later.</p>
+              </div>
+            </Alert>
+          ) : null}
+
+          {apiStatus === API_STATUS.SUCCESS ? (
+            <Alert
+              color="success"
+              className="w-fit text-center flex flex-col justify-center"
+            >
+              <p className="font-medium text-xl">Success!</p>
+              <p className="text-lg"> You workout has been saved! </p>
+              <Button
+                className="mt-5 mx-auto"
+                onClick={() => setApiStatus(API_STATUS.IDLE)}
+              >
+                Add a new Workout
+              </Button>
+            </Alert>
+          ) : null}
+          
+          {apiStatus === API_STATUS.IDLE || apiStatus === API_STATUS.ERROR ? (
+            <>
+              <div className="mb-5">
+                <WorkoutSummaryCard />
+              </div>
+              {exercises.map(
+                (
+                  { hidden, title, sets, id: exerciseId, type: exerciseType },
+                  index
+                ) => {
+                  return (
+                    <div className="mt-5" key={exerciseId}>
+                      <Card className={`${hidden ? "h-12" : ""}`}>
+                        <div className="flex items-center justify-between">
+                          <h3>{title ? `${index + 1}. ${title}` : null}</h3>
+                          <div className="flex space-x-2">
+                            {hidden ? (
+                              <Tooltip
+                                content="Expand Exercise"
+                                className="w-36 text-center"
+                              >
+                                <button
+                                  title="Expand Exercise"
+                                  onClick={() =>
+                                    handleModifyExercise(exerciseId, {
+                                      hidden: false,
+                                    })
+                                  }
+                                >
+                                  <HiPlus />
+                                </button>
+                              </Tooltip>
+                            ) : (
+                              <Tooltip
+                                content="Hide Exercise"
+                                className="w-32 text-center"
+                              >
+                                <button
+                                  title="Hide Exercise"
+                                  onClick={() =>
+                                    handleModifyExercise(exerciseId, {
+                                      hidden: true,
+                                    })
+                                  }
+                                >
+                                  <HiMinus />
+                                </button>
+                              </Tooltip>
+                            )}
+                            <Tooltip content={`Delete this exercise`}>
+                              <button
+                                onClick={() => {
+                                  setDeleteViewModal(true);
+                                  setDeleteItemInfo({
+                                    type: ACTION_ITEMS.EXERCISE,
+                                    exerciseId,
+                                  });
+                                }}
+                              >
+                                <HiTrash color="red" />
+                              </button>
+                            </Tooltip>
+                          </div>
                         </div>
 
-                        <TextInput
+                        {!hidden && (
+                          <div className="flex max-w-md flex-col gap-4">
+                            <div>
+                              <div className="mb-2 block">
+                                <Label htmlFor="exercise">
+                                  Exercise {index + 1}
+                                </Label>
+                              </div>
+
+                              {/* <TextInput
                           id="exercise"
                           type="text"
                           placeholder="Type your exercise"
@@ -224,160 +311,216 @@ export default function Page() {
                           {exercisesData.map(({ name }) => (
                             <option key={name}>{name}</option>
                           ))}
-                        </datalist>
-                      </div>
-                      <div>
-                        {sets.map(({ id: setId, reps, weight }, index) => (
-                          <div key={setId} className="mt-5">
-                            <div className="flex justify-between">
-                              <h2>Set {index + 1}</h2>
-                              <Tooltip content="Delete this set">
-                                <button
-                                  onClick={() => {
-                                    setOpenModal(true);
-                                    setDeleteItemInfo({
-                                      type: ACTION_ITEMS.SET,
-                                      setId,
-                                      exerciseId,
-                                    });
-                                  }}
-                                >
-                                  <HiTrash color="red" />
-                                </button>
-                              </Tooltip>
-                            </div>
-                            <div className="mt-2 flex flex-row justify-between space-x-5">
-                              <div className="w-full">
-                                <div>
-                                  <Label htmlFor="rep1">Reps </Label>
-                                </div>
-                                <TextInput
-                                  id="rep1"
-                                  type="number"
-                                  value={reps}
-                                  required
-                                />
-                              </div>
+                        </datalist> */}
 
-                              <div className="w-full">
-                                <div>
-                                  <Label htmlFor="weight1">Weight (LBS) </Label>
-                                </div>
-                                <TextInput
-                                  id="weight1"
-                                  type="number"
-                                  value={weight}
-                                  required
+                              <Select
+                                id="exercise"
+                                className={styles.exerciseSelect}
+                                value={convertStringToSelectValue(title)}
+                                // className="test border-red-400 border-2 focus:outline-none"
+                                options={convertDataToSelectOptions()}
+                                onChange={(newValue) => {
+                                  if (newValue?.label) {
+                                    handleModifyExercise(exerciseId, {
+                                      title: newValue.label,
+                                      muscleGroup: (newValue as any).muscle_gp,
+                                      type: identifyExerciseType(
+                                        newValue.label
+                                      ),
+                                    });
+                                  }
+                                }}
+                              />
+                            </div>
+                            <div>
+                              {sets?.map(
+                                (
+                                  { id: setId, reps, weight, duration },
+                                  index
+                                ) => (
+                                  <div key={setId} className="mt-5">
+                                    <div className="flex justify-between mb-2">
+                                      <h2>Set {index + 1}</h2>
+                                      <Tooltip content="Delete this set">
+                                        <button
+                                          onClick={() => {
+                                            setDeleteViewModal(true);
+                                            setDeleteItemInfo({
+                                              type: ACTION_ITEMS.SET,
+                                              setId,
+                                              exerciseId,
+                                            });
+                                          }}
+                                        >
+                                          <HiTrash color="red" />
+                                        </button>
+                                      </Tooltip>
+                                    </div>
+                                    {exerciseType === EXERCISE_TYPES.STENGTH ? (
+                                      <div className="flex flex-row justify-between space-x-5">
+                                        <div className="w-full">
+                                          <div>
+                                            <Label htmlFor={`rep-${setId}`}>
+                                              Reps{" "}
+                                            </Label>
+                                          </div>
+                                          <TextInput
+                                            id={`rep-${setId}`}
+                                            type="number"
+                                            value={reps}
+                                            min={0}
+                                            required
+                                            onChange={({ target }) => {
+                                              handleModifySet(
+                                                exerciseId,
+                                                setId,
+                                                {
+                                                  reps: target.value,
+                                                }
+                                              );
+                                            }}
+                                          />
+                                        </div>
+
+                                        <div className="w-full">
+                                          <div>
+                                            <Label htmlFor={`weight-${setId}`}>
+                                              Weight (LBS){" "}
+                                            </Label>
+                                          </div>
+                                          <TextInput
+                                            id={`weight-${setId}`}
+                                            type="number"
+                                            value={weight}
+                                            min={0}
+                                            required
+                                            onChange={({ target }) => {
+                                              handleModifySet(
+                                                exerciseId,
+                                                setId,
+                                                {
+                                                  weight: target.value,
+                                                }
+                                              );
+                                            }}
+                                          />
+                                        </div>
+                                      </div>
+                                    ) : (
+                                      // cardio
+                                      <div className="w-full">
+                                        <div>
+                                          <Label htmlFor={`minutes-${setId}`}>
+                                            Duration (Minutes){" "}
+                                          </Label>
+                                        </div>
+                                        <TextInput
+                                          id={`minutes-${setId}`}
+                                          type="number"
+                                          value={duration}
+                                          min={0}
+                                          required
+                                          onChange={({ target }) => {
+                                            handleModifySet(exerciseId, setId, {
+                                              duration: target.value,
+                                            });
+                                          }}
+                                        />
+                                      </div>
+                                    )}
+                                  </div>
+                                )
+                              )}
+                              <Button
+                                className="mt-5 w-full"
+                                color="blue"
+                                onClick={() => handleAddSet(exerciseId)}
+                              >
+                                <span> Add set </span>
+                                <HiPlus className="my-auto ml-1" />
+                              </Button>
+                            </div>
+                            <div>
+                              <div className="mb-2 block">
+                                <Label
+                                  htmlFor="comment"
+                                  value="Optional Details"
                                 />
                               </div>
+                              <Textarea
+                                id="comment"
+                                placeholder="Leave a comment..."
+                                required
+                                rows={4}
+                              />
                             </div>
                           </div>
-                        ))}
-                        <Button
-                          className="mt-5 w-full"
-                          color="blue"
-                          onClick={() => addSet(exerciseId)}
-                        >
-                          <span> Add set </span>
-                          <HiPlus className="my-auto ml-1" />
-                        </Button>
-                      </div>
-                      <div>
-                        <div className="mb-2 block">
-                          <Label htmlFor="comment" value="Optional Details" />
-                        </div>
-                        <Textarea
-                          id="comment"
-                          placeholder="Leave a comment..."
-                          required
-                          rows={4}
-                        />
-                      </div>
-                    </form>
-                  )}
-                </Card>
+                        )}
+                      </Card>
+                    </div>
+                  );
+                }
+              )}
+              <Button className="w-full mt-5" onClick={handleAddExercise}>
+                <span> Add exercise </span>
+                <HiPlus className="my-auto ml-1" />
+              </Button>
+              <div
+                className={`${styles.saveWorkoutTooltipContainer} 
+            ${
+              unfinishedFields.length === 0 ? styles.hiddenTooltip : ""
+            } w-full`}
+              >
+                <Tooltip
+                  content={
+                    unfinishedFields.length > 0
+                      ? "Please name all exercises before saving the workout"
+                      : ""
+                  }
+                >
+                  <Button
+                    disabled={unfinishedFields.length > 0}
+                    type="submit"
+                    className="w-full mt-5"
+                    color="success"
+                    onClick={() => setSaveWorkoutViewModal(true)}
+                  >
+                    <span> Save Workout </span>
+                    <HiCheckCircle className="my-auto ml-1" />
+                  </Button>
+                </Tooltip>
+              </div>{" "}
+            </>
+          ) : null}
+
+          {apiStatus === API_STATUS.LOADING ? (
+            <Card className="max-w-sm w-fit flex flex-col space-y-2 mt-5">
+              {" "}
+              <p className="font-medium text-xl">Saving Your Exercise</p>
+              <p className="text-lg">Please wait a moment...</p>
+              <div className="text-center">
+                <Spinner aria-label="" size="xl" />
               </div>
-            );
-          })}
-          <Button className="w-full mt-5" onClick={addExercise}>
-            <span> Add exercise </span>
-            <HiPlus className="my-auto ml-1" />
-          </Button>
+            </Card>
+          ) : null}
         </div>
       </div>
-      {/* <DeleteModal
-        openModal={openModal}
-        setOpenModal={setOpenModal}
-        itemName="item"
-      /> */}
-      {/* MODAL */}
 
-      <Modal
-        show={openModal}
-        size="md"
-        onClose={() => setOpenModal(false)}
-        popup
-      >
-        <Modal.Header />
-        <Modal.Body>
-          <div className="text-center">
-            <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
-            <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-              Are you sure you want to delete it?
-            </h3>
-            <div className="flex justify-center gap-4">
-              <Button color="failure" onClick={handleDeleteItem}>
-                {"Yes, I'm sure"}
-              </Button>
-              <Button
-                color="gray"
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-              >
-                No, cancel
-              </Button>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal>
+      <ActionModal
+        title="Are you sure you want to delete it?"
+        acceptButtonColor="failure"
+        showModal={deleteViewModal}
+        closeModal={closeDeleteViewModal}
+        handleAccept={handleDeleteItem}
+      />
+
+      <ActionModal
+        title="Are you sure you want to save this workout?"
+        acceptButtonColor="success"
+        showModal={saveWorkoutViewModal}
+        closeModal={closeSaveWorkoutViewModal}
+        handleAccept={handleSaveWorkout}
+      />
     </>
   );
 }
-
-// const DeleteModal = ({
-//   itemName,
-//   openModal,
-//   setOpenModal,
-// }: {
-//   itemName: string;
-//   openModal: boolean;
-//   setOpenModal: (val: boolean) => void;
-// }) => (
-//   <>
-//     <Modal show={openModal} size="md" onClose={() => setOpenModal(false)} popup>
-//       <Modal.Header />
-//       <Modal.Body>
-//         <div className="text-center">
-//           <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
-//           <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-//             Are you sure you want to delete this {itemName}?
-//           </h3>
-//           <div className="flex justify-center gap-4">
-//             <Button color="failure" onClick={() => setOpenModal(false)}>
-//               {"Yes, I'm sure"}
-//             </Button>
-//             <Button
-//               color="gray"
-//               onClick={() => {
-//                 setOpenModal(false);
-//               }}
-//             >
-//               No, cancel
-//             </Button>
-//           </div>
-//         </div>
-//       </Modal.Body>
-//     </Modal>
-//   </>
-// );

@@ -5,7 +5,7 @@ import React from "react";
 import logo from "../../../../../public/logo.svg";
 import { auth } from "@/src/firebase/config";
 import { usePathname, useRouter } from "next/navigation";
-import { useAuth } from "@/src/context/authContext";
+import { useAuth } from "@/src/app/context/authContext";
 
 export default function Header() {
   const { user, loadingUser } = useAuth();

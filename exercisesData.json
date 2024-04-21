@@ -455,7 +455,7 @@
     "equipment": "Body Only"
   },
   {
-    "name": "Close-grip bench press",
+    "name": "Barbell bench press",
     "image": "",
     "image1": "",
     "muscle_gp": "Chest",
@@ -1013,13 +1013,6 @@
     "image1": "",
     "muscle_gp": "Forearms",
     "equipment": "Dumbbell"
-  },
-  {
-    "name": "Machine Bicep Curl",
-    "image": "",
-    "image1": "",
-    "muscle_gp": "Biceps",
-    "equipment": "Machine"
   },
   {
     "name": "Seated Palms-Down Barbell Wrist Curl",

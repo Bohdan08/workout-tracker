@@ -1,4 +1,4 @@
-import parseFirebaseErorrMessage from "@/src/app/lib/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
+import parseFirebaseErorrMessage from "@/src/app/utils/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
 import { database, usersCollection } from "../config";
 import { doc, getDoc } from "firebase/firestore";
 

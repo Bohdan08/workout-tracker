@@ -1,1 +1,6 @@
-export {};
+export const API_STATUS = {
+  IDLE: "IDLE",
+  LOADING: "LOADING",
+  ERROR: "ERROR",
+  SUCCESS: "SUCCESS",
+};

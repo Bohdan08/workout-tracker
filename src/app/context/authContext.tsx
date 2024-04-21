@@ -8,7 +8,7 @@ import {
 } from "react";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "@/src/firebase/config";
-import { addUserToken } from "../app/lib/actions";
+import { addUserToken } from "../lib/actions/actions";
 
 const TEN_MINUTES = 10 * 60 * 1000;
 

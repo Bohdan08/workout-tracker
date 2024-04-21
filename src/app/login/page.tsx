@@ -6,7 +6,7 @@ import React, { FormEvent, useState } from "react";
 import { Button, Alert, Label, TextInput } from "flowbite-react";
 import { HiInformationCircle } from "react-icons/hi";
 import Link from "next/link";
-import { addUserToken } from "../lib/actions";
+import { addUserToken } from "../lib/actions/actions";
 import {
   AUTH_FORM_STYLE,
   AUTH_HEADING_STYLE,

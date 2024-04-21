@@ -20,6 +20,7 @@ const firebaseConfig = {
 export const firebaseApp = initializeApp(firebaseConfig);
 export const database = getFirestore(firebaseApp);
 export const auth = getAuth();
-export const usersCollection = 'users';
+export const usersCollection = "users";
+export const workoutsCollection = "workouts";
 // Set Persistence
 // setPersistence(auth, browserSessionPersistence);
