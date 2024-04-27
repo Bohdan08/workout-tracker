@@ -23,7 +23,7 @@ const initialState: WorkoutsHistory = {
 // Get popular products from firebase
 export const fetchWorkoutsHistory = createAsyncThunk(
   "workoutsHistory/fetchWorkoutsHistory",
-  async () => getAllUserWorkouts("pY8FgcjJrMXKeIO1mSB1ysTLoRl1")
+  async (userId: string) => getAllUserWorkouts(userId)
 );
 
 const workoutsHistorySlice = createSlice({

@@ -2,9 +2,11 @@
 import Link from "next/link";
 import React from "react";
 
+import styles from "./menu.module.scss";
+
 export default function Menu() {
   return (
-    <aside className="border-r h-full w-60">
+    <aside className={`border-r h-full w-60 ${styles.menu}`}>
       <nav>
         <ul className="flex flex-col space-y-5 py-4">
           <li>

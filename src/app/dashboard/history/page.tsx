@@ -11,58 +11,40 @@ import {
   TableRow,
 } from "flowbite-react";
 import { useRouter } from "next/navigation";
-import getUserWorkouts from "@/src/firebase/firestore/getUserWorkouts";
 import { useAuth } from "../../context/authContext";
 import { API_STATUS } from "../../common/constants";
 import getWeekdayName from "../../lib/utils/getWeekdayName";
 import formatDate from "../../lib/utils/formatDate";
 import { fetchWorkoutsHistory } from "../../lib/store/features/workoutsHistory/workoutsHistorySlice";
-import { useDispatch } from "react-redux";
-// import { getAllCollections } from "../../lib/actions/getAllWorkouts/getAllWorkouts";
-// import getWorkouts from "@/src/firebase/firestore/addWorkouts";
+import useAppDispatch from "../../hooks/useAppDispatch";
+import useAppSelector from "../../hooks/useAppSelector";
 
 export default function History() {
-  const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
-  const [apiErrorMessage, setApiErrorMessage] = useState("");
+  // const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
+  // const [apiErrorMessage, setApiErrorMessage] = useState("");
 
   const { user } = useAuth();
   const router = useRouter();
 
-  const [data, setData] = useState<any>([]);
+  const { workouts, apiStatus, apiErrorMessage } = useAppSelector(
+    (store) => store.workoutsHistory
+  );
 
-  const dispatch = useDispatch();
+  // const [data, setData] = useState<any>([]);
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    async function fetchData() {
-      setApiStatus(API_STATUS.LOADING);
-
-      const { result, error, errorMessage } = await getUserWorkouts(
-        user?.uid as string
-      );
-
-      if (error) {
-        setApiStatus(API_STATUS.ERROR);
-        setApiErrorMessage(errorMessage);
-        return;
-      }
-
-      // success
-      setData(result);
-      setApiStatus(API_STATUS.SUCCESS);
-    }
-
     if (user?.uid && apiStatus === API_STATUS.IDLE) {
-      // fetchData();
-      console.log("HERE");
-      dispatch(fetchWorkoutsHistory() as any);
+      dispatch(fetchWorkoutsHistory(user.uid));
     }
-  }, [user, apiStatus]);
+  }, [user, apiStatus, dispatch]);
 
-  console.log(data, "data");
+  // console.log(data, "data");
 
   return (
     <div className="overflow-x-auto">
-      {apiStatus === API_STATUS.SUCCESS && data?.length ? (
+      {apiStatus === API_STATUS.SUCCESS && workouts?.length ? (
         <Table>
           <TableHead>
             <TableHeadCell>Date</TableHeadCell>
@@ -70,7 +52,7 @@ export default function History() {
             <TableHeadCell>Muscles</TableHeadCell>
           </TableHead>
           <TableBody className="divide-y">
-            {data.map(({ id, created, allMuscleGroups }: any) => (
+            {workouts.map(({ id, created, allMuscleGroups }: any) => (
               <TableRow
                 key={id}
                 className="cursor-pointer hover:bg-gray-100"
@@ -113,12 +95,12 @@ export default function History() {
         </Alert>
       ) : null}
 
-      {apiStatus === API_STATUS.SUCCESS && !data?.length ? (
+      {apiStatus === API_STATUS.SUCCESS && !workouts?.length ? (
         <Alert
           color="info"
           className="text-center flex flex-col justify-center items-center mb-5"
         >
-          <p className="font-semibold text-xl">No Data Found!</p>
+          <p className="font-semibold text-xl">No Workouts Found!</p>
           <div className="text-lg mt-3">
             <p> You haven&apos;t created any workouts yet.</p>
           </div>

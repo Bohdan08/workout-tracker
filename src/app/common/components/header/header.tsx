@@ -7,14 +7,16 @@ import { auth } from "@/src/firebase/config";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/src/app/context/authContext";
 
+import styles from "./header.module.scss";
+
 export default function Header() {
   const { user, loadingUser } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
 
-  console.log(loadingUser, "loadingUser");
+  // console.log(loadingUser, "loadingUser");
   return (
-    <header className="border-b py-2 px-4 sm:px-6">
+    <header className={`border-b py-2 px-4 sm:px-6 ${styles.header}`}>
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-8">
           <div>
