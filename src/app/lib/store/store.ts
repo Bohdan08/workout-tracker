@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import newWorkout from "./features/newWorkout/newWorkoutSlice";
-
+import workoutsHistory from "./features/workoutsHistory/workoutsHistorySlice";
 // export const store = configureStore({
 //   reducer: {
 //     addWorkout: addWorkout,
@@ -16,6 +16,7 @@ export const makeStore = () => {
   return configureStore({
     reducer: {
       newWorkout,
+      workoutsHistory,
     },
   });
 };

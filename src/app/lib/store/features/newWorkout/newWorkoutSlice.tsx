@@ -13,7 +13,7 @@ import { ExerciseSet, Exercise } from "@/src/app/common/interfaces";
 const createExerciseTemplate = () => ({
   id: uuid(),
   hidden: false,
-  metrics: WEIGHT_METRICS.LBS,
+  // metrics: WEIGHT_METRICS.LBS,
   type: EXERCISE_TYPES.STENGTH,
   title: "",
   // sets: [createExerciseSetTemplate()],
@@ -21,22 +21,13 @@ const createExerciseTemplate = () => ({
   muscleGroup: "",
 });
 
-// interface Exercise {
-//   id: string;
-//   hidden: boolean;
-//   metrics: WEIGHT_METRICS;
-//   type: EXERCISE_TYPES;
-//   title: string;
-//   notes: string;
-//   muscleGroup: string;
-//   sets?: ExerciseSet[];
-// }
-
 interface Workout {
+  metrics: WEIGHT_METRICS.LBS,
   exercises: Exercise[];
 }
 
 const initialState: Workout = {
+  metrics: WEIGHT_METRICS.LBS,
   exercises: [createExerciseTemplate()],
 };
 

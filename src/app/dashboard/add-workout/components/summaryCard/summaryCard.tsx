@@ -4,16 +4,13 @@ import React from "react";
 
 const BADGE_COLORS = ["info", "success", "warning", "indigo", "purple", "pink"];
 
-export default function WorkoutSummary() {
+export default function WorkoutSummary({
+  affectedMuscleGroups,
+}: {
+  affectedMuscleGroups: string[];
+}) {
   const { exercises } = useAppSelector((store) => store.newWorkout);
 
-  const affectedMuscleGroups = [
-    ...new Set(
-      exercises
-        .filter((obj) => obj.muscleGroup !== "")
-        .map((obj) => obj.muscleGroup)
-    ),
-  ];
   return (
     <Card className="bg-gray-100">
       <ul className="flex flex-col space-y-4">

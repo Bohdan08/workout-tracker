@@ -10,7 +10,6 @@ import {
   Alert,
 } from "flowbite-react";
 import Select from "react-select";
-import { v4 as uuid } from "uuid";
 import React, { useState } from "react";
 import { HiPlus, HiMinus, HiTrash, HiCheckCircle } from "react-icons/hi";
 import exercisesData from "../../../../exercisesData.json";
@@ -29,12 +28,6 @@ import {
 } from "../../lib/store/features/newWorkout/newWorkoutSlice";
 import WorkoutSummaryCard from "./components/summaryCard/summaryCard";
 import ActionModal from "../../common/components/actionModal";
-import { addDoc, doc, serverTimestamp, setDoc } from "firebase/firestore";
-import {
-  database,
-  usersCollection,
-  workoutsCollection,
-} from "@/src/firebase/config";
 import { useAuth } from "../../context/authContext";
 import { EXERCISE_TYPES } from "../../common/enums";
 import { API_STATUS } from "../../common/constants";
@@ -44,10 +37,6 @@ export enum ACTION_ITEMS {
   SET = "SET",
   EXERCISE = "EXERCISE",
 }
-
-const getTimeEpoch = () => {
-  return new Date().getTime().toString();
-};
 
 type Options = Record<string, string | number | boolean>;
 
@@ -90,7 +79,6 @@ export default function Page() {
     dispatch(deleteExerciseSet({ exerciseId, setId }));
 
   const handleModifyExercise = (exerciseId: string, options: Options) => {
-    console.log(options, "OPTION");
     dispatch(modifyExercise({ exerciseId, options }));
   };
 
@@ -134,6 +122,14 @@ export default function Page() {
     label,
   });
 
+  const affectedMuscleGroups = [
+    ...new Set(
+      exercises
+        .filter((obj) => obj.muscleGroup !== "")
+        .map((obj) => obj.muscleGroup)
+    ),
+  ];
+
   const handleSaveWorkout = async () => {
     closeSaveWorkoutViewModal();
     setApiStatus(API_STATUS.LOADING);
@@ -142,9 +138,6 @@ export default function Page() {
       user?.uid as string,
       exercises
     );
-
-    console.log(error, "error");
-    console.log(errorMessage, "errorMessage");
 
     if (error) {
       setApiStatus(API_STATUS.ERROR);
@@ -197,7 +190,9 @@ export default function Page() {
           {apiStatus === API_STATUS.IDLE || apiStatus === API_STATUS.ERROR ? (
             <>
               <div className="mb-5">
-                <WorkoutSummaryCard />
+                <WorkoutSummaryCard
+                  affectedMuscleGroups={affectedMuscleGroups}
+                />
               </div>
               {exercises.map(
                 (

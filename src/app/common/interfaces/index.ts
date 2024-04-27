@@ -10,10 +10,18 @@ export interface ExerciseSet {
 export interface Exercise {
   id: string;
   hidden: boolean;
-  metrics: WEIGHT_METRICS;
+  // metrics: WEIGHT_METRICS;
   type: EXERCISE_TYPES;
   title: string;
   notes: string;
   muscleGroup: string;
   sets?: ExerciseSet[];
+}
+
+export interface Workout {
+  id: string;
+  created: Date;
+  metrics: WEIGHT_METRICS;
+  exercises: Exercise[];
+  allMuscleGroups: string[];
 }

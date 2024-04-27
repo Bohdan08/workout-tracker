@@ -1,6 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
+  Alert,
+  Spinner,
   Table,
   TableBody,
   TableCell,
@@ -9,34 +11,119 @@ import {
   TableRow,
 } from "flowbite-react";
 import { useRouter } from "next/navigation";
+import getUserWorkouts from "@/src/firebase/firestore/getUserWorkouts";
+import { useAuth } from "../../context/authContext";
+import { API_STATUS } from "../../common/constants";
+import getWeekdayName from "../../lib/utils/getWeekdayName";
+import formatDate from "../../lib/utils/formatDate";
+import { fetchWorkoutsHistory } from "../../lib/store/features/workoutsHistory/workoutsHistorySlice";
+import { useDispatch } from "react-redux";
+// import { getAllCollections } from "../../lib/actions/getAllWorkouts/getAllWorkouts";
+// import getWorkouts from "@/src/firebase/firestore/addWorkouts";
 
 export default function History() {
+  const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
+  const [apiErrorMessage, setApiErrorMessage] = useState("");
+
+  const { user } = useAuth();
   const router = useRouter();
+
+  const [data, setData] = useState<any>([]);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    async function fetchData() {
+      setApiStatus(API_STATUS.LOADING);
+
+      const { result, error, errorMessage } = await getUserWorkouts(
+        user?.uid as string
+      );
+
+      if (error) {
+        setApiStatus(API_STATUS.ERROR);
+        setApiErrorMessage(errorMessage);
+        return;
+      }
+
+      // success
+      setData(result);
+      setApiStatus(API_STATUS.SUCCESS);
+    }
+
+    if (user?.uid && apiStatus === API_STATUS.IDLE) {
+      // fetchData();
+      console.log("HERE");
+      dispatch(fetchWorkoutsHistory() as any);
+    }
+  }, [user, apiStatus]);
+
+  console.log(data, "data");
 
   return (
     <div className="overflow-x-auto">
-      <Table>
-        <TableHead>
-          <TableHeadCell>Date</TableHeadCell>
-          <TableHeadCell>Weekday</TableHeadCell>
-          <TableHeadCell>Title</TableHeadCell>
-          <TableHeadCell>Number In The week</TableHeadCell>
-        </TableHead>
-        <TableBody className="divide-y">
-          {SUMMARY_DATA.map(({ id, date, weekday, title, numberInTheWeek }) => (
-            <TableRow
-              key={id}
-              className="cursor-pointer hover:bg-gray-100"
-              onClick={() => router.push(`/dashboard/history/${id}`)}
-            >
-              <TableCell>{date}</TableCell>
-              <TableCell>{weekday}</TableCell>
-              <TableCell>{title}</TableCell>
-              <TableCell>{numberInTheWeek}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      {apiStatus === API_STATUS.SUCCESS && data?.length ? (
+        <Table>
+          <TableHead>
+            <TableHeadCell>Date</TableHeadCell>
+            <TableHeadCell>Weekday</TableHeadCell>
+            <TableHeadCell>Muscles</TableHeadCell>
+          </TableHead>
+          <TableBody className="divide-y">
+            {data.map(({ id, created, allMuscleGroups }: any) => (
+              <TableRow
+                key={id}
+                className="cursor-pointer hover:bg-gray-100"
+                onClick={() => router.push(`/dashboard/history/${id}`)}
+              >
+                <TableCell>
+                  {formatDate(created, { divider: " ", includeYear: false })}
+                </TableCell>
+                <TableCell>{getWeekdayName(created)}</TableCell>
+                <TableCell>{allMuscleGroups.join(", ")}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      ) : null}
+
+      {/* OTHER */}
+
+      {apiStatus === API_STATUS.LOADING && (
+        <div className="max-w-sm w-fit flex flex-col space-y-2 mt-5">
+          {" "}
+          <p className="font-medium text-xl">Loading Your Workouts</p>
+          <p className="text-lg">Please wait a moment...</p>
+          <div className="text-center">
+            <Spinner aria-label="" size="xl" />
+          </div>
+        </div>
+      )}
+      {apiStatus === API_STATUS.ERROR ? (
+        <Alert
+          color="failure"
+          className="text-center flex flex-col justify-center items-center mb-5"
+        >
+          <p className="font-semibold text-xl">Error!</p>
+          <div className="text-lg mt-3">
+            <p> Sorry, we couldn&apos;t retrieve your workouts... </p>
+            {apiErrorMessage && <p> Reason: {apiErrorMessage} </p>}
+            <p>Please try again later.</p>
+          </div>
+        </Alert>
+      ) : null}
+
+      {apiStatus === API_STATUS.SUCCESS && !data?.length ? (
+        <Alert
+          color="info"
+          className="text-center flex flex-col justify-center items-center mb-5"
+        >
+          <p className="font-semibold text-xl">No Data Found!</p>
+          <div className="text-lg mt-3">
+            <p> You haven&apos;t created any workouts yet.</p>
+          </div>
+        </Alert>
+      ) : null}
     </div>
   );
 }

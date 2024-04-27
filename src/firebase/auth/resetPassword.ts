@@ -1,6 +1,6 @@
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../config";
-import parseFirebaseErorrMessage from "@/src/app/utils/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
+import parseFirebaseErorrMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
 
 export default async function resetPassword(email: string) {
   let result = null,
