@@ -3288,5 +3288,9 @@
     "image1": "",
     "muscle_gp": "Triceps",
     "equipment": "Other"
+  },
+  {
+    "name": "Walking backward",
+    "muscle_gp": "Quadriceps"
   }
 ]

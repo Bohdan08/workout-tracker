@@ -1,12 +1,7 @@
-import {
-  ActionReducerMapBuilder,
-  PayloadAction,
-  createAsyncThunk,
-  createSlice,
-} from "@reduxjs/toolkit";
-import { Workout, WorkoutData } from "@/src/app/common/interfaces";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { WorkoutData } from "@/src/app/common/interfaces";
 import { API_STATUS } from "@/src/app/common/constants";
-import { getAllUserWorkouts } from "../../../actions/getAllUserWorkouts/getAllUserWorkouts";
+import { getAllUserWorkouts } from "../../../actions/getAllWorkouts/getAllWorkouts";
 
 interface WorkoutsHistory {
   apiStatus: string;
@@ -20,7 +15,6 @@ const initialState: WorkoutsHistory = {
   workouts: [],
 };
 
-// Get popular products from firebase
 export const fetchWorkoutsHistory = createAsyncThunk(
   "workoutsHistory/fetchWorkoutsHistory",
   async (userId: string) => getAllUserWorkouts(userId)
@@ -48,7 +42,7 @@ const workoutsHistorySlice = createSlice({
     });
     builder.addCase(
       fetchWorkoutsHistory.fulfilled,
-      (state, action: PayloadAction<Workout[]>) => {
+      (state, action: PayloadAction<WorkoutData[]>) => {
         state.apiErrorMessage = null;
         state.apiStatus = API_STATUS.SUCCESS;
         state.workouts = action.payload;

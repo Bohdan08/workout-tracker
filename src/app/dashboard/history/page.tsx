@@ -18,6 +18,7 @@ import formatDate from "../../lib/utils/formatDate";
 import { fetchWorkoutsHistory } from "../../lib/store/features/workoutsHistory/workoutsHistorySlice";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import useAppSelector from "../../hooks/useAppSelector";
+import { setWorkout } from "../../lib/store/features/selectedWorkout/selectedWorkoutSlice";
 
 export default function History() {
   // const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
@@ -53,11 +54,16 @@ export default function History() {
           </TableHead>
           <TableBody className="divide-y">
             {workouts.map(
-              ({ id, created, workoutDate, allMuscleGroups }: any) => (
+              ({ id, created, workoutDate, allMuscleGroups }: any, index) => (
                 <TableRow
                   key={id}
                   className="cursor-pointer hover:bg-gray-100"
-                  onClick={() => router.push(`/dashboard/history/${id}`)}
+                  onClick={() => {
+                    // DISPATCH
+                    dispatch(setWorkout(workouts[index]));
+                    //
+                    router.push(`/dashboard/history/${id}`);
+                  }}
                 >
                   <TableCell>
                     {formatDate(workoutDate, { includeYear: false })}

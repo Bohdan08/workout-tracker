@@ -7,7 +7,7 @@ import {
   getDoc,
   getDocs,
 } from "firebase/firestore";
-import { getAllCollections } from "@/src/app/lib/actions/getAllUserWorkouts/getAllUserWorkouts";
+import { getAllCollections } from "@/src/app/lib/actions/getAllWorkouts/getAllWorkouts";
 
 export default async function getData(id: string) {
   let result = null;

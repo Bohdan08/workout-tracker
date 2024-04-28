@@ -1,22 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import newWorkout from "./features/newWorkout/newWorkoutSlice";
+import selectedWorkout from "./features/selectedWorkout/selectedWorkoutSlice";
 import workoutsHistory from "./features/workoutsHistory/workoutsHistorySlice";
-// export const store = configureStore({
-//   reducer: {
-//     addWorkout: addWorkout,
-//   },
-//   // middleware: (getDefaultMiddleware) =>
-//   //   getDefaultMiddleware({
-//   //     serializableCheck: false,
-//   //     immutableCheck: false,
-//   //   }),
-// });
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       newWorkout,
       workoutsHistory,
+      selectedWorkout,
     },
   });
 };

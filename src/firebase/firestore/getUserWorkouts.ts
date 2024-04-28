@@ -1,4 +1,4 @@
-import { getAllUserWorkouts } from "@/src/app/lib/actions/getAllUserWorkouts/getAllUserWorkouts";
+import { getAllUserWorkouts } from "@/src/app/lib/actions/getAllWorkouts/getAllWorkouts";
 
 // call server side api as we can get all subcollections only in node environment
 // 

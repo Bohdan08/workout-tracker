@@ -1,24 +1,56 @@
 "use client";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
-import React from "react";
-import WorkoutSummary from "../../add-workout/components/summaryCard/summaryCard";
-import { Badge, Card, Datepicker, Label, TextInput } from "flowbite-react";
+import React, { useEffect } from "react";
+import {
+  Badge,
+  Card,
+  Datepicker,
+  Label,
+  Spinner,
+  TextInput,
+} from "flowbite-react";
 import { BADGE_COLORS } from "@/src/app/common/constants";
-import { EXERCISE_TYPES } from "@/src/app/common/enums";
+import { API_STATUS, EXERCISE_TYPES } from "@/src/app/common/enums";
 import getAffectedMuscleGroups from "@/src/app/lib/utils/getAffectedMuscleGroups";
 import TotalCard from "./components/totalCard";
 import ExerciseSetDetails from "./components/exerciseSetDetails";
+import useAppDispatch from "@/src/app/hooks/useAppDispatch";
+import { fetchWorkoutById } from "@/src/app/lib/store/features/selectedWorkout/selectedWorkoutSlice";
+import { useAuth } from "@/src/app/context/authContext";
+import LoadingView from "./components/loadingView/loadingView";
+import ErrorView from "./components/errorView";
 
-export default function Page({ params: { id } }: { params: { id: string } }) {
-  const { workouts, apiStatus, apiErrorMessage } = useAppSelector(
-    (store) => store.workoutsHistory
+export default function Page({
+  params: { id: workoutId },
+}: {
+  params: { id: string };
+}) {
+  const { user } = useAuth();
+
+  const { data, apiStatus, apiErrorMessage } = useAppSelector(
+    (store) => store.selectedWorkout
   );
+  const dispatch = useAppDispatch();
 
-  const currIndex = workouts.findIndex((obj) => obj.id === id);
-  const currWorkout = workouts[currIndex];
+  console.log(data, "datadata");
 
-  if (currWorkout) {
-    const { exercises, workoutDate } = currWorkout;
+  useEffect(() => {
+    // check if workout hasn't been logged
+    if (user?.uid && data.id === null && apiStatus === API_STATUS.IDLE) {
+      dispatch(fetchWorkoutById({ userId: user.uid, workoutId }));
+    }
+  }, [data, apiStatus, dispatch, user?.uid, workoutId]);
+
+  if (apiStatus === API_STATUS.ERROR) {
+    return <ErrorView message={apiErrorMessage} />;
+  }
+
+  if (apiStatus === API_STATUS.LOADING) {
+    return <LoadingView />;
+  }
+
+  if (apiStatus === API_STATUS.SUCCESS && data.id) {
+    const { exercises, workoutDate } = data;
 
     const affectedMuscleGroups = getAffectedMuscleGroups(exercises);
 
@@ -50,7 +82,7 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
           {" "}
           Workout Summary for {workoutDate as string}
         </h1>
-        {currWorkout ? (
+        {data ? (
           <div>
             {/* <div className="mt-5">
             <Datepicker
@@ -172,6 +204,4 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
       </div>
     );
   }
-
-  return <div>no data</div>;
 }
