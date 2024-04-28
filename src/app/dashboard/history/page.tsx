@@ -52,19 +52,21 @@ export default function History() {
             <TableHeadCell>Muscles</TableHeadCell>
           </TableHead>
           <TableBody className="divide-y">
-            {workouts.map(({ id, created, allMuscleGroups }: any) => (
-              <TableRow
-                key={id}
-                className="cursor-pointer hover:bg-gray-100"
-                onClick={() => router.push(`/dashboard/history/${id}`)}
-              >
-                <TableCell>
-                  {formatDate(created, { divider: " ", includeYear: false })}
-                </TableCell>
-                <TableCell>{getWeekdayName(created)}</TableCell>
-                <TableCell>{allMuscleGroups.join(", ")}</TableCell>
-              </TableRow>
-            ))}
+            {workouts.map(
+              ({ id, created, workoutDate, allMuscleGroups }: any) => (
+                <TableRow
+                  key={id}
+                  className="cursor-pointer hover:bg-gray-100"
+                  onClick={() => router.push(`/dashboard/history/${id}`)}
+                >
+                  <TableCell>
+                    {formatDate(workoutDate, { includeYear: false })}
+                  </TableCell>
+                  <TableCell>{getWeekdayName(created)}</TableCell>
+                  <TableCell>{allMuscleGroups.join(", ")}</TableCell>
+                </TableRow>
+              )
+            )}
           </TableBody>
         </Table>
       ) : null}

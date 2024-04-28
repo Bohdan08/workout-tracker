@@ -1,24 +1,23 @@
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { database, usersCollection, workoutsCollection } from "../config";
 import parseFirebaseErorrMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
-import { Exercise } from "@/src/app/common/interfaces";
-import formatDate from "@/src/app/lib/utils/formatDate";
+import { Exercise, WorkoutData } from "@/src/app/common/interfaces";
+// import formatDate from "@/src/app/lib/utils/formatDate";
 import { v4 as uuid } from "uuid";
 
-const getTimeEpoch = () => {
-  return new Date().getTime().toString();
-};
+// const getTimeEpoch = () => {
+//   return new Date().getTime().toString();
+// };
 
 export default async function addWorkout(
   userId: string,
-  exercises: Exercise[]
+  workoutData: WorkoutData
 ) {
   let result = null;
   let error = false;
   let errorMessage = "";
 
-  // document key is today's date
-  const docKey = formatDate();
+  const docId = uuid();
 
   try {
     const userRef = doc(
@@ -26,14 +25,14 @@ export default async function addWorkout(
       usersCollection,
       userId,
       workoutsCollection,
-      docKey
+      docId
     );
 
-    const workoutId = getTimeEpoch();
+    // const workoutId = getTimeEpoch();
 
     const allMuscleGroups = [
       ...new Set(
-        exercises
+        workoutData.exercises
           .filter((obj) => obj.muscleGroup !== "")
           .map((obj) => obj.muscleGroup)
       ),
@@ -42,11 +41,11 @@ export default async function addWorkout(
     result = await setDoc(
       userRef,
       {
-        [workoutId]: {
-          id: uuid(),
+        data: {
+          // id: uuid(),
           created: serverTimestamp(),
           allMuscleGroups,
-          exercises,
+          ...workoutData,
         },
       },
       { merge: true }

@@ -2,7 +2,12 @@ import { EXERCISE_TYPES, WEIGHT_METRICS } from "@/src/app/common/enums";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
 import createExerciseSetTemplate from "../../../utils/createExerciseSetTemplate";
-import { ExerciseSet, Exercise } from "@/src/app/common/interfaces";
+import {
+  ExerciseSet,
+  Exercise,
+  WorkoutData,
+} from "@/src/app/common/interfaces";
+import formatDate from "../../../utils/formatDate";
 
 // const createExerciseSetTemplate = () => ({
 //   id: uuid(),
@@ -21,13 +26,15 @@ const createExerciseTemplate = () => ({
   muscleGroup: "",
 });
 
-interface Workout {
-  metrics: WEIGHT_METRICS.LBS,
-  exercises: Exercise[];
-}
+// export interface WorkoutData {
+//   metrics: WEIGHT_METRICS.LBS;
+//   workoutDate: Date | string;
+//   exercises: Exercise[];
+// }
 
-const initialState: Workout = {
+const initialState: WorkoutData = {
   metrics: WEIGHT_METRICS.LBS,
+  workoutDate: formatDate(new Date()),
   exercises: [createExerciseTemplate()],
 };
 
@@ -35,6 +42,9 @@ const newWorkoutSlice = createSlice({
   name: "newWorkout",
   initialState,
   reducers: {
+    setWorkoutDate(state, action: PayloadAction<string | Date>) {
+      state.workoutDate = action.payload;
+    },
     addExercise(state) {
       state.exercises = [...state.exercises, createExerciseTemplate()];
     },
@@ -118,6 +128,7 @@ const newWorkoutSlice = createSlice({
 });
 
 export const {
+  setWorkoutDate,
   // exercise actions
   addExercise,
   modifyExercise,

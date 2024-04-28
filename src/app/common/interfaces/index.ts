@@ -16,6 +16,7 @@ export interface Exercise {
   notes: string;
   muscleGroup: string;
   sets?: ExerciseSet[];
+  duration?: number;
 }
 
 export interface Workout {
@@ -24,4 +25,11 @@ export interface Workout {
   metrics: WEIGHT_METRICS;
   exercises: Exercise[];
   allMuscleGroups: string[];
+}
+
+export interface WorkoutData {
+  id?: string;
+  metrics: WEIGHT_METRICS.LBS;
+  workoutDate: Date | string;
+  exercises: Exercise[];
 }

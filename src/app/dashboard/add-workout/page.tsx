@@ -8,6 +8,7 @@ import {
   Tooltip,
   Spinner,
   Alert,
+  Datepicker,
 } from "flowbite-react";
 import Select from "react-select";
 import React, { useState } from "react";
@@ -25,6 +26,7 @@ import {
   modifyExercise,
   modifyExerciseSet,
   resetWorkout,
+  setWorkoutDate,
 } from "../../lib/store/features/newWorkout/newWorkoutSlice";
 import WorkoutSummaryCard from "./components/summaryCard/summaryCard";
 import ActionModal from "../../common/components/actionModal";
@@ -32,6 +34,7 @@ import { useAuth } from "../../context/authContext";
 import { EXERCISE_TYPES } from "../../common/enums";
 import { API_STATUS } from "../../common/constants";
 import addWorkout from "@/src/firebase/firestore/addWorkout";
+import formatDate from "../../lib/utils/formatDate";
 
 export enum ACTION_ITEMS {
   SET = "SET",
@@ -50,7 +53,10 @@ const identifyExerciseType = (exerciseName: string) => {
 
 export default function Page() {
   const { user } = useAuth();
-  const { exercises } = useAppSelector((store) => store.newWorkout);
+  const newWorkoutData = useAppSelector((store) => store.newWorkout);
+
+  const { exercises, workoutDate } = newWorkoutData;
+
   const dispatch = useDispatch();
   // console.log(user, "user");
   const [deleteViewModal, setDeleteViewModal] = useState(false);
@@ -78,9 +84,11 @@ export default function Page() {
   const handleDeleteSet = (exerciseId: string, setId: string) =>
     dispatch(deleteExerciseSet({ exerciseId, setId }));
 
-  const handleModifyExercise = (exerciseId: string, options: Options) => {
+  const handleModifyExercise = (exerciseId: string, options: Options) =>
     dispatch(modifyExercise({ exerciseId, options }));
-  };
+
+  const handleWorkoutDate = (newDate: string) =>
+    dispatch(setWorkoutDate(newDate));
 
   const handleModifySet = (
     exerciseId: string,
@@ -122,21 +130,13 @@ export default function Page() {
     label,
   });
 
-  const affectedMuscleGroups = [
-    ...new Set(
-      exercises
-        .filter((obj) => obj.muscleGroup !== "")
-        .map((obj) => obj.muscleGroup)
-    ),
-  ];
-
   const handleSaveWorkout = async () => {
     closeSaveWorkoutViewModal();
     setApiStatus(API_STATUS.LOADING);
 
     const { error, errorMessage } = await addWorkout(
       user?.uid as string,
-      exercises
+      newWorkoutData
     );
 
     if (error) {
@@ -155,7 +155,7 @@ export default function Page() {
   return (
     <>
       <div>
-        <h1 className="text-3xl font-medium">New Workout</h1>
+        <h1 className="text-3xl font-medium">Your Workout</h1>
         <div className="max-w-md mt-5">
           {apiStatus === API_STATUS.ERROR ? (
             <Alert
@@ -190,9 +190,17 @@ export default function Page() {
           {apiStatus === API_STATUS.IDLE || apiStatus === API_STATUS.ERROR ? (
             <>
               <div className="mb-5">
-                <WorkoutSummaryCard
-                  affectedMuscleGroups={affectedMuscleGroups}
+                <Datepicker
+                  value={workoutDate as string}
+                  onSelectedDateChanged={(newDate) =>
+                    handleWorkoutDate(formatDate(newDate))
+                  }
+                  minDate={new Date(2022, 0, 1)}
+                  maxDate={new Date()}
                 />
+              </div>
+              <div className="mb-5">
+                <WorkoutSummaryCard exercises={exercises} />
               </div>
               {exercises.map(
                 (

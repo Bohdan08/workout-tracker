@@ -4,3 +4,12 @@ export const API_STATUS = {
   ERROR: "ERROR",
   SUCCESS: "SUCCESS",
 };
+
+export const BADGE_COLORS = [
+  "info",
+  "success",
+  "warning",
+  "indigo",
+  "purple",
+  "pink",
+];

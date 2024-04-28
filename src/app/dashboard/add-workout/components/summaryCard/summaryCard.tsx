@@ -1,16 +1,16 @@
-import useAppSelector from "@/src/app/hooks/useAppSelector";
+import { Exercise } from "@/src/app/common/interfaces";
+import getAffectedMuscleGroups from "@/src/app/lib/utils/getAffectedMuscleGroups";
 import { Badge, Card } from "flowbite-react";
 import React from "react";
 
 const BADGE_COLORS = ["info", "success", "warning", "indigo", "purple", "pink"];
 
 export default function WorkoutSummary({
-  affectedMuscleGroups,
+  exercises,
 }: {
-  affectedMuscleGroups: string[];
+  exercises: Exercise[];
 }) {
-  const { exercises } = useAppSelector((store) => store.newWorkout);
-
+  const affectedMuscleGroups = getAffectedMuscleGroups(exercises);
   return (
     <Card className="bg-gray-100">
       <ul className="flex flex-col space-y-4">

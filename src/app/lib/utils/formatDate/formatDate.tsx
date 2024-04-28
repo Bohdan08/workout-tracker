@@ -3,8 +3,8 @@ interface Options {
   includeYear?: boolean;
 }
 
-const formatDate = (value?: Date | string, options?: Options) => {
-  const { divider = "-", includeYear = true } = options || {};
+const formatDate = (value?: string | Date, options?: Options) => {
+  const { includeYear = true } = options || {};
 
   const formattedDate = value ? new Date(value) : new Date();
   // get date
@@ -18,10 +18,11 @@ const formatDate = (value?: Date | string, options?: Options) => {
   let yearValue = "";
 
   if (includeYear) {
-    yearValue = includeYear ? `${divider}${formattedDate.getFullYear()}` : "";
+    yearValue = includeYear ? `, ${formattedDate.getFullYear()}` : "";
   }
 
-  return `${dateNumber}${divider}${monthName}${yearValue}`;
+  // return `${dateNumber}${divider}${monthName}${yearValue}`;
+  return `${monthName} ${dateNumber}${yearValue}`;
 };
 
 export default formatDate;

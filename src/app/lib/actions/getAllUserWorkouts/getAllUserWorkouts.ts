@@ -14,7 +14,9 @@ const formatServerTimeStamp = (value: Timestamp) => {
 
 export async function getAllUserWorkouts(userId: string) {
   const db = firebaseAdmin.firestore();
-  const userRef = db.collection(usersCollection).doc(userId || "pY8FgcjJrMXKeIO1mSB1ysTLoRl1");
+  const userRef = db
+    .collection(usersCollection)
+    .doc(userId || "pY8FgcjJrMXKeIO1mSB1ysTLoRl1");
   // .doc(userId || "pY8FgcjJrMXKeIO1mSB1ysTLoRl1");
   const listCollections = await userRef.listCollections();
 
@@ -26,6 +28,7 @@ export async function getAllUserWorkouts(userId: string) {
       // transform server timestamp to date format
       const formattedData = Object.values(doc.data()).map((data) => ({
         ...data,
+        id: doc.id,
         created: formatServerTimeStamp(data.created),
       }));
 

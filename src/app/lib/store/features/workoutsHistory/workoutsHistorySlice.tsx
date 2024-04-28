@@ -4,14 +4,14 @@ import {
   createAsyncThunk,
   createSlice,
 } from "@reduxjs/toolkit";
-import { Workout } from "@/src/app/common/interfaces";
+import { Workout, WorkoutData } from "@/src/app/common/interfaces";
 import { API_STATUS } from "@/src/app/common/constants";
 import { getAllUserWorkouts } from "../../../actions/getAllUserWorkouts/getAllUserWorkouts";
 
 interface WorkoutsHistory {
   apiStatus: string;
   apiErrorMessage: string | null;
-  workouts: Workout[];
+  workouts: WorkoutData[];
 }
 
 const initialState: WorkoutsHistory = {
