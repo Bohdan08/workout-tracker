@@ -16,7 +16,9 @@ export default function Header() {
 
   // console.log(loadingUser, "loadingUser");
   return (
-    <header className={`border-b py-2 px-4 sm:px-6 ${styles.header}`}>
+    <header
+      className={`border-b py-2 px-4 sm:px-6 sticky top-0 bg-white z-10 ${styles.header}`}
+    >
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-8">
           <div>

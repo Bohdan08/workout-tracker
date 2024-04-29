@@ -15,7 +15,7 @@ export default function RootLayout({
       {" "}
       <Header />
       <main className="grow">
-        <div className="flex space-x-2 px-4 sm:px-6 ">
+        <div className="flex space-x-2 pr-4 sm:pr-6">
           <Menu />
           <div className="w-full px-4 pt-4 pb-10">{children}</div>
         </div>
