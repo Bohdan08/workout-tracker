@@ -18,12 +18,14 @@ import formatDate from "../../../utils/formatDate";
 const createExerciseTemplate = () => ({
   id: uuid(),
   hidden: false,
+  type: null,
+  measurmentType: null,
   // metrics: WEIGHT_METRICS.LBS,
-  type: EXERCISE_TYPES.STENGTH,
+  // type: EXERCISE_TYPES.STENGTH,
   title: "",
   // sets: [createExerciseSetTemplate()],
   notes: "",
-  muscleGroup: "",
+  muscleGroups: [],
 });
 
 // export interface WorkoutData {
@@ -56,7 +58,7 @@ const newWorkoutSlice = createSlice({
               ...exercise,
               sets: [
                 ...(exercise.sets || []),
-                createExerciseSetTemplate(exercise.type),
+                createExerciseSetTemplate(exercise.measurmentType),
               ],
             }
       );
@@ -65,7 +67,7 @@ const newWorkoutSlice = createSlice({
       state,
       action: PayloadAction<{
         exerciseId: string;
-        options: Record<string, string | number | boolean>;
+        options: Record<string, any>;
       }>
     ) {
       const { exerciseId, options } = action.payload;
@@ -79,7 +81,7 @@ const newWorkoutSlice = createSlice({
       action: PayloadAction<{
         exerciseId: string;
         setId: string;
-        options: Record<string, string | number | boolean>;
+        options: Record<string, any>;
       }>
     ) {
       const { exerciseId, setId, options } = action.payload;

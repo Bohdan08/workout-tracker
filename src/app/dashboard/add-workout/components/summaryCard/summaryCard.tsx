@@ -12,7 +12,7 @@ export default function WorkoutSummary({
 }) {
   const affectedMuscleGroups = getAffectedMuscleGroups(exercises);
   return (
-    <Card className="bg-gray-100 top-[60px] sticky">
+    <Card className="bg-gray-100 top-[60px] sticky w-full">
       <ul className="flex flex-col space-y-4">
         <li>
           Total Exercises:{" "}

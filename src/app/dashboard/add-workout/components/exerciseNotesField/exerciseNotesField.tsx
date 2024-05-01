@@ -26,13 +26,14 @@ export default function ExerciseNotesField({
   return (
     <div>
       <div className="mb-2 block">
-        <Label htmlFor="comment" value="Optional Details" />
+        <Label htmlFor="comment" value="Additional Details" />
       </div>
       <Textarea
         id="comment"
-        placeholder="Leave a comment..."
+        placeholder="Leave a comment about your exercise..."
         required
         rows={4}
+        maxLength={250}
         value={currExercise.notes}
         onChange={({ target }) => {
           handleExerciseTitle(exerciseId, {

@@ -140,7 +140,6 @@ export default function Page() {
                                   <ExerciseSets
                                     exerciseIndex={index}
                                     exerciseId={exerciseId}
-                                    exerciseType={exerciseType}
                                   />
                                   <ExerciseNotesField
                                     exerciseIndex={index}
@@ -185,7 +184,7 @@ export default function Page() {
                   </div>
 
                   {/*  */}
-                  <div className={`max-w-md`}>
+                  <div className={`w-[300px]`}>
                     <WorkoutSummaryCard exercises={exercises} />
                   </div>
                 </div>

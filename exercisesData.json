@@ -1995,7 +1995,14 @@
     "equipment": "Body Only"
   },
   {
-    "name": "Trail Running/Walking",
+    "name": "Running",
+    "image": "",
+    "image1": "",
+    "muscle_gp": "Quadriceps",
+    "equipment": "Body Only"
+  },
+  {
+    "name": "Walking",
     "image": "",
     "image1": "",
     "muscle_gp": "Quadriceps",

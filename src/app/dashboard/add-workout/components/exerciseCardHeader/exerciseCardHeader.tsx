@@ -38,7 +38,7 @@ export default function ExerciseCardHeader({
   return (
     <>
       <div className="flex items-center justify-between">
-        <h3>{title ? `${exerciseIndex + 1}. ${title}` : null}</h3>
+        <h3>{`${exerciseIndex + 1}. ${title || "Exercise Details"}`}</h3>
         <div className="flex space-x-2">
           {hidden ? (
             <Tooltip content="Expand Exercise" className="w-36 text-center">

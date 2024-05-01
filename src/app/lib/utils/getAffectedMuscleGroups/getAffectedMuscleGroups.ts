@@ -4,8 +4,9 @@ const getAffectedMuscleGroups = (exercises: Exercise[]) => {
   return [
     ...new Set(
       exercises
-        .filter((obj) => obj.muscleGroup !== "")
-        .map((obj) => obj.muscleGroup)
+        // .filter((obj) => obj.muscleGroup !== "")
+        .map((obj) => obj.muscleGroups)
+        .flat()
     ),
   ];
 };

@@ -1,13 +1,14 @@
 "use client";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
-import { Label, TextInput } from "flowbite-react";
+import { Label } from "flowbite-react";
 import React from "react";
 import exercisesData from "../../../../../../exercisesData.json";
-import ReactSelect from "react-select";
+import ReactSelect, { MultiValue } from "react-select";
 import useAppDispatch from "@/src/app/hooks/useAppDispatch";
 import { modifyExercise } from "@/src/app/lib/store/features/newWorkout/newWorkoutSlice";
 import { EXERCISE_TYPES } from "@/src/app/common/enums";
 import CreatableSelect, { useCreatable } from "react-select/creatable";
+import createExerciseSetTemplate from "@/src/app/lib/utils/createExerciseSetTemplate";
 
 const MAIN_MUSCLE_GROUPS = [
   "Abdominals",
@@ -26,8 +27,6 @@ const MAIN_MUSCLE_GROUPS = [
   "Middle/Upper Back",
 ];
 
-type Options = Record<string, string | number | boolean>;
-
 const identifyExerciseType = (exerciseName: string) => {
   const formattedExerciseName = exerciseName.toLocaleLowerCase();
 
@@ -41,6 +40,30 @@ const identifyExerciseType = (exerciseName: string) => {
 
   return EXERCISE_TYPES.STENGTH;
 };
+
+export enum MEASURMENT_TYPES {
+  REPS_WEIGHTS = "Reps/Weights",
+  DURATION_DISTANCE = "Duration/Distance",
+}
+
+const identifyMeasurmentType = (exerciseName: string) => {
+  const formattedExerciseName = exerciseName.toLocaleLowerCase();
+
+  if (
+    formattedExerciseName.includes("running") ||
+    formattedExerciseName.includes("walking") ||
+    formattedExerciseName.includes("bike")
+  ) {
+    return MEASURMENT_TYPES.DURATION_DISTANCE;
+  }
+
+  return MEASURMENT_TYPES.REPS_WEIGHTS;
+};
+
+const MEASURMENT_SET_TYPES = [
+  MEASURMENT_TYPES.REPS_WEIGHTS,
+  MEASURMENT_TYPES.DURATION_DISTANCE,
+];
 
 export default function SelectExerciseField({
   exerciseIndex,
@@ -67,8 +90,8 @@ export default function SelectExerciseField({
       }));
   };
 
-  const convertMuscleDataToSelectOptions = () =>
-    MAIN_MUSCLE_GROUPS.map((label) => ({
+  const convertArrayStringsToSelectOptions = (data: string[]) =>
+    data.map((label) => ({
       value: label.toLowerCase(),
       label,
     }));
@@ -78,66 +101,141 @@ export default function SelectExerciseField({
     label,
   });
 
-  const handleExerciseTitle = (exerciseId: string, options: Options) =>
+  const handleExercise = (exerciseId: string, options: Record<string, any>) =>
     dispatch(modifyExercise({ exerciseId, options }));
 
   const optionsExercisesData = convertExercisesDataToSelectOptions();
-  const optionsMuscleData = convertMuscleDataToSelectOptions();
+  const optionsMuscleData =
+    convertArrayStringsToSelectOptions(MAIN_MUSCLE_GROUPS);
+
+  const optionsMeasurmentData =
+    convertArrayStringsToSelectOptions(MEASURMENT_SET_TYPES);
+
+  const currExercise = exercises[exerciseIndex];
+
+  const valuesMuscleGroups = currExercise.muscleGroups?.length
+    ? currExercise.muscleGroups.map((m) => convertStringToSelectValue(m))
+    : [];
 
   return (
     <div>
-      <div className="mb-2 block">
-        <Label htmlFor="exercise">Exercise {exerciseIndex + 1}</Label>
-      </div>
+      <div className="mb-5">
+        <div className="mb-2 block">
+          <Label htmlFor="exercise-name">Exercise Name</Label>
+        </div>
 
-      <ReactSelect
+        {/* <ReactSelect
         id="exercise"
         placeholder="Select exercise"
         className="custom-react-select"
-        value={convertStringToSelectValue(exercises[exerciseIndex].title)}
+        value={convertStringToSelectValue(currExercise.title)}
         options={optionsExercisesData}
         onChange={(newValue) => {
           if (newValue?.label) {
-            handleExerciseTitle(exerciseId, {
+            handleExercise(exerciseId, {
               title: newValue.label,
-              muscleGroup: (newValue as any).muscle_gp,
+              // muscleGroups: (newValue as any).muscle_gp,
               type: identifyExerciseType(newValue.label),
             });
           }
         }}
-      />
+      /> */}
 
-      <CreatableSelect
-        id="exercise"
-        className="custom-react-select"
-        isClearable
-        value={convertStringToSelectValue(exercises[exerciseIndex].title)}
-        options={optionsExercisesData}
-        onChange={(newValue) => {
-          if (newValue?.label) {
-            handleExerciseTitle(exerciseId, {
-              title: newValue.label,
-              muscleGroup: (newValue as any).muscle_gp,
-              type: identifyExerciseType(newValue.label),
-            });
-          } else {
-            handleExerciseTitle(exerciseId, {
-              title: "",
-              muscleGroup: "",
-            });
+        <CreatableSelect
+          id="exercise-name"
+          className="custom-react-select"
+          placeholder="Select or create exercise"
+          isClearable
+          value={
+            currExercise.title
+              ? convertStringToSelectValue(currExercise.title)
+              : null
           }
-        }}
-      />
+          options={optionsExercisesData}
+          onChange={(newValue: Record<string, any>) => {
+            if (newValue?.label) {
+              handleExercise(exerciseId, {
+                title: newValue.label,
+                muscleGroups: newValue.muscle_gp ? [newValue.muscle_gp] : [],
+                measurmentType: newValue.muscle_gp
+                  ? identifyMeasurmentType(newValue.label)
+                  : null,
+                // create set if musle group is known and sets haven't been created by user
+                ...(newValue.muscle_gp &&
+                  !currExercise.sets?.length && {
+                    sets: [
+                      createExerciseSetTemplate(
+                        identifyMeasurmentType(newValue.muscle_gp)
+                      ),
+                    ],
+                  }),
+              });
+            } else {
+              handleExercise(exerciseId, {
+                title: "",
+                muscleGroups: [] as string[],
+                measurmentType: null,
+              });
+            }
+          }}
+        />
+      </div>
 
-      <div>
+      <div className="mb-5">
         <div className="mb-2 block">
-          <Label htmlFor="muscle-group" value="Musle Group" />
+          <Label htmlFor="muscle-group" value="Musle Groups (Optional)" />
         </div>
         <CreatableSelect
+          id="muscle-group"
+          value={valuesMuscleGroups}
+          placeholder="Select or add muscle groups"
           className="custom-react-select"
           isMulti
           isClearable
           options={optionsMuscleData}
+          onChange={(updatedMusleGroups: MultiValue<Record<string, any>>) => {
+            const convertedMusclegroups = updatedMusleGroups?.length
+              ? updatedMusleGroups.map((m) => m.label)
+              : [];
+
+            handleExercise(exerciseId, {
+              muscleGroups: convertedMusclegroups,
+            });
+          }}
+        />
+      </div>
+
+      {/* type of set */}
+      <div>
+        <div className="mb-2 block">
+          <Label htmlFor="measurment-type" value="Measurment Type" />
+        </div>
+        <ReactSelect
+          id="measurment-type"
+          value={
+            currExercise.measurmentType
+              ? convertStringToSelectValue(currExercise.measurmentType)
+              : null
+          }
+          placeholder="Select measurment type"
+          className="custom-react-select"
+          isClearable
+          options={optionsMeasurmentData}
+          onChange={(newMeasurment) => {
+            if (
+              newMeasurment?.label &&
+              newMeasurment.label !== currExercise.measurmentType
+            ) {
+              handleExercise(exerciseId, {
+                sets: [
+                  createExerciseSetTemplate(
+                    newMeasurment.label as MEASURMENT_TYPES
+                  ),
+                ],
+                measurmentType: newMeasurment.label,
+              });
+            }
+          }}
         />
       </div>
     </div>

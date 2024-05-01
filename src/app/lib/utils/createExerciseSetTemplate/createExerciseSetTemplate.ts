@@ -1,9 +1,9 @@
-import { EXERCISE_TYPES } from "@/src/app/common/enums";
 import { ExerciseSet } from "@/src/app/common/interfaces";
+import { MEASURMENT_TYPES } from "@/src/app/dashboard/add-workout/components/selectExerciseField/selectExerciseField";
 import { v4 as uuid } from "uuid";
 
-const createExerciseSetTemplate = (type: EXERCISE_TYPES): ExerciseSet => {
-  if (type === EXERCISE_TYPES.STENGTH) {
+const createExerciseSetTemplate = (measurmentType: MEASURMENT_TYPES): any => {
+  if (measurmentType === MEASURMENT_TYPES.REPS_WEIGHTS) {
     return {
       id: uuid(),
       reps: 0,
@@ -11,10 +11,13 @@ const createExerciseSetTemplate = (type: EXERCISE_TYPES): ExerciseSet => {
     };
   }
 
-  return {
-    id: uuid(),
-    duration: 0,
-  };
+  if (measurmentType === MEASURMENT_TYPES.DURATION_DISTANCE) {
+    return {
+      id: uuid(),
+      duration: 0,
+      distance: 0,
+    };
+  }
 };
 
 export default createExerciseSetTemplate;

@@ -2,7 +2,17 @@ import useAppSelector from "@/src/app/hooks/useAppSelector";
 import getAffectedMuscleGroups from "@/src/app/lib/utils/getAffectedMuscleGroups";
 import React, { useState } from "react";
 import TotalCard from "../../components/totalCard";
-import { Badge, Card, Tooltip } from "flowbite-react";
+import {
+  Badge,
+  Card,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeadCell,
+  TableRow,
+  Tooltip,
+} from "flowbite-react";
 import { BADGE_COLORS } from "@/src/app/common/constants";
 import ExerciseSetDetails from "../../components/exerciseSetDetails";
 import { EXERCISE_TYPES } from "@/src/app/common/enums";
@@ -86,7 +96,7 @@ export default function SuccessView() {
                 (
                   {
                     id,
-                    muscleGroup,
+                    muscleGroups,
                     sets = [],
                     notes,
                     title,
@@ -139,11 +149,11 @@ export default function SuccessView() {
                           className="w-fit mb-2 mr-2"
                           size="sm"
                         >
-                          {muscleGroup}
+                          {/* {muscleGroups.flat().join(",")} */}
                         </Badge>
                         {sets.length ? (
-                          <div className="mt-5">
-                            {sets.map(({ id: setId, reps, weight }, index) => {
+                          <div className="mt-5 w-full">
+                            {/* {sets.map(({ id: setId, reps, weight }, index) => {
                               return (
                                 <div key={setId} className="mt-5">
                                   <div className="mb-2">
@@ -163,7 +173,6 @@ export default function SuccessView() {
                                       />
                                     </div>
                                   ) : (
-                                    // cardio
                                     <ExerciseSetDetails
                                       title="Duration (Minutes)"
                                       total={duration as number}
@@ -172,6 +181,33 @@ export default function SuccessView() {
                                 </div>
                               );
                             })}
+                          </div>
+                        ) : (
+                          <div>
+                            {" "}
+                            <p>No sets and reps have been logged...</p>{" "}
+                          </div>
+                        )} */}
+                            <Table className="w-full border" striped>
+                              <TableHead>
+                                <TableHeadCell>#</TableHeadCell>
+                                <TableHeadCell>Reps</TableHeadCell>
+                                <TableHeadCell>Weight (LBS)</TableHeadCell>
+                              </TableHead>
+                              <TableBody className="divide-y">
+                                {sets.map(
+                                  ({ id: setId, reps, weight }, index) => {
+                                    return (
+                                      <TableRow key={setId}>
+                                        <TableCell>{index + 1}</TableCell>
+                                        <TableCell>{reps}</TableCell>
+                                        <TableCell>{weight}</TableCell>
+                                      </TableRow>
+                                    );
+                                  }
+                                )}
+                              </TableBody>
+                            </Table>
                           </div>
                         ) : (
                           <div>

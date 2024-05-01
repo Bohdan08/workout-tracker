@@ -5,16 +5,30 @@ export interface ExerciseSet {
   reps?: number | undefined;
   weight?: number | undefined;
   duration?: number;
+  distance?: number | undefined;
+}
+
+export interface WeightsRepsSet {
+  id: string;
+  reps: number | undefined;
+  weight: number | undefined;
+}
+
+export interface DurationDistanceSet {
+  id: string;
+  duration: number | undefined;
+  distance: number | undefined;
 }
 
 export interface Exercise {
   id: string;
   hidden: boolean;
   // metrics: WEIGHT_METRICS;
-  type: EXERCISE_TYPES;
+  type: EXERCISE_TYPES | null;
+  measurmentType: string | null;
   title: string;
   notes: string;
-  muscleGroup: string;
+  muscleGroups: string[];
   sets?: ExerciseSet[];
   duration?: number;
 }
