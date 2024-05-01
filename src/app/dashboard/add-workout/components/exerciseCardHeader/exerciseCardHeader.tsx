@@ -3,17 +3,11 @@ import useAppDispatch from "@/src/app/hooks/useAppDispatch";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
 import {
   deleteExercise,
-  deleteExerciseSet,
   modifyExercise,
 } from "@/src/app/lib/store/features/newWorkout/newWorkoutSlice";
 import { Tooltip } from "flowbite-react";
 import React, { useState } from "react";
 import { HiPlus, HiMinus, HiTrash } from "react-icons/hi";
-
-export enum ACTION_ITEMS {
-  SET = "SET",
-  EXERCISE = "EXERCISE",
-}
 
 export default function ExerciseCardHeader({
   exerciseIndex,

@@ -28,7 +28,7 @@ export default function SuccessView() {
   const totalReps = exercises.reduce((acc, obj) => {
     if (obj.sets?.length) {
       obj.sets.forEach((setInfo) => {
-        acc += parseInt(setInfo.reps?.toString() || "");
+        if (setInfo.reps) acc += parseInt(setInfo.reps?.toString() || "");
       });
     }
     return acc;
@@ -37,7 +37,7 @@ export default function SuccessView() {
   const totalWeight = exercises.reduce((acc, obj) => {
     if (obj.sets?.length) {
       obj.sets.forEach((setInfo) => {
-        acc += parseInt(setInfo.weight?.toString() || "");
+        if (setInfo.weight) acc += parseInt(setInfo.weight?.toString() || "");
       });
     }
     return acc;
@@ -81,7 +81,7 @@ export default function SuccessView() {
           <div className="mt-5">
             {" "}
             <h2 className="text-2xl font-medium">Exercises </h2>{" "}
-            <div className="mt-5 flex space-x-5">
+            <div className="mt-5 flex flex-wrap">
               {exercises.map(
                 (
                   {
@@ -96,7 +96,7 @@ export default function SuccessView() {
                   index
                 ) => {
                   return (
-                    <Card key={id} className="md:w-[450px] h-fit">
+                    <Card key={id} className="md:w-[450px] h-fit mr-5 mb-5">
                       <div className="flex h-full flex-col space-y-5 items-start">
                         <div className="flex justify-between w-full">
                           <h3 className="text-xl font-medium">
@@ -145,7 +145,7 @@ export default function SuccessView() {
                           <div className="mt-5">
                             {sets.map(({ id: setId, reps, weight }, index) => {
                               return (
-                                <div key={setId}>
+                                <div key={setId} className="mt-5">
                                   <div className="mb-2">
                                     <p className="font-medium text-lg">
                                       Set {index + 1}

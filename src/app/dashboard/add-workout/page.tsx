@@ -17,18 +17,12 @@ import styles from "./page.module.scss";
 import { useDispatch } from "react-redux";
 import {
   addExercise,
-  addExerciseSet,
-  deleteExercise,
-  deleteExerciseSet,
-  modifyExercise,
-  modifyExerciseSet,
   resetWorkout,
   setWorkoutDate,
 } from "../../lib/store/features/newWorkout/newWorkoutSlice";
 import WorkoutSummaryCard from "./components/summaryCard/summaryCard";
 import ActionModal from "../../common/components/actionModal";
 import { useAuth } from "../../context/authContext";
-import { EXERCISE_TYPES } from "../../common/enums";
 import { API_STATUS } from "../../common/constants";
 import addWorkout from "@/src/firebase/firestore/addWorkout";
 import formatDate from "../../lib/utils/formatDate";
@@ -36,13 +30,8 @@ import ErrorMessage from "./components/errorMessage";
 import LoadingView from "./components/loadingCard/loadingCard";
 import SelectExerciseField from "./components/selectExerciseField/selectExerciseField";
 import ExerciseCardHeader from "./components/exerciseCardHeader";
-
-export enum ACTION_ITEMS {
-  SET = "SET",
-  EXERCISE = "EXERCISE",
-}
-
-type Options = Record<string, string | number | boolean>;
+import ExerciseSets from "./components/exerciseSets";
+import ExerciseNotesField from "./components/exerciseNotesField";
 
 export default function Page() {
   const { user } = useAuth();
@@ -52,55 +41,17 @@ export default function Page() {
 
   const dispatch = useDispatch();
   // console.log(user, "user");
-  const [deleteViewModal, setDeleteViewModal] = useState(false);
   const [saveWorkoutViewModal, setSaveWorkoutViewModal] = useState(false);
 
   const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
   const [apiError, setApiError] = useState("");
 
-  const [deleteItemInfo, setDeleteItemInfo] = useState<{
-    type?: string;
-    exerciseId?: string;
-    setId?: string;
-  }>({});
-
-  const closeDeleteViewModal = () => setDeleteViewModal(false);
   const closeSaveWorkoutViewModal = () => setSaveWorkoutViewModal(false);
 
   const handleAddExercise = () => dispatch(addExercise());
-  const handleDeleteExercise = (exerciseId: string) =>
-    dispatch(deleteExercise(exerciseId));
-
-  const handleAddSet = (exerciseId: string) =>
-    dispatch(addExerciseSet(exerciseId));
-
-  const handleDeleteSet = (exerciseId: string, setId: string) =>
-    dispatch(deleteExerciseSet({ exerciseId, setId }));
 
   const handleWorkoutDate = (newDate: string) =>
     dispatch(setWorkoutDate(newDate));
-
-  const handleModifySet = (
-    exerciseId: string,
-    setId: string,
-    options: Options
-  ) => dispatch(modifyExerciseSet({ exerciseId, setId, options }));
-
-  const handleDeleteItem = () => {
-    if (
-      deleteItemInfo.type === ACTION_ITEMS.SET &&
-      deleteItemInfo.setId &&
-      deleteItemInfo.exerciseId
-    ) {
-      handleDeleteSet(deleteItemInfo.exerciseId, deleteItemInfo.setId);
-    } else {
-      handleDeleteExercise(deleteItemInfo.exerciseId as string);
-    }
-
-    // reset delete info
-    setDeleteViewModal(false);
-    setDeleteItemInfo({});
-  };
 
   const handleSaveWorkout = async () => {
     closeSaveWorkoutViewModal();
@@ -172,13 +123,7 @@ export default function Page() {
                 </div> */}
                     {exercises.map(
                       (
-                        {
-                          hidden,
-                          title,
-                          sets,
-                          id: exerciseId,
-                          type: exerciseType,
-                        },
+                        { hidden, id: exerciseId, type: exerciseType },
                         index
                       ) => {
                         return (
@@ -192,139 +137,15 @@ export default function Page() {
                                     exerciseIndex={index}
                                     exerciseId={exerciseId}
                                   />
-                                  <div>
-                                    {sets?.map(
-                                      (
-                                        { id: setId, reps, weight, duration },
-                                        index
-                                      ) => (
-                                        <div key={setId} className="mt-5">
-                                          <div className="flex justify-between mb-2">
-                                            <h2>Set {index + 1}</h2>
-                                            <Tooltip content="Delete this set">
-                                              <button
-                                                onClick={() => {
-                                                  setDeleteViewModal(true);
-                                                  setDeleteItemInfo({
-                                                    type: ACTION_ITEMS.SET,
-                                                    setId,
-                                                    exerciseId,
-                                                  });
-                                                }}
-                                              >
-                                                <HiTrash color="red" />
-                                              </button>
-                                            </Tooltip>
-                                          </div>
-                                          {exerciseType ===
-                                          EXERCISE_TYPES.STENGTH ? (
-                                            <div className="flex flex-row justify-between space-x-5">
-                                              <div className="w-full">
-                                                <div>
-                                                  <Label
-                                                    htmlFor={`rep-${setId}`}
-                                                  >
-                                                    Reps{" "}
-                                                  </Label>
-                                                </div>
-                                                <TextInput
-                                                  id={`rep-${setId}`}
-                                                  type="number"
-                                                  value={reps}
-                                                  min={0}
-                                                  required
-                                                  onChange={({ target }) => {
-                                                    handleModifySet(
-                                                      exerciseId,
-                                                      setId,
-                                                      {
-                                                        reps: target.value,
-                                                      }
-                                                    );
-                                                  }}
-                                                />
-                                              </div>
-
-                                              <div className="w-full">
-                                                <div>
-                                                  <Label
-                                                    htmlFor={`weight-${setId}`}
-                                                  >
-                                                    Weight (LBS){" "}
-                                                  </Label>
-                                                </div>
-                                                <TextInput
-                                                  id={`weight-${setId}`}
-                                                  type="number"
-                                                  value={weight}
-                                                  min={0}
-                                                  required
-                                                  onChange={({ target }) => {
-                                                    handleModifySet(
-                                                      exerciseId,
-                                                      setId,
-                                                      {
-                                                        weight: target.value,
-                                                      }
-                                                    );
-                                                  }}
-                                                />
-                                              </div>
-                                            </div>
-                                          ) : (
-                                            // cardio
-                                            <div className="w-full">
-                                              <div>
-                                                <Label
-                                                  htmlFor={`minutes-${setId}`}
-                                                >
-                                                  Duration (Minutes){" "}
-                                                </Label>
-                                              </div>
-                                              <TextInput
-                                                id={`minutes-${setId}`}
-                                                type="number"
-                                                value={duration}
-                                                min={0}
-                                                required
-                                                onChange={({ target }) => {
-                                                  handleModifySet(
-                                                    exerciseId,
-                                                    setId,
-                                                    {
-                                                      duration: target.value,
-                                                    }
-                                                  );
-                                                }}
-                                              />
-                                            </div>
-                                          )}
-                                        </div>
-                                      )
-                                    )}
-                                    <Button
-                                      className="mt-5 w-full"
-                                      color="blue"
-                                      onClick={() => handleAddSet(exerciseId)}
-                                    >
-                                      <span> Add set </span>
-                                      <HiPlus className="my-auto ml-1" />
-                                    </Button>
-                                  </div>
-                                  <div>
-                                    <div className="mb-2 block">
-                                      <Label
-                                        htmlFor="comment"
-                                        value="Optional Details"
-                                      />
-                                    </div>
-                                    <Textarea
-                                      id="comment"
-                                      placeholder="Leave a comment..."
-                                      required
-                                      rows={4}
-                                    />
-                                  </div>
+                                  <ExerciseSets
+                                    exerciseIndex={index}
+                                    exerciseId={exerciseId}
+                                    exerciseType={exerciseType}
+                                  />
+                                  <ExerciseNotesField
+                                    exerciseIndex={index}
+                                    exerciseId={exerciseId}
+                                  />
                                 </div>
                               )}
                             </Card>
@@ -373,14 +194,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-
-      <ActionModal
-        title="Are you sure you want to delete it?"
-        acceptButtonColor="failure"
-        showModal={deleteViewModal}
-        closeModal={closeDeleteViewModal}
-        handleAccept={handleDeleteItem}
-      />
 
       <ActionModal
         title="Are you sure you want to save this workout?"
