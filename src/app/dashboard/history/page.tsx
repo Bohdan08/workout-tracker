@@ -68,7 +68,7 @@ export default function History() {
                   <TableCell>
                     {formatDate(workoutDate, { includeYear: false })}
                   </TableCell>
-                  <TableCell>{getWeekdayName(created)}</TableCell>
+                  <TableCell>{getWeekdayName(workoutDate)}</TableCell>
                   <TableCell>{allMuscleGroups.join(", ")}</TableCell>
                 </TableRow>
               )

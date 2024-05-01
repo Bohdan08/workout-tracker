@@ -66,7 +66,7 @@ export default function SuccessView() {
           </div>
           <div className="mt-5">
             <h2 className="text-2xl font-medium">Musle Groups</h2>
-            <div className="flex space-x-2 mt-2">
+            <div className="flex mt-2">
               {affectedMuscleGroups.map((muscle, index) => (
                 <Badge
                   key={muscle}

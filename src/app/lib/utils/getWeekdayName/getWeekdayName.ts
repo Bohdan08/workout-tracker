@@ -8,11 +8,11 @@ const getWeekdayName = (value?: Date | string) => {
 export default getWeekdayName;
 
 const WEEKDAY_NAMES = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];

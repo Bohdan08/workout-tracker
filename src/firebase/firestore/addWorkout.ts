@@ -1,7 +1,7 @@
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { database, usersCollection, workoutsCollection } from "../config";
 import parseFirebaseErorrMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
-import { Exercise, WorkoutData } from "@/src/app/common/interfaces";
+import { WorkoutData } from "@/src/app/common/interfaces";
 // import formatDate from "@/src/app/lib/utils/formatDate";
 import { v4 as uuid } from "uuid";
 
@@ -19,6 +19,15 @@ export default async function addWorkout(
 
   const docId = uuid();
 
+  // filter non db related values
+  const filteredWorkoutData = {
+    ...workoutData,
+    // exercises:
+    exercises: workoutData.exercises.map((exercise) => {
+      return (({ hidden, ...obj }) => obj)(exercise); // remove hidden
+    }),
+  };
+
   try {
     const userRef = doc(
       database,
@@ -32,7 +41,7 @@ export default async function addWorkout(
 
     const allMuscleGroups = [
       ...new Set(
-        workoutData.exercises
+        filteredWorkoutData.exercises
           .filter((obj) => obj.muscleGroup !== "")
           .map((obj) => obj.muscleGroup)
       ),
@@ -45,7 +54,7 @@ export default async function addWorkout(
           // id: uuid(),
           created: serverTimestamp(),
           allMuscleGroups,
-          ...workoutData,
+          ...filteredWorkoutData,
         },
       },
       { merge: true }
