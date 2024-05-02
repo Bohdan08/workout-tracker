@@ -3,6 +3,11 @@ export enum WEIGHT_METRICS {
   KG = "KG",
 }
 
+export enum DISTANCE_METRICS {
+  KM = "KM",
+  LBS = "MIL",
+}
+
 export enum ACTION_ITEMS {
   SET = "SET",
   EXERCISE = "EXERCISE",

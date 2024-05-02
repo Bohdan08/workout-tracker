@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import newWorkout from "./features/newWorkout/newWorkoutSlice";
 import selectedWorkout from "./features/selectedWorkout/selectedWorkoutSlice";
 import workoutsHistory from "./features/workoutsHistory/workoutsHistorySlice";
+import userProfile from "./features/userProfile/userProfile";
 
 export const makeStore = () => {
   return configureStore({
@@ -9,6 +10,7 @@ export const makeStore = () => {
       newWorkout,
       workoutsHistory,
       selectedWorkout,
+      userProfile,
     },
   });
 };

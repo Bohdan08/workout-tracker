@@ -219,7 +219,7 @@ export default function SelectExerciseField({
           }
           placeholder="Select measurment type"
           className="custom-react-select"
-          isClearable
+          // isClearable
           options={optionsMeasurmentData}
           onChange={(newMeasurment) => {
             if (

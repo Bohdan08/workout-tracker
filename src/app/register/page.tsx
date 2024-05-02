@@ -7,7 +7,7 @@ import { HiInformationCircle } from "react-icons/hi";
 import Link from "next/link";
 import { AUTH_LINK_STYLE, AUTH_WRAPPER_STYLE } from "../common/styles";
 import { sendEmailVerification } from "firebase/auth";
-import addData from "@/src/firebase/firestore/addData";
+import addData from "@/src/firebase/firestore/addUserData";
 import { serverTimestamp } from "firebase/firestore";
 
 const MIN_PASSWORD_LENGTH = 8;

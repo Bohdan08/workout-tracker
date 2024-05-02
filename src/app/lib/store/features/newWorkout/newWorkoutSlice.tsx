@@ -8,6 +8,7 @@ import {
   WorkoutData,
 } from "@/src/app/common/interfaces";
 import formatDate from "../../../utils/formatDate";
+import { MEASURMENT_TYPES } from "@/src/app/dashboard/add-workout/components/selectExerciseField/selectExerciseField";
 
 // const createExerciseSetTemplate = () => ({
 //   id: uuid(),
@@ -58,7 +59,9 @@ const newWorkoutSlice = createSlice({
               ...exercise,
               sets: [
                 ...(exercise.sets || []),
-                createExerciseSetTemplate(exercise.measurmentType),
+                createExerciseSetTemplate(
+                  exercise.measurmentType as MEASURMENT_TYPES
+                ),
               ],
             }
       );

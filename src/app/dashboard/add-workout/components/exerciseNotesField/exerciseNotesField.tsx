@@ -24,7 +24,7 @@ export default function ExerciseNotesField({
   ) => dispatch(modifyExercise({ exerciseId, options }));
 
   return (
-    <div>
+    <div className="mt-5">
       <div className="mb-2 block">
         <Label htmlFor="comment" value="Additional Details" />
       </div>

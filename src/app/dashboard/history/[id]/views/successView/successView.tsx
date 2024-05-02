@@ -14,8 +14,6 @@ import {
   Tooltip,
 } from "flowbite-react";
 import { BADGE_COLORS } from "@/src/app/common/constants";
-import ExerciseSetDetails from "../../components/exerciseSetDetails";
-import { EXERCISE_TYPES } from "@/src/app/common/enums";
 import { HiTrash, HiOutlinePencilAlt } from "react-icons/hi";
 
 enum CARD_ACTION_STATUS {
@@ -106,43 +104,46 @@ export default function SuccessView() {
                   index
                 ) => {
                   return (
-                    <Card key={id} className="md:w-[450px] h-fit mr-5 mb-5">
+                    <Card
+                      key={id}
+                      className="md:w-[350px] relative h-fit mr-5 mb-5"
+                    >
+                      <div className="flex space-x-2 absolute right-3 top-3">
+                        <Tooltip
+                          content="Edit Exercise"
+                          className="w-36 text-center"
+                        >
+                          <button
+                            title="Edit Exercise"
+                            onClick={() =>
+                              setCardsActionStatus({
+                                ...cardsActionStatus,
+                                [id]: true,
+                              })
+                            }
+                          >
+                            <HiOutlinePencilAlt color="text-yellow-600" />
+                          </button>
+                        </Tooltip>
+                        <Tooltip content={`Delete this exercise`}>
+                          <button
+                          // onClick={() => {
+                          //   setDeleteViewModal(true);
+                          //   setDeleteItemInfo({
+                          //     type: ACTION_ITEMS.EXERCISE,
+                          //     exerciseId,
+                          //   });
+                          // }}
+                          >
+                            <HiTrash color="red" />
+                          </button>
+                        </Tooltip>
+                      </div>
                       <div className="flex h-full flex-col space-y-5 items-start">
                         <div className="flex justify-between w-full">
-                          <h3 className="text-xl font-medium">
+                          <h3 className="text-xl font-medium relative mt-5">
                             {index + 1}. {title}
                           </h3>
-                          <div className="flex space-x-2">
-                            <Tooltip
-                              content="Edit Exercise"
-                              className="w-36 text-center"
-                            >
-                              <button
-                                title="Edit Exercise"
-                                onClick={() =>
-                                  setCardsActionStatus({
-                                    ...cardsActionStatus,
-                                    [id]: true,
-                                  })
-                                }
-                              >
-                                <HiOutlinePencilAlt color="text-yellow-600" />
-                              </button>
-                            </Tooltip>
-                            <Tooltip content={`Delete this exercise`}>
-                              <button
-                              // onClick={() => {
-                              //   setDeleteViewModal(true);
-                              //   setDeleteItemInfo({
-                              //     type: ACTION_ITEMS.EXERCISE,
-                              //     exerciseId,
-                              //   });
-                              // }}
-                              >
-                                <HiTrash color="red" />
-                              </button>
-                            </Tooltip>
-                          </div>
                         </div>
                         <Badge
                           color={BADGE_COLORS[index % exercises.length]}
