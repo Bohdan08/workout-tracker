@@ -49,6 +49,12 @@ const userProfileSlice = createSlice({
     setDistanceUnit(state, action: PayloadAction<DISTANCE_METRICS>) {
       state.data.distanceUnit = action.payload;
     },
+    setFirstName(state, action: PayloadAction<string>) {
+      state.data.firstName = action.payload;
+    },
+    setLastName(state, action: PayloadAction<string>) {
+      state.data.lastName = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUserData.pending, (state) => {
@@ -72,7 +78,12 @@ const userProfileSlice = createSlice({
   },
 });
 
-export const { setUserProfileData, setWeightUnit, setDistanceUnit } =
-  userProfileSlice.actions;
+export const {
+  setUserProfileData,
+  setWeightUnit,
+  setDistanceUnit,
+  setFirstName,
+  setLastName,
+} = userProfileSlice.actions;
 
 export default userProfileSlice.reducer;

@@ -2,7 +2,10 @@ import { doc, setDoc } from "firebase/firestore";
 import { database, usersCollection } from "../config";
 import parseFirebaseErorrMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
 
-export default async function addUserData(id: string, data: Record<string, any>) {
+export default async function addUserData(
+  id: string,
+  data: Record<string, any>
+) {
   let result = null;
   let error = false;
   let errorMessage = "";

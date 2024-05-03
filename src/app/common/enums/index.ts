@@ -24,3 +24,8 @@ export enum API_STATUS {
   ERROR = "failed",
   SUCCESS = "succeeded",
 }
+
+export enum CARD_ACTION_STATUS {
+  READ = "READ",
+  EDIT = "EDIT",
+}
