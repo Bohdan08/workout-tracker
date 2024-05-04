@@ -4,17 +4,24 @@ import { useAuth } from "@/src/app/context/authContext";
 import { setEmail } from "@/src/app/lib/store/features/userProfile/userProfile";
 import parseFirebaseErrorMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage";
 import { auth } from "@/src/firebase/config";
-import { User, sendEmailVerification, updateEmail } from "firebase/auth";
-import { Alert, Button, Card, TextInput } from "flowbite-react";
+import {
+  EmailAuthProvider,
+  User,
+  reauthenticateWithCredential,
+  sendEmailVerification,
+  updateEmail,
+} from "firebase/auth";
+import { Alert, Button, Card, Label, TextInput } from "flowbite-react";
 import React, { useState } from "react";
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 
-export default function LoginSettings() {
+export default function EmailSettings() {
   const { user } = useAuth();
 
   const [cardStatus, setCardStatus] = useState(CARD_ACTION_STATUS.READ);
   const [newEmail, setNewEmail] = useState(user?.email || "");
+  const [currentPassword, setCurrentPassword] = useState("");
 
   const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
   const [apiErrorMessage, setApiErrorMessage] = useState<string | null>(null);
@@ -35,22 +42,34 @@ export default function LoginSettings() {
     setApiStatus(API_STATUS.ERROR);
     setApiErrorMessage(parseFirebaseErrorMessage(error.message));
   };
-  const saveChanges = async (event: React.FormEvent) => {
+
+  const onChangeEmail = async (event: React.FormEvent) => {
     event.preventDefault();
 
     if (
       auth?.currentUser &&
       user?.uid &&
       newEmail &&
-      newEmail !== user?.email
+      newEmail !== user?.email &&
+      auth.currentUser.email
     ) {
-      await updateEmail(auth.currentUser, newEmail)
-        .then(() => {
-          sendEmailVerification(auth.currentUser as User)
+      // retauthenticate user to assure they typed the correct current password
+      const credential = EmailAuthProvider.credential(
+        auth.currentUser.email,
+        currentPassword
+      );
+
+      await reauthenticateWithCredential(auth.currentUser, credential)
+        .then(async () => {
+          await updateEmail(auth.currentUser as User, newEmail)
             .then(() => {
-              setApiStatus(API_STATUS.SUCCESS);
-              setCardStatus(CARD_ACTION_STATUS.READ);
-              dispatch(setEmail(newEmail as string));
+              sendEmailVerification(auth.currentUser as User)
+                .then(() => {
+                  setApiStatus(API_STATUS.SUCCESS);
+                  setCardStatus(CARD_ACTION_STATUS.READ);
+                  dispatch(setEmail(newEmail as string));
+                })
+                .catch(handleApiError);
             })
             .catch(handleApiError);
         })
@@ -61,7 +80,7 @@ export default function LoginSettings() {
   return user ? (
     <div>
       <Card className="bg-gray-100 w-full">
-        <form onSubmit={saveChanges}>
+        <form onSubmit={onChangeEmail}>
           <div className="flex justify-between">
             <h2 className="text-xl font-medium">Email</h2>
             <div>
@@ -106,26 +125,47 @@ export default function LoginSettings() {
               ) : null}
             </div>
             {cardStatus === CARD_ACTION_STATUS.EDIT ? (
-              <TextInput
-                className="mt-2"
-                type="email"
-                value={newEmail || ""}
-                onChange={({ target }) => setNewEmail(target.value)}
-              />
+              <div>
+                <div>
+                  <div className="mb-2 block">
+                    <Label htmlFor="new-email" value="New Email *" />
+                  </div>
+                  <TextInput
+                    id="new-email"
+                    type="email"
+                    value={newEmail || ""}
+                    onChange={({ target }) => setNewEmail(target.value)}
+                    required
+                  />
+                </div>
+                <div className="mt-5">
+                  <div className="mb-2 block">
+                    <Label
+                      htmlFor="confirm-password"
+                      value="Confirm Your Password *"
+                    />
+                  </div>
+                  <TextInput
+                    id="confirm-password"
+                    type="password"
+                    value={currentPassword}
+                    minLength={8}
+                    onChange={({ target }) => setCurrentPassword(target.value)}
+                    required
+                  />
+                </div>
+
+                <div className="flex space-x-5 mt-5">
+                  <Button type="submit" disabled={newEmail === user.email}>
+                    Save
+                  </Button>
+                  <Button type="button" color="light" onClick={cancelChanges}>
+                    Cancel{" "}
+                  </Button>
+                </div>
+              </div>
             ) : null}
           </div>
-
-          {cardStatus === CARD_ACTION_STATUS.EDIT &&
-          apiStatus !== API_STATUS.SUCCESS ? (
-            <div className="flex space-x-5 mt-5">
-              <Button type="submit" disabled={newEmail === user.email}>
-                Save
-              </Button>
-              <Button type="button" color="light" onClick={cancelChanges}>
-                Cancel{" "}
-              </Button>
-            </div>
-          ) : null}
         </form>
       </Card>
     </div>

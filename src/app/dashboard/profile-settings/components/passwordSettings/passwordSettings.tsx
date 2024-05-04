@@ -42,7 +42,7 @@ export default function PasswordSettings() {
 
   const newPasswordsMatch = newPassword === newRepeatPassword;
 
-  const saveChanges = async (event: React.FormEvent) => {
+  const onChangePassword = async (event: React.FormEvent) => {
     event.preventDefault();
     setTriedtoSubmit(true);
     if (newPasswordsMatch && auth?.currentUser?.email) {
@@ -108,10 +108,10 @@ export default function PasswordSettings() {
             ) : null}
           </div>
           {cardStatus === CARD_ACTION_STATUS.EDIT ? (
-            <form onSubmit={saveChanges}>
+            <form onSubmit={onChangePassword}>
               <div className="mb-5">
                 <div className="mb-2 block">
-                  <Label htmlFor="new-password" value="New Password" />
+                  <Label htmlFor="new-password" value="New Password *" />
                 </div>
                 <div>
                   <TextInput
@@ -129,7 +129,7 @@ export default function PasswordSettings() {
                 <div className="mb-2 block">
                   <Label
                     htmlFor="new-repeated-password"
-                    value="Confirm New Password"
+                    value="Confirm New Password *"
                   />
                 </div>
                 <div>
@@ -148,7 +148,7 @@ export default function PasswordSettings() {
 
               <div>
                 <div className="mb-2 block">
-                  <Label htmlFor="current-password" value="Current Password" />
+                  <Label htmlFor="current-password" value="Current Password *" />
                 </div>
                 <div>
                   <TextInput
