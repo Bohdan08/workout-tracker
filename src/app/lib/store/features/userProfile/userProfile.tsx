@@ -22,6 +22,7 @@ interface Profile {
     emailVerified?: boolean;
     weightUnit?: WEIGHT_METRICS;
     distanceUnit?: DISTANCE_METRICS;
+    providerData?: Record<string, any>[];
   };
 }
 
@@ -55,6 +56,9 @@ const userProfileSlice = createSlice({
     setLastName(state, action: PayloadAction<string>) {
       state.data.lastName = action.payload;
     },
+    setEmail(state, action: PayloadAction<string>) {
+      state.data.email = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUserData.pending, (state) => {
@@ -84,6 +88,7 @@ export const {
   setDistanceUnit,
   setFirstName,
   setLastName,
+  setEmail
 } = userProfileSlice.actions;
 
 export default userProfileSlice.reducer;

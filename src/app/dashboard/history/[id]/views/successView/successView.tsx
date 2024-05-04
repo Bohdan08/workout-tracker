@@ -16,11 +16,6 @@ import {
 import { BADGE_COLORS } from "@/src/app/common/constants";
 import { HiTrash, HiOutlinePencilAlt } from "react-icons/hi";
 
-enum CARD_ACTION_STATUS {
-  VIEW = "view",
-  EDIT = "edit",
-}
-
 export default function SuccessView() {
   const [cardsActionStatus, setCardsActionStatus] = useState({});
 

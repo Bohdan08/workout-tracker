@@ -14,9 +14,9 @@ const parseFirebaseErorrMessage = (errorMessage: string) => {
   } else if (errorMessage.includes("provider-already-linked")) {
     return "Your've already created a secure account. Please go to sign in page.";
   } else if (errorMessage.includes("auth/email-already-in-use")) {
-    return "Email already in use";
-  }  else if (errorMessage.includes("auth/invalid-credential")) {
-    return "Invalid email or password";
+    return "Email already in use.";
+  } else if (errorMessage.includes("auth/invalid-credential")) {
+    return "Invalid credentials.";
   }
 
   return errorMessage;

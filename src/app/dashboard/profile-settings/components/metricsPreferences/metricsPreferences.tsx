@@ -1,6 +1,7 @@
 "use client";
 import {
   API_STATUS,
+  CARD_ACTION_STATUS,
   DISTANCE_METRICS,
   WEIGHT_METRICS,
 } from "@/src/app/common/enums";
@@ -11,15 +12,10 @@ import {
   setWeightUnit,
 } from "@/src/app/lib/store/features/userProfile/userProfile";
 import addUserData from "@/src/firebase/firestore/addUserData";
-import { Alert, Button, Card, Label, Radio, Toast } from "flowbite-react";
+import { Alert, Button, Card, Label, Radio } from "flowbite-react";
 import React, { useState } from "react";
-import { HiOutlinePencilAlt, HiCheck } from "react-icons/hi";
+import { HiOutlinePencilAlt } from "react-icons/hi";
 import { useDispatch } from "react-redux";
-
-enum ACTION_STATUS {
-  READ = "read",
-  EDIT = "edit",
-}
 
 const WEIGHT_UNITS = [
   {
@@ -57,7 +53,7 @@ export default function MetricsPreferences() {
   const { user } = useAuth();
   const { data } = useAppSelector((store) => store.userProfile);
 
-  const [cardStatus, setCardStatus] = useState(ACTION_STATUS.READ);
+  const [cardStatus, setCardStatus] = useState(CARD_ACTION_STATUS.READ);
   const { weightUnit, distanceUnit } = data;
 
   const [newWeightUnit, setNewWeightUnit] = useState(weightUnit);
@@ -85,7 +81,7 @@ export default function MetricsPreferences() {
 
   const cancelChanges = () => {
     // reset values
-    setCardStatus(ACTION_STATUS.READ);
+    setCardStatus(CARD_ACTION_STATUS.READ);
     setNewDistanceUnit(distanceUnit);
     setNewWeightUnit(weightUnit);
   };
@@ -107,7 +103,7 @@ export default function MetricsPreferences() {
       }
 
       setApiStatus(API_STATUS.SUCCESS);
-      setCardStatus(ACTION_STATUS.READ);
+      setCardStatus(CARD_ACTION_STATUS.READ);
       dispatch(setWeightUnit(newWeightUnit as WEIGHT_METRICS));
       dispatch(setDistanceUnit(newDistanceUnit as DISTANCE_METRICS));
     }
@@ -119,8 +115,8 @@ export default function MetricsPreferences() {
         <div className="flex justify-between">
           <h2 className="text-xl font-medium">Preferences</h2>
           <div>
-            {cardStatus === ACTION_STATUS.READ ? (
-              <button onClick={() => setCardStatus(ACTION_STATUS.EDIT)}>
+            {cardStatus === CARD_ACTION_STATUS.READ ? (
+              <button onClick={() => setCardStatus(CARD_ACTION_STATUS.EDIT)}>
                 <HiOutlinePencilAlt />
               </button>
             ) : null}
@@ -146,12 +142,12 @@ export default function MetricsPreferences() {
               <p>Weight Units</p>
             </div>
             <div>
-              {cardStatus === ACTION_STATUS.READ ? (
+              {cardStatus === CARD_ACTION_STATUS.READ ? (
                 <p className="font-medium">
                   {WEIGHT_MAP[weightUnit as string]}
                 </p>
               ) : null}
-              {cardStatus === ACTION_STATUS.EDIT ? (
+              {cardStatus === CARD_ACTION_STATUS.EDIT ? (
                 <div className="flex flex-col space-y-3 w-40">
                   {WEIGHT_UNITS.map(({ value, label }) => (
                     <div
@@ -183,12 +179,12 @@ export default function MetricsPreferences() {
               <p>Distance Units</p>
             </div>
             <div>
-              {cardStatus === ACTION_STATUS.READ ? (
+              {cardStatus === CARD_ACTION_STATUS.READ ? (
                 <p className="font-medium">
                   {DISTANCE_MAP[distanceUnit as string]}
                 </p>
               ) : null}
-              {cardStatus === ACTION_STATUS.EDIT ? (
+              {cardStatus === CARD_ACTION_STATUS.EDIT ? (
                 <div className="flex flex-col space-y-3 w-40">
                   {DISTANCE_UNITS.map(({ value, label }) => (
                     <div
@@ -213,7 +209,7 @@ export default function MetricsPreferences() {
           </div>
         </div>
 
-        {cardStatus === ACTION_STATUS.EDIT &&
+        {cardStatus === CARD_ACTION_STATUS.EDIT &&
         apiStatus !== API_STATUS.SUCCESS ? (
           <div className="flex space-x-5">
             <Button disabled={!fieldsChanged} onClick={saveChanges}>

@@ -25,7 +25,6 @@ export default function PersonalInfo() {
   const [newLastName, setNewLastName] = useState<string>(lastName);
 
   const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
-
   const [apiErrorMessage, setApiErrorMessage] = useState<string | null>(null);
 
   const dispatch = useDispatch();
@@ -43,6 +42,13 @@ export default function PersonalInfo() {
   const personalInfoChanged = !firstNameTheSame || !lastNameTheSame;
 
   const newValuesValid = firstNameValid && lastNameValid;
+
+  const cancelChanges = () => {
+    // reset values
+    setCardStatus(CARD_ACTION_STATUS.READ);
+    setNewLastName(lastName);
+    setNewfirstName(firstName);
+  };
 
   const saveChanges = async () => {
     if (user?.uid && newValuesValid && personalInfoChanged) {
@@ -152,10 +158,7 @@ export default function PersonalInfo() {
             >
               Save
             </Button>
-            <Button
-              color="light"
-              onClick={() => setCardStatus(CARD_ACTION_STATUS.READ)}
-            >
+            <Button color="light" onClick={cancelChanges}>
               Cancel{" "}
             </Button>
           </div>
