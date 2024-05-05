@@ -1,7 +1,7 @@
 "use client";
 import { API_STATUS, CARD_ACTION_STATUS } from "@/src/app/common/enums";
 import { useAuth } from "@/src/app/context/authContext";
-import { setEmail } from "@/src/app/lib/store/features/userProfile/userProfile";
+import { setEmail } from "@/src/app/lib/store/features/userProfile/userProfileSlice";
 import parseFirebaseErrorMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage";
 import { auth } from "@/src/firebase/config";
 import {
@@ -77,6 +77,7 @@ export default function EmailSettings() {
     }
   };
 
+  console.log(user, "USER");
   return user ? (
     <div>
       <Card className="bg-gray-100 w-full">

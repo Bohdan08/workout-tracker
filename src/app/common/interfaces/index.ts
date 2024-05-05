@@ -1,4 +1,4 @@
-import { EXERCISE_TYPES, WEIGHT_METRICS } from "../enums";
+import { DISTANCE_METRICS, EXERCISE_TYPES, WEIGHT_METRICS } from "../enums";
 
 export interface ExerciseSet {
   id: string;
@@ -43,7 +43,10 @@ export interface Workout {
 
 export interface WorkoutData {
   id?: string;
-  metrics: WEIGHT_METRICS.LBS;
+  // metrics: WEIGHT_METRICS.LBS;
   workoutDate: Date | string;
   exercises: Exercise[];
+  weightUnit: WEIGHT_METRICS | null;
+  distanceUnit: DISTANCE_METRICS | null;
+  edited?: string[];
 }

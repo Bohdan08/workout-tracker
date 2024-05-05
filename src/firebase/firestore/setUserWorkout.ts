@@ -5,11 +5,7 @@ import { WorkoutData } from "@/src/app/common/interfaces";
 // import formatDate from "@/src/app/lib/utils/formatDate";
 import { v4 as uuid } from "uuid";
 
-// const getTimeEpoch = () => {
-//   return new Date().getTime().toString();
-// };
-
-export default async function addWorkout(
+export default async function setWorkout(
   userId: string,
   workoutData: WorkoutData
 ) {
@@ -37,24 +33,28 @@ export default async function addWorkout(
       docId
     );
 
-    // const workoutId = getTimeEpoch();
-
     const allMuscleGroups = [
       ...new Set(
         filteredWorkoutData.exercises
-          .filter((obj) => obj.muscleGroup !== "")
-          .map((obj) => obj.muscleGroup)
+          .filter((obj) => obj.muscleGroups?.length)
+          .map((obj) => obj.muscleGroups)
+          .flat()
       ),
     ];
+
+    const editedInfo = workoutData.edited || [];
 
     result = await setDoc(
       userRef,
       {
         data: {
-          // id: uuid(),
+          id: docId,
           created: serverTimestamp(),
           allMuscleGroups,
           ...filteredWorkoutData,
+          ...(workoutData.id && {
+            edited: [...editedInfo, serverTimestamp()],
+          }),
         },
       },
       { merge: true }

@@ -18,7 +18,9 @@ import formatDate from "../../lib/utils/formatDate";
 import { fetchWorkoutsHistory } from "../../lib/store/features/workoutsHistory/workoutsHistorySlice";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import useAppSelector from "../../hooks/useAppSelector";
-import { setWorkout } from "../../lib/store/features/selectedWorkout/selectedWorkoutSlice";
+import LoadingView from "../components/loadingView/loadingView";
+import ErrorView from "../components/errorView/errorView";
+import { setWorkout } from "../../lib/store/features/workout/workoutSlice";
 
 export default function History() {
   // const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
@@ -46,61 +48,45 @@ export default function History() {
   return (
     <div className="overflow-x-auto">
       {apiStatus === API_STATUS.SUCCESS && workouts?.length ? (
-        <Table>
-          <TableHead>
-            <TableHeadCell>Date</TableHeadCell>
-            <TableHeadCell>Weekday</TableHeadCell>
-            <TableHeadCell>Muscles</TableHeadCell>
-          </TableHead>
-          <TableBody className="divide-y">
-            {workouts.map(
-              ({ id, created, workoutDate, allMuscleGroups }: any, index) => (
-                <TableRow
-                  key={id}
-                  className="cursor-pointer hover:bg-gray-100"
-                  onClick={() => {
-                    // DISPATCH
-                    dispatch(setWorkout(workouts[index]));
-                    //
-                    router.push(`/dashboard/history/${id}`);
-                  }}
-                >
-                  <TableCell>
-                    {formatDate(workoutDate, { includeYear: false })}
-                  </TableCell>
-                  <TableCell>{getWeekdayName(workoutDate)}</TableCell>
-                  <TableCell>{allMuscleGroups.join(", ")}</TableCell>
-                </TableRow>
-              )
-            )}
-          </TableBody>
-        </Table>
+        <>
+          <Table>
+            <TableHead>
+              <TableHeadCell>Date</TableHeadCell>
+              <TableHeadCell>Weekday</TableHeadCell>
+              <TableHeadCell>Muscles</TableHeadCell>
+            </TableHead>
+            <TableBody className="divide-y">
+              {workouts.map(
+                ({ id, created, workoutDate, allMuscleGroups }: any, index) => (
+                  <TableRow
+                    key={id}
+                    className="cursor-pointer hover:bg-gray-100"
+                    onClick={() => {
+                      // set workout
+                      dispatch(setWorkout(workouts[index]));
+                      //
+                      router.push(`/dashboard/history/${id}`);
+                    }}
+                  >
+                    <TableCell>
+                      {formatDate(workoutDate, { includeYear: false })}
+                    </TableCell>
+                    <TableCell>{getWeekdayName(workoutDate)}</TableCell>
+                    <TableCell>{allMuscleGroups?.join(", ")}</TableCell>
+                  </TableRow>
+                )
+              )}
+            </TableBody>
+          </Table>
+        </>
       ) : null}
 
       {/* OTHER */}
-
       {apiStatus === API_STATUS.LOADING && (
-        <div className="max-w-sm w-fit flex flex-col space-y-2 mt-5">
-          {" "}
-          <p className="font-medium text-xl">Retrieving Your Workouts</p>
-          <p className="text-lg">Please wait a moment...</p>
-          <div className="text-center">
-            <Spinner aria-label="" size="xl" />
-          </div>
-        </div>
+        <LoadingView title="Retrieving Your Workouts" />
       )}
       {apiStatus === API_STATUS.ERROR ? (
-        <Alert
-          color="failure"
-          className="text-center flex flex-col justify-center items-center mb-5"
-        >
-          <p className="font-semibold text-xl">Error!</p>
-          <div className="text-lg mt-3">
-            <p> Sorry, we couldn&apos;t retrieve your workouts... </p>
-            {apiErrorMessage && <p> Reason: {apiErrorMessage} </p>}
-            <p>Please try again later.</p>
-          </div>
-        </Alert>
+        <ErrorView errorMessage={apiErrorMessage} />
       ) : null}
 
       {apiStatus === API_STATUS.SUCCESS && !workouts?.length ? (

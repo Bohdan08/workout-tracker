@@ -1,5 +1,9 @@
 import ActionModal from "@/src/app/common/components/actionModal";
-import { EXERCISE_TYPES } from "@/src/app/common/enums";
+import { MAX_SETS } from "@/src/app/common/constants";
+import {
+  EXERCISE_MEASURMENT_TYPES,
+  EXERCISE_TYPES,
+} from "@/src/app/common/enums";
 import useAppDispatch from "@/src/app/hooks/useAppDispatch";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
 import {
@@ -7,11 +11,10 @@ import {
   deleteExerciseSet,
   modifyExercise,
   modifyExerciseSet,
-} from "@/src/app/lib/store/features/newWorkout/newWorkoutSlice";
+} from "@/src/app/lib/store/features/workout/workoutSlice";
 import { Button, Label, TextInput, Tooltip } from "flowbite-react";
 import React, { useState } from "react";
 import { HiPlus, HiTrash } from "react-icons/hi";
-import { MEASURMENT_TYPES } from "../selectExerciseField/selectExerciseField";
 
 export default function ExerciseSets({
   exerciseId,
@@ -24,8 +27,8 @@ export default function ExerciseSets({
 
   const [deleteSetModal, setDeleteSetModal] = useState<string | null>(null);
 
-  const newWorkoutData = useAppSelector((store) => store.newWorkout);
-  const { exercises } = newWorkoutData;
+  const workoutData = useAppSelector((store) => store.workout);
+  const { exercises, weightUnit, distanceUnit } = workoutData;
 
   const currWorkout = exercises[exerciseIndex];
 
@@ -55,8 +58,8 @@ export default function ExerciseSets({
     <>
       <div>
         {/* WEIGHTS SETS */}
-        {currWorkout.measurmentType === MEASURMENT_TYPES.REPS_WEIGHTS &&
-        sets?.length
+        {currWorkout.measurmentType ===
+          EXERCISE_MEASURMENT_TYPES.REPS_WEIGHTS && sets?.length
           ? sets.map(({ id: setId, reps, weight }, index) => (
               <div key={setId} className="mt-5">
                 <div className="flex justify-between mb-2">
@@ -92,7 +95,9 @@ export default function ExerciseSets({
 
                   <div className="w-full">
                     <div>
-                      <Label htmlFor={`weight-${setId}`}>Weight (LBS) </Label>
+                      <Label htmlFor={`weight-${setId}`}>
+                        Weight ({weightUnit}){" "}
+                      </Label>
                     </div>
                     <TextInput
                       id={`weight-${setId}`}
@@ -114,8 +119,8 @@ export default function ExerciseSets({
 
         {/* DURATION SETS */}
 
-        {currWorkout.measurmentType === MEASURMENT_TYPES.DURATION_DISTANCE &&
-        sets?.length
+        {currWorkout.measurmentType ===
+          EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE && sets?.length
           ? sets.map(({ id: setId, duration, distance }, index) => (
               <div key={setId} className="mt-5">
                 <div className="flex justify-between mb-2">
@@ -154,11 +159,11 @@ export default function ExerciseSets({
                   <div className="w-full">
                     <div>
                       <Label htmlFor={`miles-${setId}`}>
-                        Distance (Miles){" "}
+                        Distance ({distanceUnit}){" "}
                       </Label>
                     </div>
                     <TextInput
-                      id={`miles-${setId}`}
+                      id={`${distanceUnit}-${setId}`}
                       type="number"
                       value={distance}
                       min={0}
@@ -176,7 +181,7 @@ export default function ExerciseSets({
           : null}
 
         <Button
-          disabled={!currWorkout.measurmentType}
+          disabled={!currWorkout.measurmentType || sets?.length === MAX_SETS}
           className="mt-5 w-full"
           color="blue"
           onClick={() => handleAddSet(exerciseId)}
@@ -184,6 +189,17 @@ export default function ExerciseSets({
           <span> Add set </span>
           <HiPlus className="my-auto ml-1" />
         </Button>
+        {sets?.length === MAX_SETS ? (
+          <p className="mt-3 text-red-600">
+            You reached a maximum of {MAX_SETS} sets per exercise.
+          </p>
+        ) : null}
+        {!currWorkout.measurmentType ? (
+          <p className="mt-3 text-red-600">
+            Please select <span className="font-medium">Measurment Type </span>{" "}
+            to be able to add set.
+          </p>
+        ) : null}
       </div>
 
       <ActionModal

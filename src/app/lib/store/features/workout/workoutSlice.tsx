@@ -1,4 +1,9 @@
-import { EXERCISE_TYPES, WEIGHT_METRICS } from "@/src/app/common/enums";
+import {
+  DISTANCE_METRICS,
+  EXERCISE_MEASURMENT_TYPES,
+  EXERCISE_TYPES,
+  WEIGHT_METRICS,
+} from "@/src/app/common/enums";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
 import createExerciseSetTemplate from "../../../utils/createExerciseSetTemplate";
@@ -8,7 +13,6 @@ import {
   WorkoutData,
 } from "@/src/app/common/interfaces";
 import formatDate from "../../../utils/formatDate";
-import { MEASURMENT_TYPES } from "@/src/app/dashboard/add-workout/components/selectExerciseField/selectExerciseField";
 
 // const createExerciseSetTemplate = () => ({
 //   id: uuid(),
@@ -22,7 +26,7 @@ const createExerciseTemplate = () => ({
   type: null,
   measurmentType: null,
   // metrics: WEIGHT_METRICS.LBS,
-  // type: EXERCISE_TYPES.STENGTH,
+  // type: EXERCISE_TYPES.STRENGTH,
   title: "",
   // sets: [createExerciseSetTemplate()],
   notes: "",
@@ -35,16 +39,31 @@ const createExerciseTemplate = () => ({
 //   exercises: Exercise[];
 // }
 
-const initialState: WorkoutData = {
-  metrics: WEIGHT_METRICS.LBS,
+const initialState: WorkoutData & { id?: string } = {
+  // metrics: WEIGHT_METRICS.LBS,
+  weightUnit: null,
+  distanceUnit: null,
   workoutDate: formatDate(new Date()),
   exercises: [createExerciseTemplate()],
 };
 
-const newWorkoutSlice = createSlice({
-  name: "newWorkout",
+const workoutSlice = createSlice({
+  name: "workout",
   initialState,
   reducers: {
+    setWorkout(state, action: PayloadAction<WorkoutData>) {
+      state.id = action.payload.id || "";
+      state.distanceUnit = action.payload.distanceUnit;
+      state.weightUnit = action.payload.weightUnit;
+      state.exercises = action.payload.exercises;
+      state.workoutDate = action.payload.workoutDate;
+    },
+    setWorkoutWeightUnit(state, action: PayloadAction<WEIGHT_METRICS>) {
+      state.weightUnit = action.payload;
+    },
+    setWorkoutDistanceUnit(state, action: PayloadAction<DISTANCE_METRICS>) {
+      state.distanceUnit = action.payload;
+    },
     setWorkoutDate(state, action: PayloadAction<string | Date>) {
       state.workoutDate = action.payload;
     },
@@ -60,8 +79,8 @@ const newWorkoutSlice = createSlice({
               sets: [
                 ...(exercise.sets || []),
                 createExerciseSetTemplate(
-                  exercise.measurmentType as MEASURMENT_TYPES
-                ),
+                  exercise.measurmentType as EXERCISE_MEASURMENT_TYPES
+                ) as any,
               ],
             }
       );
@@ -126,14 +145,15 @@ const newWorkoutSlice = createSlice({
       );
     },
 
-    resetWorkout(state) {
-      state.exercises = [createExerciseTemplate()];
-    },
+    resetWorkout: () => initialState,
   },
 });
 
 export const {
+  setWorkout,
   setWorkoutDate,
+  setWorkoutWeightUnit,
+  setWorkoutDistanceUnit,
   // exercise actions
   addExercise,
   modifyExercise,
@@ -145,6 +165,6 @@ export const {
 
   //
   resetWorkout,
-} = newWorkoutSlice.actions;
+} = workoutSlice.actions;
 
-export default newWorkoutSlice.reducer;
+export default workoutSlice.reducer;

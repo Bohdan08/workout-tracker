@@ -1,9 +1,10 @@
-import useAppSelector from "@/src/app/hooks/useAppSelector";
+"use client";
 import getAffectedMuscleGroups from "@/src/app/lib/utils/getAffectedMuscleGroups";
 import React, { useState } from "react";
 import TotalCard from "../../components/totalCard";
 import {
   Badge,
+  Button,
   Card,
   Table,
   TableBody,
@@ -11,17 +12,43 @@ import {
   TableHead,
   TableHeadCell,
   TableRow,
-  Tooltip,
 } from "flowbite-react";
 import { BADGE_COLORS } from "@/src/app/common/constants";
-import { HiTrash, HiOutlinePencilAlt } from "react-icons/hi";
+import { HiArrowLeft } from "react-icons/hi";
+import Link from "next/link";
+import { WorkoutData } from "@/src/app/common/interfaces";
+import { EXERCISE_TYPES } from "@/src/app/common/enums";
 
-export default function SuccessView() {
-  const [cardsActionStatus, setCardsActionStatus] = useState({});
+import styles from "./successView.module.scss";
+import WorkoutHandler, {
+  WORKOUT_TYPE,
+} from "@/src/app/dashboard/components/workoutHandler/workoutHandler";
+import { useDispatch } from "react-redux";
+import {
+  resetWorkout,
+  setWorkout,
+} from "@/src/app/lib/store/features/workout/workoutSlice";
+import useAppSelector from "@/src/app/hooks/useAppSelector";
 
-  const { data } = useAppSelector((store) => store.selectedWorkout);
-  const { exercises, workoutDate } = data;
+enum WORKOUT_STATUS {
+  EDIT = "EDIT",
+  VIEW = "VIEW",
+}
 
+export default function SuccessView({
+  data,
+  resetOnEdit,
+}: {
+  data: WorkoutData;
+  resetOnEdit: () => void;
+}) {
+  const [workoutStatus, setWorkoutStatus] = useState(WORKOUT_STATUS.VIEW);
+
+  // const { exercises, workoutDate, weightUnit, distanceUnit } = data;
+  const workoutData = useAppSelector((store) => store.workout);
+  const { exercises, workoutDate, weightUnit, distanceUnit } = workoutData;
+
+  const dispatch = useDispatch();
   const affectedMuscleGroups = getAffectedMuscleGroups(exercises);
 
   const totalSets = exercises.reduce((acc, obj) => {
@@ -46,28 +73,52 @@ export default function SuccessView() {
     return acc;
   }, 0);
 
+  const handleEditWorkout = () => {
+    // change state to edit
+    setWorkoutStatus(WORKOUT_STATUS.EDIT);
+  };
+
+  const handleViewWorkout = () => {
+    // change state to view
+    setWorkoutStatus(WORKOUT_STATUS.VIEW);
+    // reset workout in redux
+    dispatch(resetWorkout());
+  };
+
   return (
     <div>
-      <h1 className="text-3xl font-medium">
-        {" "}
-        Workout Summary for {workoutDate as string}
-      </h1>
-      {data ? (
-        <div>
-          {/* <div className="mt-5">
-            <Datepicker
-              value={currWorkout?.workoutDate as string}
-              minDate={new Date(2022, 0, 1)}
-              maxDate={new Date()}
-            />
-          </div> */}
-          <div className="mt-5 flex space-x-5">
-            <TotalCard title="Exercises" total={exercises.length} />
-            <TotalCard title="Sets" total={totalSets} />
-            <TotalCard title="Reps" total={totalReps} />
-            <TotalCard title="Weight (LBS)" total={totalWeight} />
-          </div>
-          <div className="mt-5">
+      <Link
+        href="/dashboard/history"
+        className="flex items-center space-x-1 mb-5 w-fit text-gray-600 hover:text-black hover:underline"
+      >
+        <HiArrowLeft /> <span>Back to All workouts</span>
+      </Link>
+      <div className="my-5">
+        {workoutStatus === WORKOUT_STATUS.VIEW ? (
+          <Button color="warning" onClick={handleEditWorkout}>
+            Edit Workout
+          </Button>
+        ) : (
+          <Button color="blue" onClick={handleViewWorkout}>
+            View Workout
+          </Button>
+        )}
+      </div>
+      {workoutStatus === WORKOUT_STATUS.VIEW ? (
+        <>
+          <h1 className="text-3xl font-medium">
+            {" "}
+            Workout Summary for {workoutDate as string}
+          </h1>
+
+          <div>
+            <div className="mt-5 flex space-x-5">
+              <TotalCard title="Exercises" total={exercises.length} />
+              <TotalCard title="Sets" total={totalSets} />
+              <TotalCard title="Reps" total={totalReps} />
+              <TotalCard title={`Weight (${weightUnit})`} total={totalWeight} />
+            </div>
+            {/* <div className="mt-5">
             <h2 className="text-2xl font-medium">Musle Groups</h2>
             <div className="flex mt-2">
               {affectedMuscleGroups.map((muscle, index) => (
@@ -80,155 +131,126 @@ export default function SuccessView() {
                 </Badge>
               ))}
             </div>
-          </div>
-          <div className="mt-5">
-            {" "}
-            <h2 className="text-2xl font-medium">Exercises </h2>{" "}
-            <div className="mt-5 flex flex-wrap">
-              {exercises.map(
-                (
-                  {
-                    id,
-                    muscleGroups,
-                    sets = [],
-                    notes,
-                    title,
-                    duration = 0,
-                    type: exerciseType,
-                  },
-                  index
-                ) => {
-                  return (
-                    <Card
-                      key={id}
-                      className="md:w-[350px] relative h-fit mr-5 mb-5"
-                    >
-                      <div className="flex space-x-2 absolute right-3 top-3">
-                        <Tooltip
-                          content="Edit Exercise"
-                          className="w-36 text-center"
-                        >
-                          <button
-                            title="Edit Exercise"
-                            onClick={() =>
-                              setCardsActionStatus({
-                                ...cardsActionStatus,
-                                [id]: true,
-                              })
-                            }
-                          >
-                            <HiOutlinePencilAlt color="text-yellow-600" />
-                          </button>
-                        </Tooltip>
-                        <Tooltip content={`Delete this exercise`}>
-                          <button
-                          // onClick={() => {
-                          //   setDeleteViewModal(true);
-                          //   setDeleteItemInfo({
-                          //     type: ACTION_ITEMS.EXERCISE,
-                          //     exerciseId,
-                          //   });
-                          // }}
-                          >
-                            <HiTrash color="red" />
-                          </button>
-                        </Tooltip>
-                      </div>
-                      <div className="flex h-full flex-col space-y-5 items-start">
-                        <div className="flex justify-between w-full">
-                          <h3 className="text-xl font-medium relative mt-5">
-                            {index + 1}. {title}
-                          </h3>
-                        </div>
-                        <Badge
+          </div> */}
+            <div className="mt-5">
+              {" "}
+              <h2 className="text-2xl font-medium">Exercises </h2>{" "}
+              <div className="mt-5 flex flex-wrap">
+                {exercises.map(
+                  (
+                    {
+                      id: exerciseId,
+                      muscleGroups,
+                      sets = [],
+                      notes,
+                      title,
+                      duration = 0,
+                      type: exerciseType,
+                    },
+                    index
+                  ) => {
+                    let tableHeaders = ["#", "Reps", `Weight (${weightUnit})`];
+
+                    if (exerciseType === EXERCISE_TYPES.CARDIO) {
+                      tableHeaders = [
+                        "#",
+                        `Duration (Min)`,
+                        `Distance (${distanceUnit})`,
+                      ];
+                    }
+
+                    return (
+                      <Card
+                        key={exerciseId}
+                        className={`md:w-[350px] relative h-fit mr-5 mb-5 ${styles.exerciseCard}`}
+                      >
+                        <div className="flex h-full flex-col space-y-5 items-start">
+                          <div className="flex justify-between w-full px-4">
+                            <h3 className="text-xl font-medium relative">
+                              {index + 1}. {title}
+                            </h3>
+                          </div>
+                          {/* <Badge
                           color={BADGE_COLORS[index % exercises.length]}
                           className="w-fit mb-2 mr-2"
                           size="sm"
                         >
-                          {/* {muscleGroups.flat().join(",")} */}
-                        </Badge>
-                        {sets.length ? (
-                          <div className="mt-5 w-full">
-                            {/* {sets.map(({ id: setId, reps, weight }, index) => {
-                              return (
-                                <div key={setId} className="mt-5">
-                                  <div className="mb-2">
-                                    <p className="font-medium text-lg">
-                                      Set {index + 1}
-                                    </p>
-                                  </div>
-                                  {exerciseType === EXERCISE_TYPES.STENGTH ? (
-                                    <div className="flex flex-row justify-between space-x-10">
-                                      <ExerciseSetDetails
-                                        title="Reps"
-                                        total={reps as number}
-                                      />
-                                      <ExerciseSetDetails
-                                        title="Weight (LBS)"
-                                        total={weight as number}
-                                      />
-                                    </div>
-                                  ) : (
-                                    <ExerciseSetDetails
-                                      title="Duration (Minutes)"
-                                      total={duration as number}
-                                    />
-                                  )}
-                                </div>
-                              );
-                            })}
-                          </div>
-                        ) : (
-                          <div>
-                            {" "}
-                            <p>No sets and reps have been logged...</p>{" "}
-                          </div>
-                        )} */}
-                            <Table className="w-full border" striped>
-                              <TableHead>
-                                <TableHeadCell>#</TableHeadCell>
-                                <TableHeadCell>Reps</TableHeadCell>
-                                <TableHeadCell>Weight (LBS)</TableHeadCell>
-                              </TableHead>
-                              <TableBody className="divide-y">
-                                {sets.map(
-                                  ({ id: setId, reps, weight }, index) => {
+                          {muscleGroups.flat().join(",")}
+                        </Badge> */}
+                          {sets.length ? (
+                            <div className="mt-5 w-full">
+                              <Table className="w-full" striped>
+                                <TableHead>
+                                  {tableHeaders.map((tableHeader) => (
+                                    <TableHeadCell key={tableHeader}>
+                                      {tableHeader}
+                                    </TableHeadCell>
+                                  ))}
+                                </TableHead>
+                                <TableBody className="divide-y">
+                                  {sets.map((obj, index) => {
+                                    const {
+                                      id: setId,
+                                      reps,
+                                      weight,
+                                      duration,
+                                      distance,
+                                    } = obj;
+
+                                    let tableCells = [reps, weight];
+
+                                    if (
+                                      exerciseType === EXERCISE_TYPES.CARDIO
+                                    ) {
+                                      tableCells = [duration, distance];
+                                    }
+
                                     return (
                                       <TableRow key={setId}>
                                         <TableCell>{index + 1}</TableCell>
-                                        <TableCell>{reps}</TableCell>
-                                        <TableCell>{weight}</TableCell>
+                                        {tableCells.map((tableCell) => (
+                                          <TableCell key={tableCell}>
+                                            {tableCell || "N/A"}
+                                          </TableCell>
+                                        ))}
                                       </TableRow>
                                     );
-                                  }
-                                )}
-                              </TableBody>
-                            </Table>
-                          </div>
-                        ) : (
-                          <div>
-                            {" "}
-                            <p>No sets and reps have been logged...</p>{" "}
-                          </div>
-                        )}
-
-                        {notes ? (
-                          <div className="mt-5">
-                            <p className="text-lg font-medium">
+                                  })}
+                                </TableBody>
+                              </Table>
+                            </div>
+                          ) : (
+                            <div className="px-4">
                               {" "}
-                              Additional Details{" "}
-                            </p>
-                            <p>{notes}</p>
-                          </div>
-                        ) : null}
-                      </div>
-                    </Card>
-                  );
-                }
-              )}
+                              <p>No sets and reps have been logged...</p>{" "}
+                            </div>
+                          )}
+
+                          {notes ? (
+                            <div className="mt-5 px-4">
+                              <p className="text-lg font-medium">
+                                {" "}
+                                Additional Details{" "}
+                              </p>
+                              <p className="mt-1 text-gray-700">{notes}</p>
+                            </div>
+                          ) : null}
+                        </div>
+                      </Card>
+                    );
+                  }
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        </>
+      ) : null}
+
+      {workoutStatus === WORKOUT_STATUS.EDIT ? (
+        <WorkoutHandler
+          onSaveChanges={resetOnEdit}
+          workoutType={WORKOUT_TYPE.EXISTING}
+        />
       ) : null}
     </div>
   );

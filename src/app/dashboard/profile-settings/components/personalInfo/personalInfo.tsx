@@ -6,7 +6,7 @@ import useAppSelector from "@/src/app/hooks/useAppSelector";
 import {
   setFirstName,
   setLastName,
-} from "@/src/app/lib/store/features/userProfile/userProfile";
+} from "@/src/app/lib/store/features/userProfile/userProfileSlice";
 import addUserData from "@/src/firebase/firestore/addUserData";
 import { Alert, Button, Card, Label, TextInput } from "flowbite-react";
 import React, { useState } from "react";

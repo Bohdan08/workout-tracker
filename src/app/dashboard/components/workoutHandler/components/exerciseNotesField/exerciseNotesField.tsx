@@ -1,6 +1,6 @@
 import useAppDispatch from "@/src/app/hooks/useAppDispatch";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
-import { modifyExercise } from "@/src/app/lib/store/features/newWorkout/newWorkoutSlice";
+import { modifyExercise } from "@/src/app/lib/store/features/workout/workoutSlice";
 import { Label, Textarea } from "flowbite-react";
 import React from "react";
 
@@ -13,8 +13,8 @@ export default function ExerciseNotesField({
 }) {
   const dispatch = useAppDispatch();
 
-  const newWorkoutData = useAppSelector((store) => store.newWorkout);
-  const { exercises } = newWorkoutData;
+  const workoutData = useAppSelector((store) => store.workout);
+  const { exercises } = workoutData;
 
   const currExercise = exercises[exerciseIndex];
 

@@ -14,7 +14,7 @@ export enum ACTION_ITEMS {
 }
 
 export enum EXERCISE_TYPES {
-  STENGTH = "STENGTH",
+  STRENGTH = "STRENGTH",
   CARDIO = "CARDIO",
 }
 
@@ -28,4 +28,9 @@ export enum API_STATUS {
 export enum CARD_ACTION_STATUS {
   READ = "READ",
   EDIT = "EDIT",
+}
+
+export enum EXERCISE_MEASURMENT_TYPES {
+  REPS_WEIGHTS = "Reps/Weights",
+  DURATION_DISTANCE = "Duration/Distance",
 }

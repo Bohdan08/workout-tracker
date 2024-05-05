@@ -4,7 +4,7 @@ import useAppSelector from "@/src/app/hooks/useAppSelector";
 import {
   deleteExercise,
   modifyExercise,
-} from "@/src/app/lib/store/features/newWorkout/newWorkoutSlice";
+} from "@/src/app/lib/store/features/workout/workoutSlice";
 import { Tooltip } from "flowbite-react";
 import React, { useState } from "react";
 import { HiPlus, HiMinus, HiTrash } from "react-icons/hi";
@@ -16,8 +16,8 @@ export default function ExerciseCardHeader({
 }) {
   const [deleteViewModal, setDeleteViewModal] = useState(false);
 
-  const newWorkoutData = useAppSelector((store) => store.newWorkout);
-  const { exercises } = newWorkoutData;
+  const workoutData = useAppSelector((store) => store.workout);
+  const { exercises } = workoutData;
 
   const { id: exerciseId, title, hidden } = exercises[exerciseIndex] || {};
 

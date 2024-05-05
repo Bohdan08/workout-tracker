@@ -2,11 +2,14 @@
 import useAppSelector from "@/src/app/hooks/useAppSelector";
 import { Label } from "flowbite-react";
 import React from "react";
-import exercisesData from "../../../../../../exercisesData.json";
+import exercisesData from "../../../../../../../exercisesData.json";
 import ReactSelect, { MultiValue } from "react-select";
 import useAppDispatch from "@/src/app/hooks/useAppDispatch";
-import { modifyExercise } from "@/src/app/lib/store/features/newWorkout/newWorkoutSlice";
-import { EXERCISE_TYPES } from "@/src/app/common/enums";
+import { modifyExercise } from "@/src/app/lib/store/features/workout/workoutSlice";
+import {
+  EXERCISE_MEASURMENT_TYPES,
+  EXERCISE_TYPES,
+} from "@/src/app/common/enums";
 import CreatableSelect, { useCreatable } from "react-select/creatable";
 import createExerciseSetTemplate from "@/src/app/lib/utils/createExerciseSetTemplate";
 
@@ -38,13 +41,8 @@ const identifyExerciseType = (exerciseName: string) => {
     return EXERCISE_TYPES.CARDIO;
   }
 
-  return EXERCISE_TYPES.STENGTH;
+  return EXERCISE_TYPES.STRENGTH;
 };
-
-export enum MEASURMENT_TYPES {
-  REPS_WEIGHTS = "Reps/Weights",
-  DURATION_DISTANCE = "Duration/Distance",
-}
 
 const identifyMeasurmentType = (exerciseName: string) => {
   const formattedExerciseName = exerciseName.toLocaleLowerCase();
@@ -54,15 +52,15 @@ const identifyMeasurmentType = (exerciseName: string) => {
     formattedExerciseName.includes("walking") ||
     formattedExerciseName.includes("bike")
   ) {
-    return MEASURMENT_TYPES.DURATION_DISTANCE;
+    return EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE;
   }
 
-  return MEASURMENT_TYPES.REPS_WEIGHTS;
+  return EXERCISE_MEASURMENT_TYPES.REPS_WEIGHTS;
 };
 
 const MEASURMENT_SET_TYPES = [
-  MEASURMENT_TYPES.REPS_WEIGHTS,
-  MEASURMENT_TYPES.DURATION_DISTANCE,
+  EXERCISE_MEASURMENT_TYPES.REPS_WEIGHTS,
+  EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE,
 ];
 
 export default function SelectExerciseField({
@@ -72,9 +70,9 @@ export default function SelectExerciseField({
   exerciseIndex: number;
   exerciseId: string;
 }) {
-  const newWorkoutData = useAppSelector((store) => store.newWorkout);
+  const workoutData = useAppSelector((store) => store.workout);
 
-  const { exercises } = newWorkoutData;
+  const { exercises } = workoutData;
   const dispatch = useAppDispatch();
 
   const convertExercisesDataToSelectOptions = () => {
@@ -229,7 +227,7 @@ export default function SelectExerciseField({
               handleExercise(exerciseId, {
                 sets: [
                   createExerciseSetTemplate(
-                    newMeasurment.label as MEASURMENT_TYPES
+                    newMeasurment.label as EXERCISE_MEASURMENT_TYPES
                   ),
                 ],
                 measurmentType: newMeasurment.label,

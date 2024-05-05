@@ -1,15 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import newWorkout from "./features/newWorkout/newWorkoutSlice";
-import selectedWorkout from "./features/selectedWorkout/selectedWorkoutSlice";
+import workout from "./features/workout/workoutSlice";
 import workoutsHistory from "./features/workoutsHistory/workoutsHistorySlice";
-import userProfile from "./features/userProfile/userProfile";
+import userProfile from "./features/userProfile/userProfileSlice";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      newWorkout,
+      workout,
       workoutsHistory,
-      selectedWorkout,
       userProfile,
     },
   });

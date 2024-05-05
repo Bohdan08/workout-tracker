@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/authContext";
 import useAppSelector from "../../hooks/useAppSelector";
-import { fetchUserData } from "../../lib/store/features/userProfile/userProfile";
+import { fetchUserData } from "../../lib/store/features/userProfile/userProfileSlice";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import { API_STATUS } from "../../common/enums";
 import LoadingView from "../components/loadingView/loadingView";
