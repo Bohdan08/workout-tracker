@@ -1,7 +1,7 @@
 // "use client";
 import { useEffect } from "react";
 import Header from "./common/components/header";
-import { getFirebaseAdminToken } from "./actions/getFirebaseAdminToken";
+import { getFirebaseAdminToken } from "./lib/actions/getFirebaseAdminToken/getFirebaseAdminToken";
 
 export default function Home() {
   return (

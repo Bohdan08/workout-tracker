@@ -25,6 +25,7 @@ import ExerciseSets from "./components/exerciseSets";
 import ExerciseNotesField from "./components/exerciseNotesField/exerciseNotesField";
 import WorkoutSummary from "./components/summaryCard/summaryCard";
 import { MAX_EXERCISES } from "@/src/app/common/constants";
+import { DASHBOARD_MENU_HEADER } from "@/src/app/common/styles";
 
 export enum WORKOUT_TYPE {
   NEW = "NEW",
@@ -97,7 +98,9 @@ export default function WorkoutHandler({
       <div className="">
         <div className="max-w-4xl w-full">
           <div>
-            <h1 className="text-3xl font-medium text-left">Your Workout</h1>
+            <h1 className={`${DASHBOARD_MENU_HEADER} text-left`}>
+              Your Workout
+            </h1>
             <div className="mt-5">
               {apiStatus === API_STATUS.ERROR ? (
                 <ErrorView message={apiError} />
@@ -218,7 +221,7 @@ export default function WorkoutHandler({
                   </div>
 
                   {/*  */}
-                  <div className={`w-[300px]`}>
+                  <div className={`w-[300px] hidden md:block`}>
                     <WorkoutSummary exercises={exercises} />
                   </div>
                 </div>

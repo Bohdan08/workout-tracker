@@ -34,5 +34,9 @@ export async function getAllUserWorkouts(userId: string) {
 
       return formattedData;
     })
-    .flat();
+    .flat()
+    .sort(
+      (a, b) =>
+        (new Date(b.workoutDate) as any) - (new Date(a.workoutDate) as any)
+    );
 }

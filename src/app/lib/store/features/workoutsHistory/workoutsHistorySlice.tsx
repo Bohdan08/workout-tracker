@@ -7,7 +7,7 @@ import { API_STATUS } from "@/src/app/common/enums";
 interface WorkoutsHistory {
   apiStatus: string;
   apiErrorMessage: string | null;
-  workouts: WorkoutData[];
+  workouts: WorkoutData[] & { allMuscleGroups?: string[] }[];
 }
 
 const initialState: WorkoutsHistory = {
@@ -29,6 +29,7 @@ const workoutsHistorySlice = createSlice({
       state.workouts = action.payload;
     },
     resetWorkouts(state) {
+      state.apiStatus = API_STATUS.IDLE;
       state.workouts = [];
     },
   },

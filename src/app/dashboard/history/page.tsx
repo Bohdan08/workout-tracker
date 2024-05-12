@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Alert,
-  Spinner,
   Table,
   TableBody,
   TableCell,
@@ -21,6 +20,7 @@ import LoadingView from "../components/loadingView/loadingView";
 import ErrorView from "../components/errorView/errorView";
 import { setWorkout } from "../../lib/store/features/workout/workoutSlice";
 import { API_STATUS } from "../../common/enums";
+import WorkoutsTable from "./workoutsTable";
 
 export default function History() {
   const { user } = useAuth();
@@ -41,37 +41,7 @@ export default function History() {
   return (
     <div className="overflow-x-auto">
       {apiStatus === API_STATUS.SUCCESS && workouts?.length ? (
-        <>
-          <Table>
-            <TableHead>
-              <TableHeadCell>Date</TableHeadCell>
-              <TableHeadCell>Weekday</TableHeadCell>
-              <TableHeadCell>Muscles</TableHeadCell>
-            </TableHead>
-            <TableBody className="divide-y">
-              {workouts.map(
-                ({ id, created, workoutDate, allMuscleGroups }: any, index) => (
-                  <TableRow
-                    key={id}
-                    className="cursor-pointer hover:bg-gray-100"
-                    onClick={() => {
-                      // set workout
-                      dispatch(setWorkout(workouts[index]));
-                      //
-                      router.push(`/dashboard/history/${id}`);
-                    }}
-                  >
-                    <TableCell>
-                      {formatDate(workoutDate, { includeYear: false })}
-                    </TableCell>
-                    <TableCell>{getWeekdayName(workoutDate)}</TableCell>
-                    <TableCell>{allMuscleGroups?.join(", ")}</TableCell>
-                  </TableRow>
-                )
-              )}
-            </TableBody>
-          </Table>
-        </>
+        <WorkoutsTable />
       ) : null}
 
       {/* OTHER */}
@@ -96,62 +66,3 @@ export default function History() {
     </div>
   );
 }
-
-const SUMMARY_DATA = [
-  {
-    id: 1,
-    date: "1 Feb",
-    weekday: "Monday",
-    title: "Chest, Legs",
-    numberInTheWeek: 1,
-  },
-  {
-    id: 2,
-    date: "5 Feb",
-    weekday: "Friday",
-    title: "Cardio",
-    numberInTheWeek: 2,
-  },
-  {
-    id: 3,
-    date: "8 Feb",
-    weekday: "Monday",
-    title: "Full Body",
-    numberInTheWeek: 1,
-  },
-  {
-    id: 4,
-    date: "12 Feb",
-    weekday: "Thursday",
-    title: "Legs",
-    numberInTheWeek: 2,
-  },
-  {
-    id: 5,
-    date: "14 Feb",
-    weekday: "Saturday",
-    title: "Back",
-    numberInTheWeek: 3,
-  },
-  {
-    id: 6,
-    date: "17 Feb",
-    weekday: "Tuesday",
-    title: "Full Body",
-    numberInTheWeek: 1,
-  },
-  {
-    id: 7,
-    date: "20 Feb",
-    weekday: "Friday",
-    title: "Full Body",
-    numberInTheWeek: 2,
-  },
-  {
-    id: 8,
-    date: "22 Feb",
-    weekday: "Sunday",
-    title: "Chest, Arms",
-    numberInTheWeek: 3,
-  },
-].reverse();

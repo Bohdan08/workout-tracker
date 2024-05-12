@@ -4,8 +4,9 @@ import TotalCard from "../../../components/totalCard/totalCard";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
 
 export default function TotalCards() {
-  const { workouts } = useAppSelector((store) => store.workoutsHistory);
+  const { workouts = [] } = useAppSelector((store) => store.workoutsHistory);
 
+  let totalWorkouts = workouts.length;
   let totalExercises = 0;
   let totalSets = 0;
   let totalReps = 0;
@@ -30,7 +31,8 @@ export default function TotalCards() {
 
   return (
     <div className="mt-5">
-      <div className="mb-5 flex space-x-5">
+      <div className="mb-5 flex flex-col md:flex-row md:space-x-5 space-y-5 md:space-y-0">
+        <TotalCard title="Workouts" total={totalWorkouts} />
         <TotalCard title="Exercises" total={totalExercises} />
         <TotalCard title="Sets" total={totalSets} />
         <TotalCard title="Reps" total={totalReps} />

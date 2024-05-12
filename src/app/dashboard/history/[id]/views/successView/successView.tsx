@@ -36,6 +36,7 @@ import { useAuth } from "@/src/app/context/authContext";
 import ErrorView from "@/src/app/dashboard/components/errorView";
 import LoadingView from "@/src/app/dashboard/components/loadingView";
 import { useRouter } from "next/navigation";
+import { resetWorkouts } from "@/src/app/lib/store/features/workoutsHistory/workoutsHistorySlice";
 
 enum WORKOUT_STATUS {
   EDIT = "EDIT",
@@ -118,6 +119,7 @@ export default function SuccessView({
     }
 
     dispatch(resetWorkout());
+    dispatch(resetWorkouts());
     router.push("/dashboard/history");
   };
 
@@ -195,20 +197,22 @@ export default function SuccessView({
                       total={totalWeight}
                     />
                   </div>
-                  {/* <div className="mt-5">
-            <h2 className="text-2xl font-medium">Musle Groups</h2>
-            <div className="flex mt-2">
-              {affectedMuscleGroups.map((muscle, index) => (
-                <Badge
-                  key={muscle}
-                  color={BADGE_COLORS[index % affectedMuscleGroups.length]}
-                  className="w-fit text-xl mb-2 mr-2 px-3 py-2"
-                >
-                  {muscle}
-                </Badge>
-              ))}
-            </div>
-          </div> */}
+                  <div className="mt-5">
+                    <h2 className="text-2xl font-medium">Musle Groups</h2>
+                    <div className="flex mt-2">
+                      {affectedMuscleGroups.map((muscle, index) => (
+                        <Badge
+                          key={muscle}
+                          color={
+                            BADGE_COLORS[index % affectedMuscleGroups.length]
+                          }
+                          className="w-fit text-xl mb-2 mr-2 px-3 py-2"
+                        >
+                          {muscle}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
                   <div className="mt-5">
                     {" "}
                     <h2 className="text-2xl font-medium">Exercises </h2>{" "}
