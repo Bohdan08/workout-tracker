@@ -1,18 +1,17 @@
 "use client";
 import signIn from "@/src/firebase/auth/signIn";
-import signUp from "@/src/firebase/auth/signUp";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 import { Button, Alert, Label, TextInput } from "flowbite-react";
 import { HiInformationCircle } from "react-icons/hi";
 import Link from "next/link";
-import { addUserToken } from "../lib/actions/actions";
 import {
   AUTH_FORM_STYLE,
   AUTH_HEADING_STYLE,
   AUTH_LINK_STYLE,
   AUTH_WRAPPER_STYLE,
 } from "../common/styles";
+import { addUserToken } from "../lib/actions/addUserToken/addUserToken";
 
 export default function Page() {
   const [email, setEmail] = useState("bohdan.martyniuk19@gmail.com");
@@ -28,7 +27,8 @@ export default function Page() {
 
     if (error) {
       setApiError(errorMessage);
-      // return console.log(error);
+      console.error(error);
+      return;
     }
 
     if (result) {
@@ -36,10 +36,10 @@ export default function Page() {
       // successful
       const userToken = await currUser?.getIdToken();
 
-      addUserToken(userToken);
-
+      addUserToken(userToken).then(() => router.push("/dashboard/overview"));
+      // console.log(userToken, "userToken");
       // redirect user to dashboard
-      router.push("/dashboard/summary");
+      // router.push("/dashboard/overview");
     }
   };
 

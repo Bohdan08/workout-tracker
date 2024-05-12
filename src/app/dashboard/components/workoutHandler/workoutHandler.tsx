@@ -50,7 +50,6 @@ export default function WorkoutHandler({
   const { exercises, workoutDate } = workoutData;
 
   const dispatch = useDispatch();
-  // console.log(user, "user");
   const [saveWorkoutViewModal, setSaveWorkoutViewModal] = useState(false);
 
   const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);

@@ -1,11 +1,11 @@
 import type { NextRequest } from "next/server";
 import { cookies } from "next/headers";
+import { getFirebaseAdminToken } from "./app/lib/actions/getFirebaseAdminToken/getFirebaseAdminToken";
 
 // This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {
   try {
     const cookieToken = cookies().get("token")?.value || "";
-
     if (!cookieToken || cookieToken === "") {
       return Response.redirect(new URL("/login", request.url));
     }
@@ -13,5 +13,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*"],
+  // matcher: ["/dashboard/:path*"],
+  matcher: ["/random"],
 };

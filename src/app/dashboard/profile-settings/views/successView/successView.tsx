@@ -26,7 +26,6 @@ export default function SuccessView() {
 
   const [activeTab, setActiveTab] = useState(0);
 
-  // console.log(user, "user");
   const handleSendEmailVerification = async () => {
     sendEmailVerification(auth.currentUser as User)
       .then(() => {

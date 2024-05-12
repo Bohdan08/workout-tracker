@@ -32,7 +32,7 @@ export default function Page() {
 
       if (result) {
         const newUser = result.user;
-        console.log(newUser, "newUser");
+
         // send verification email
         sendEmailVerification(newUser);
 
@@ -52,7 +52,7 @@ export default function Page() {
         }
 
         // redirect user to dashboard
-        router.push("/dashboard/summary");
+        router.push("/dashboard/overview");
       }
     }
   };

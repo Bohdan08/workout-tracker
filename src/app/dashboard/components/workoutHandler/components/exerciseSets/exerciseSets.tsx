@@ -29,7 +29,7 @@ export default function ExerciseSets({
 
   const workoutData = useAppSelector((store) => store.workout);
   const userData = useAppSelector((store) => store.userProfile);
-  console.log(userData, "userData");
+
   const {
     exercises,
     weightUnit = userData.data.weightUnit,

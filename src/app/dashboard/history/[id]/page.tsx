@@ -59,7 +59,6 @@ export default function Page({
       apiStatus === API_STATUS.IDLE &&
       workoutData.id !== workoutId
     ) {
-      console.log("FETCH");
       fetchWorkoutData();
     }
   }, [apiStatus, user?.uid]);

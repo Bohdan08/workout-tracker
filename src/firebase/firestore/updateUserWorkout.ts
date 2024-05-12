@@ -19,7 +19,6 @@ const updateUserWorkout = async (userId: string, workoutData: WorkoutData) => {
     errorMessage = parseFirebaseErrorMessage((apiError as Error).message);
   }
 
-  console.log(result, "resultresultresult");
   return { result, error, errorMessage };
 };
 

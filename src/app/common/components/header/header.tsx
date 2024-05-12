@@ -14,7 +14,6 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
 
-  // console.log(loadingUser, "loadingUser");
   return (
     <header
       className={`border-b py-2 px-4 sm:px-6 sticky top-0 bg-white z-10 ${styles.header}`}
@@ -32,7 +31,7 @@ export default function Header() {
             </Link>
           </div>
           <nav>
-            <Link href="/dashboard/summary">Dashboard</Link>
+            <Link href="/dashboard/overview">Dashboard</Link>
           </nav>
         </div>
         {!loadingUser && (

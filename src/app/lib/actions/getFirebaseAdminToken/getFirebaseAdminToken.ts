@@ -1,6 +1,7 @@
 "use server";
 
 import { firebaseAdmin } from "@/src/firebase/adminConfig";
+import { error } from "console";
 import { cookies } from "next/headers";
 import { headers } from "next/headers";
 
@@ -15,10 +16,10 @@ export async function getFirebaseAdminToken() {
     }
 
     const token = await firebaseAdmin.auth().verifyIdToken(cookieToken);
-
     // if token is not null, then users has been found in DB
     return Boolean(token);
   } catch (err) {
-    console.log(err, "err");
+    console.error(err, "error");
+    return false;
   }
 }

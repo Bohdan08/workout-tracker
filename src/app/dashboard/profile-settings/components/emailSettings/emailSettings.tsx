@@ -77,7 +77,6 @@ export default function EmailSettings() {
     }
   };
 
-  console.log(user, "USER");
   return user ? (
     <div>
       <Card className="bg-gray-100 w-full">
