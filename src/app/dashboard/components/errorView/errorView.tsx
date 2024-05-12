@@ -9,7 +9,7 @@ export default function ErrorView({ message }: { message: string | null }) {
     >
       <p className="font-semibold text-xl">Error!</p>
       <div className="text-lg mt-3">
-        <p> Sorry, we couldn&apos;t retrieve your workouts... </p>
+        {/* <p> Sorry, we couldn&apos;t retrieve your workouts... </p> */}
         {message && <p> Reason: {message} </p>}
         <p>Please try again later.</p>
       </div>

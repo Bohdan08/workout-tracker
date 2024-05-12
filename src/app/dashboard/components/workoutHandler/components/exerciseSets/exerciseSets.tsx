@@ -28,7 +28,13 @@ export default function ExerciseSets({
   const [deleteSetModal, setDeleteSetModal] = useState<string | null>(null);
 
   const workoutData = useAppSelector((store) => store.workout);
-  const { exercises, weightUnit, distanceUnit } = workoutData;
+  const userData = useAppSelector((store) => store.userProfile);
+  console.log(userData, "userData");
+  const {
+    exercises,
+    weightUnit = userData.data.weightUnit,
+    distanceUnit = userData.data.distanceUnit,
+  } = workoutData;
 
   const currWorkout = exercises[exerciseIndex];
 
@@ -196,8 +202,8 @@ export default function ExerciseSets({
         ) : null}
         {!currWorkout.measurmentType ? (
           <p className="mt-3 text-red-600">
-            Please select <span className="font-medium">Measurment Type </span>{" "}
-            to be able to add set.
+            Select <span className="font-medium">Measurment Type </span> in
+            order to add sets.
           </p>
         ) : null}
       </div>

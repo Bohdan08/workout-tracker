@@ -1,7 +1,8 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { WorkoutData } from "@/src/app/common/interfaces";
-import { API_STATUS } from "@/src/app/common/constants";
+// import { API_STATUS } from "@/src/app/common/constants";
 import { getAllUserWorkouts } from "../../../actions/getAllWorkouts/getAllWorkouts";
+import { API_STATUS } from "@/src/app/common/enums";
 
 interface WorkoutsHistory {
   apiStatus: string;

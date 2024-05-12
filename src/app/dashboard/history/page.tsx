@@ -12,7 +12,6 @@ import {
 } from "flowbite-react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../context/authContext";
-import { API_STATUS } from "../../common/constants";
 import getWeekdayName from "../../lib/utils/getWeekdayName";
 import formatDate from "../../lib/utils/formatDate";
 import { fetchWorkoutsHistory } from "../../lib/store/features/workoutsHistory/workoutsHistorySlice";
@@ -21,19 +20,15 @@ import useAppSelector from "../../hooks/useAppSelector";
 import LoadingView from "../components/loadingView/loadingView";
 import ErrorView from "../components/errorView/errorView";
 import { setWorkout } from "../../lib/store/features/workout/workoutSlice";
+import { API_STATUS } from "../../common/enums";
 
 export default function History() {
-  // const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
-  // const [apiErrorMessage, setApiErrorMessage] = useState("");
-
   const { user } = useAuth();
   const router = useRouter();
 
   const { workouts, apiStatus, apiErrorMessage } = useAppSelector(
     (store) => store.workoutsHistory
   );
-
-  // const [data, setData] = useState<any>([]);
 
   const dispatch = useAppDispatch();
 
@@ -42,8 +37,6 @@ export default function History() {
       dispatch(fetchWorkoutsHistory(user.uid));
     }
   }, [user, apiStatus, dispatch]);
-
-  // console.log(data, "data");
 
   return (
     <div className="overflow-x-auto">
@@ -86,7 +79,7 @@ export default function History() {
         <LoadingView title="Retrieving Your Workouts" />
       )}
       {apiStatus === API_STATUS.ERROR ? (
-        <ErrorView errorMessage={apiErrorMessage} />
+        <ErrorView message={apiErrorMessage} />
       ) : null}
 
       {apiStatus === API_STATUS.SUCCESS && !workouts?.length ? (

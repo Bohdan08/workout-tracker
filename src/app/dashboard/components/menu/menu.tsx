@@ -17,16 +17,16 @@ import { usePathname } from "next/navigation";
 
 const MENU_ITEMS = [
   {
+    id: "overview",
+    label: "Overview",
+    link: "/dashboard/overview",
+    Icon: HiOutlineChartPie,
+  },
+  {
     id: "add-workout",
     label: "Add Workout",
     link: "/dashboard/add-workout",
     Icon: HiSquaresPlus,
-  },
-  {
-    id: "summary",
-    label: "Summary",
-    link: "/dashboard/summary",
-    Icon: HiOutlineChartPie,
   },
 
   {
