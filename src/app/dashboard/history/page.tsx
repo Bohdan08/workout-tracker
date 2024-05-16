@@ -21,6 +21,7 @@ import ErrorView from "../components/errorView/errorView";
 import { setWorkout } from "../../lib/store/features/workout/workoutSlice";
 import { API_STATUS } from "../../common/enums";
 import WorkoutsTable from "./workoutsTable";
+import { DASHBOARD_MENU_HEADER } from "../../common/styles";
 
 export default function History() {
   const { user } = useAuth();
@@ -41,7 +42,13 @@ export default function History() {
   return (
     <div className="overflow-x-auto">
       {apiStatus === API_STATUS.SUCCESS && workouts?.length ? (
-        <WorkoutsTable />
+        <>
+          <h1 className={`${DASHBOARD_MENU_HEADER} text-left mb-5`}>
+            Workouts List
+          </h1>
+
+          <WorkoutsTable />
+        </>
       ) : null}
 
       {/* OTHER */}

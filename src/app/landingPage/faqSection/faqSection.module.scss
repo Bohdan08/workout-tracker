@@ -1,0 +1,13 @@
+.accordion > button {
+  background: none;
+  outline: none;
+
+  &:hover {
+    background: none;
+  }
+
+  &:focus {
+    outline: none;
+    border-radius: 0;
+  }
+}

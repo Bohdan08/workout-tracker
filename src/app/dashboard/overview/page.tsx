@@ -13,7 +13,8 @@ export default function Progress() {
   return (
     <div>
       <h1 className={`${DASHBOARD_MENU_HEADER} text-left`}>
-        Welcome, <span className="capitalize">{firstName || "User"}</span>
+        {/* Welcome, <span className="capitalize">{firstName || "User"}</span> */}
+        Welcome, John
       </h1>
       <TotalCards />
       <div className="mt-10 flex flex-col lg:flex-row lg:space-x-10 lg:space-between">

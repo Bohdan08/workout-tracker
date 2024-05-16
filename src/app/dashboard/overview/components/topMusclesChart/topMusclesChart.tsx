@@ -43,7 +43,7 @@ export default function TopMusclesChart() {
       name: `${key.slice(0, XAXIS_LABEL_LENGTH)}${
         key.length > XAXIS_LABEL_LENGTH ? "..." : ""
       }`,
-      number: value,
+      number: value * Math.floor(Math.random() * 100),
     };
   }) as { name: string; number: number }[];
 
@@ -53,7 +53,7 @@ export default function TopMusclesChart() {
 
   return (
     <div>
-      <CustomBarChart title={`Top ${TOP_MUSCLES} muscles`} data={chartData} />
+      <CustomBarChart title={`Top ${TOP_MUSCLES} Targeted Muscles`} data={chartData} />
     </div>
   );
 }

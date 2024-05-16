@@ -6,21 +6,26 @@ import styles from "./menu.module.scss";
 import {
   HiBars2,
   HiTableCells,
-  HiOutlineChartPie,
+  HiChartPie,
   HiSquaresPlus,
   HiOutlineAdjustmentsVertical,
   HiOutlineTableCells,
   HiOutlineChevronDoubleLeft,
   HiOutlineChevronDoubleRight,
+  HiArrowLeftOnRectangle,
 } from "react-icons/hi2";
-import { usePathname } from "next/navigation";
+
+import { usePathname, useRouter } from "next/navigation";
+import { auth } from "@/src/firebase/config";
+import Image from "next/image";
+import logo from "../../../../../public/logo.svg";
 
 const MENU_ITEMS = [
   {
     id: "overview",
     label: "Overview",
     link: "/dashboard/overview",
-    Icon: HiOutlineChartPie,
+    Icon: HiChartPie,
   },
   {
     id: "add-workout",
@@ -44,13 +49,21 @@ const MENU_ITEMS = [
 ];
 
 export default function Menu() {
+  const router = useRouter();
+
   const [menuOpen, setMenuOpen] = useState(true);
 
-  const handleClose = () => setMenuOpen(false);
+  // const handleClose = () => setMenuOpen(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const pathanme = usePathname();
+
+  const handleSignOut = async () => {
+    return await auth.signOut().then(() => {
+      router.push("/");
+    });
+  };
 
   return (
     <>
@@ -61,36 +74,56 @@ export default function Menu() {
         ${menuOpen ? "w-60" : "w-auto"}
         ${styles.menu}`}
       >
-        <nav>
-          <ul className="flex flex-col space-y-3 py-4">
-            {MENU_ITEMS.map(({ id, label, link, Icon }) => (
-              <li
-                key={id}
-                className={`px-2 py-1 text-gray-600 hover:text-gray-800 ${
-                  link === pathanme ? "text-gray-800 bg-gray-200 rounded" : ""
-                }`}
-              >
-                <Link
-                  href={link}
-                  className={`flex items-center ${
-                    menuOpen ? "justify-start" : "justify-center"
+        <div className="mt-5">
+          <div
+            className={`flex items-center ${
+              menuOpen ? "justify-start" : "justify-center"
+            }`}
+          >
+            <Image src={logo} width={40} height={40} alt="" />
+            {menuOpen ? (
+              <span className="text-sm relative left-2">Workout Tracker</span>
+            ) : null}
+          </div>
+          <nav>
+            <ul className="flex flex-col space-y-3 py-4">
+              {MENU_ITEMS.map(({ id, label, link, Icon }) => (
+                <li
+                  key={id}
+                  className={`px-2 py-1 text-gray-600 hover:text-gray-800 ${
+                    link === pathanme ? "text-gray-800 bg-gray-200 rounded" : ""
                   }`}
                 >
-                  <div className="relative">
-                    <Icon className="text-xl" />
-                  </div>
+                  <Link
+                    href={link}
+                    className={`flex items-center ${
+                      menuOpen ? "justify-start" : "justify-center"
+                    }`}
+                  >
+                    <div className="relative">
+                      <Icon className="text-xl" />
+                    </div>
 
-                  {menuOpen ? (
-                    <span className="relative left-1 transition ease-in-out delay-[1000s]">
-                      {label}{" "}
-                    </span>
-                  ) : null}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
+                    {menuOpen ? (
+                      <span className="relative left-1 transition ease-in-out delay-[1000s]">
+                        {label}{" "}
+                      </span>
+                    ) : null}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="w-full border border-gray-300 mb-5" />
+          <Button className="w-full" onClick={handleSignOut}>
+            <div className="relative">
+              <HiArrowLeftOnRectangle className="text-xl" />
+            </div>
+            {menuOpen ? (
+              <span className="relative left-1"> Sign Out</span>
+            ) : null}
+          </Button>
+        </div>
         <div>
           <button
             className="float-right rounded-full bg-gray-200 p-2 hover:bg-gray-300"

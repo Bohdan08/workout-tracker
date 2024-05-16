@@ -1,6 +1,6 @@
 import { getFirebaseAdminToken } from "../lib/actions/getFirebaseAdminToken/getFirebaseAdminToken";
 import { redirect } from "next/navigation";
-import DashboardLayout from "./dashBoardLayout";
+import DashboardLayout from "./dashboardLayout";
 
 export default async function RootLayout({
   children,
@@ -13,5 +13,5 @@ export default async function RootLayout({
     redirect("/login");
   }
 
-  return <DashboardLayout children={children} />;
+  return <DashboardLayout> {children} </DashboardLayout>;
 }

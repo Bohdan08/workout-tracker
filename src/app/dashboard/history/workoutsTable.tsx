@@ -40,7 +40,7 @@ export default function WorkoutsTable() {
           <TableHeadCell>Weekday</TableHeadCell>
           <TableHeadCell>Muscles</TableHeadCell>
         </TableHead>
-        <TableBody className="divide-y">
+        <TableBody className="divide-y text-gray-600">
           {workouts
             .slice(startIndex, startIndex + WORKOUTS_PER_PAGE)
             .map(({ id, workoutDate, allMuscleGroups }: any, index) => (

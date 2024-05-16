@@ -42,7 +42,7 @@ export default function DashboardLayout({
   return (
     <div className="flex min-h-screen flex-col">
       {" "}
-      <Header />
+      {/* <Header /> */}
       <main className="grow">
         <div className="flex space-x-2 pr-4 sm:pr-6">
           <Menu />

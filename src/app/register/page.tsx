@@ -52,7 +52,7 @@ export default function Page() {
         }
 
         // redirect user to dashboard
-        router.push("/dashboard/overview");
+        router.push("/dashboard/profile-settings");
       }
     }
   };

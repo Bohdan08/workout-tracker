@@ -39,7 +39,7 @@ export default function TopExercises() {
       name: `${key.slice(0, XAXIS_LABEL_LENGTH)}${
         key.length > XAXIS_LABEL_LENGTH ? "..." : ""
       }`,
-      number: value,
+      number: value * Math.floor(Math.random() * 100)
     };
   }) as { name: string; number: number }[];
 
@@ -50,7 +50,7 @@ export default function TopExercises() {
   return (
     <div>
       <CustomBarChart
-        title={`Top ${TOP_EXERCISES} Exercises`}
+        title={`Top ${TOP_EXERCISES} Performed Exercises`}
         data={chartData}
       />
     </div>

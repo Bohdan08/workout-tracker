@@ -106,7 +106,7 @@ const TABS_ITEMS = [
   },
   {
     icon: null,
-    label: "Email/Password",
+    label: "Account",
     Component: (
       <>
         <div>
@@ -114,13 +114,16 @@ const TABS_ITEMS = [
           <div className="mt-8">
             <PasswordSettings />
           </div>
+          <div className="mt-8">
+            <SocialAccounts />
+          </div>
         </div>
       </>
     ),
   },
-  {
-    icon: null,
-    label: "Linked Accounts",
-    Component: <SocialAccounts />,
-  },
+  // {
+  //   icon: null,
+  //   label: "Linked Accounts",
+  //   Component: <SocialAccounts />,
+  // },
 ];

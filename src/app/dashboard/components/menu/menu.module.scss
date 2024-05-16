@@ -1,7 +1,11 @@
 @import "../../../vars.scss";
 
 .menu {
-  top: $nav-offset;
-  height: calc(100vh - $nav-offset);
+  position: sticky;
+  height: 100vh;
+  top: 0;
+  // min-height: 100vh;
+  // top: $nav-offset;
+  // height: calc(100vh - $nav-offset);
   // transition: 0.1s;
 }

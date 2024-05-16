@@ -14,11 +14,11 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
-import { API_STATUS, BADGE_COLORS } from "@/src/app/common/constants";
+import { BADGE_COLORS } from "@/src/app/common/constants";
 import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
 import { WorkoutData } from "@/src/app/common/interfaces";
-import { EXERCISE_TYPES } from "@/src/app/common/enums";
+import { API_STATUS, EXERCISE_TYPES } from "@/src/app/common/enums";
 
 import styles from "./successView.module.scss";
 import WorkoutHandler, {
