@@ -59,9 +59,7 @@ export default function Page() {
 
   return (
     <div className={`mx-auto mt-10 flex flex-col ${AUTH_WRAPPER_STYLE}`}>
-      <h1 className="text-center text-3xl font-semibold">
-        Get started for free
-      </h1>
+      <h1 className="text-center text-3xl font-semibold">Create Account</h1>
       <form
         className="flex max-w-md w-full flex-col gap-4 mt-10"
         onSubmit={handleForm}

@@ -30,7 +30,7 @@ export default function HeaderComponent({
 }) {
   const router = useRouter();
   const pathname = usePathname();
-  console.log(pathname, "pathname");
+
   return (
     <header
     // className={`px-4 sm:px-6 sticky top-0 bg-white z-10 ${styles.header}`}
@@ -38,7 +38,7 @@ export default function HeaderComponent({
       <Navbar fluid rounded className="mt-1 bg-[#fcfbf8]">
         <Navbar.Brand href="/" className="flex items-center space-x-2">
           <Image src={logo} width={40} height={40} alt="" />
-          <span className="text-sm">Workout Tracker</span>
+          <span className="text-sm font-medium">Workout Tracker</span>
         </Navbar.Brand>
         <div className="flex md:order-2">
           {!userAuthenticated ? (

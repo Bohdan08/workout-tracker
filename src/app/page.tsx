@@ -1,6 +1,4 @@
-import { Button } from "flowbite-react";
 import Header from "./common/components/header";
-import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { LiaDumbbellSolid } from "react-icons/lia";
 import { GiBiceps } from "react-icons/gi";
@@ -15,23 +13,20 @@ import {
   HiOutlineWrenchScrewdriver,
 } from "react-icons/hi2";
 import { TbListDetails } from "react-icons/tb";
+import BeginJourney from "./landingPage/beginJourney";
+import FaqSection from "./landingPage/faqSection/faqSection";
+import Footer from "./common/footer";
 
 // images
 import totalDashboard from "../../public/landing/overview.gif";
 import createWorkout from "../../public/landing/createWorkout.gif";
 import workoutsList from "../../public/landing/workoutsHistory.gif";
 import preferences from "../../public/landing/preferences.gif";
-import BeginJourney from "./landingPage/beginJourney";
-import { getFirebaseAdminToken } from "./lib/actions/getFirebaseAdminToken/getFirebaseAdminToken";
-import FaqSection from "./landingPage/faqSection/faqSection";
-import Footer from "./common/footer";
 
 export default async function Home() {
-  const userAuthenticated = await getFirebaseAdminToken();
-
   return (
     <>
-      <Header userAuthenticated={userAuthenticated} />
+      <Header />
       <main>
         <div className="container flex justify-center items-center flex-col">
           {/* HERO */}
