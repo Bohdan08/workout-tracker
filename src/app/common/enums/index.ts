@@ -34,3 +34,8 @@ export enum EXERCISE_MEASURMENT_TYPES {
   REPS_WEIGHTS = "Reps/Weights",
   DURATION_DISTANCE = "Duration/Distance",
 }
+
+export enum WORKOUT_TYPE {
+  NEW = "NEW",
+  EXISTING = "EXISTING",
+}

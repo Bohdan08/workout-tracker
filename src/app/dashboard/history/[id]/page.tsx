@@ -7,21 +7,18 @@ import SuccessView from "./views/successView";
 import ErrorView from "../../components/errorView/errorView";
 import LoadingView from "../../components/loadingView/loadingView";
 import getUserWorkoutById from "@/src/firebase/firestore/getUserWorkoutById";
-import { WorkoutData } from "@/src/app/common/interfaces";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
 import { useDispatch } from "react-redux";
 import {
   resetWorkout,
   setWorkout,
 } from "@/src/app/lib/store/features/workout/workoutSlice";
-// import setWorkout from "@/src/firebase/firestore/setUserWorkout";
 
 export default function Page({
   params: { id: workoutId },
 }: {
   params: { id: string };
 }) {
-  const [data, setData] = useState<WorkoutData | null>(null);
   const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
   const [apiErrorMessage, setApiErrorMessage] = useState("");
   const { user } = useAuth();
@@ -57,11 +54,11 @@ export default function Page({
     if (
       user?.uid &&
       apiStatus === API_STATUS.IDLE &&
-      workoutData.id !== workoutId
+      workoutData?.id !== workoutId
     ) {
       fetchWorkoutData();
     }
-  }, [apiStatus, user?.uid]);
+  }, [apiStatus, user?.uid, workoutData, workoutId]);
 
   if (apiStatus === API_STATUS.ERROR) {
     return <ErrorView message={apiErrorMessage} />;
@@ -72,12 +69,12 @@ export default function Page({
   }
 
   // successfully fetched
-  if (apiStatus === API_STATUS.SUCCESS && data?.id) {
-    return <SuccessView resetOnEdit={resetOnEdit} data={data} />;
+  if (apiStatus === API_STATUS.SUCCESS && workoutData?.id) {
+    return <SuccessView resetOnEdit={resetOnEdit} />;
   }
 
   // got from redux
   if (workoutId === workoutData.id) {
-    return <SuccessView resetOnEdit={resetOnEdit} data={workoutData} />;
+    return <SuccessView resetOnEdit={resetOnEdit} />;
   }
 }

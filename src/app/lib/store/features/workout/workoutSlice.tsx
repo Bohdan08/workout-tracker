@@ -3,6 +3,7 @@ import {
   EXERCISE_MEASURMENT_TYPES,
   EXERCISE_TYPES,
   WEIGHT_METRICS,
+  WORKOUT_TYPE,
 } from "@/src/app/common/enums";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
@@ -14,33 +15,17 @@ import {
 } from "@/src/app/common/interfaces";
 import formatDate from "../../../utils/formatDate";
 
-// const createExerciseSetTemplate = () => ({
-//   id: uuid(),
-//   reps: 0,
-//   weight: 0,
-// });
-
 const createExerciseTemplate = () => ({
   id: uuid(),
   hidden: false,
   type: null,
   measurmentType: null,
-  // metrics: WEIGHT_METRICS.LBS,
-  // type: EXERCISE_TYPES.STRENGTH,
   title: "",
-  // sets: [createExerciseSetTemplate()],
   notes: "",
   muscleGroups: [],
 });
 
-// export interface WorkoutData {
-//   metrics: WEIGHT_METRICS.LBS;
-//   workoutDate: Date | string;
-//   exercises: Exercise[];
-// }
-
 const initialState: WorkoutData & { id?: string } = {
-  // metrics: WEIGHT_METRICS.LBS,
   weightUnit: null,
   distanceUnit: null,
   workoutDate: formatDate(new Date()),
@@ -52,11 +37,12 @@ const workoutSlice = createSlice({
   initialState,
   reducers: {
     setWorkout(state, action: PayloadAction<WorkoutData>) {
-      state.id = action.payload.id || "";
+      state.id = action.payload.id || "id";
+      state.workoutDate = action.payload.workoutDate;
       state.distanceUnit = action.payload.distanceUnit;
       state.weightUnit = action.payload.weightUnit;
       state.exercises = action.payload.exercises;
-      state.workoutDate = action.payload.workoutDate;
+      state.edited = action.payload.edited || [];
     },
     setWorkoutWeightUnit(state, action: PayloadAction<WEIGHT_METRICS>) {
       state.weightUnit = action.payload;

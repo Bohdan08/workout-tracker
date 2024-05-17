@@ -181,7 +181,7 @@ export default function SelectExerciseField({
 
       <div className="mb-5">
         <div className="mb-2 block">
-          <Label htmlFor="muscle-group" value="Musle Groups (Optional)" />
+          <Label htmlFor="muscle-group" value="Musle Groups (Optional Field)" />
         </div>
         <CreatableSelect
           id="muscle-group"

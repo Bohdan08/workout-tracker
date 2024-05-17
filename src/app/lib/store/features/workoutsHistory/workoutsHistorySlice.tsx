@@ -25,7 +25,7 @@ const workoutsHistorySlice = createSlice({
   name: "workoutsHistory",
   initialState,
   reducers: {
-    getWorkouts(state, action) {
+    updateWorkoutsHistory(state, action) {
       state.workouts = action.payload;
     },
     resetWorkouts(state) {
@@ -53,6 +53,7 @@ const workoutsHistorySlice = createSlice({
   },
 });
 
-export const { getWorkouts, resetWorkouts } = workoutsHistorySlice.actions;
+export const { updateWorkoutsHistory, resetWorkouts } =
+  workoutsHistorySlice.actions;
 
 export default workoutsHistorySlice.reducer;

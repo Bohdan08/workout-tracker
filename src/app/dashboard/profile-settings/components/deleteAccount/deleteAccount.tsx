@@ -36,7 +36,6 @@ export default function DeleteAccount() {
       // delete user and their data
       await deleteUser(user)
         .then(async () => {
-          console.log(userId, "userId");
           await deleteUserData(userId)
             .then(() => {
               setApiStatus(API_STATUS.SUCCESS);

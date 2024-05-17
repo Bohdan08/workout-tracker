@@ -9,8 +9,8 @@ import {
   setWorkoutWeightUnit,
 } from "../../lib/store/features/workout/workoutSlice";
 import { useAuth } from "../../context/authContext";
-import { WORKOUT_TYPE } from "../components/workoutHandler/workoutHandler";
 import WorkoutHandler from "../components/workoutHandler";
+import { WORKOUT_TYPE } from "../../common/enums";
 import { resetWorkouts } from "../../lib/store/features/workoutsHistory/workoutsHistorySlice";
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // reset all values on init
+    // clean up workout on init
     if (workoutData.id) {
       dispatch(resetWorkout());
     }
@@ -35,7 +35,7 @@ export default function Page() {
     ) {
       dispatch(setWorkoutWeightUnit(userProfile.data.weightUnit));
     }
-  }, [user?.uid, userProfile, workoutData.weightUnit]);
+  }, [dispatch, user?.uid, userProfile, workoutData.weightUnit]);
 
   useEffect(() => {
     if (
@@ -45,7 +45,7 @@ export default function Page() {
     ) {
       dispatch(setWorkoutDistanceUnit(userProfile.data.distanceUnit));
     }
-  }, [user?.uid, userProfile, workoutData.distanceUnit]);
+  }, [dispatch, user?.uid, userProfile, workoutData.distanceUnit]);
 
   const onCreateNewWorkout = () => {
     // reset workouts history when new workout has been created

@@ -17,7 +17,7 @@ import addWorkout from "@/src/firebase/firestore/setUserWorkout";
 import formatDate from "../../../lib/utils/formatDate";
 import LoadingView from "../loadingView";
 import ErrorView from "../errorView";
-import { API_STATUS } from "@/src/app/common/enums";
+import { API_STATUS, WORKOUT_TYPE } from "@/src/app/common/enums";
 import updateUserWorkout from "@/src/firebase/firestore/updateUserWorkout";
 import ExerciseCardHeader from "./components/exerciseCardHeader/exerciseCardHeader";
 import SelectExerciseField from "./components/selectExerciseField/selectExerciseField";
@@ -26,11 +26,6 @@ import ExerciseNotesField from "./components/exerciseNotesField/exerciseNotesFie
 import WorkoutSummary from "./components/summaryCard/summaryCard";
 import { MAX_EXERCISES } from "@/src/app/common/constants";
 import { DASHBOARD_MENU_HEADER } from "@/src/app/common/styles";
-
-export enum WORKOUT_TYPE {
-  NEW = "NEW",
-  EXISTING = "EXISTING",
-}
 
 interface WorkoutHandlerProp {
   workoutId?: string;
@@ -71,7 +66,6 @@ export default function WorkoutHandler({
 
     const { result, error, errorMessage } = await fireStoreMethod(
       user?.uid as string,
-
       workoutData
     );
 
@@ -80,12 +74,12 @@ export default function WorkoutHandler({
       setApiError(errorMessage);
     }
 
-    setApiStatus(API_STATUS.SUCCESS);
     dispatch(resetWorkout());
 
     if (onSaveChanges) {
       onSaveChanges();
     }
+    setApiStatus(API_STATUS.SUCCESS);
   };
 
   const unfinishedFields = exercises?.filter(

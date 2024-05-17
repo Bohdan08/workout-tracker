@@ -18,12 +18,15 @@ import { BADGE_COLORS } from "@/src/app/common/constants";
 import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
 import { WorkoutData } from "@/src/app/common/interfaces";
-import { API_STATUS, EXERCISE_TYPES } from "@/src/app/common/enums";
+import {
+  API_STATUS,
+  EXERCISE_MEASURMENT_TYPES,
+  EXERCISE_TYPES,
+  WORKOUT_TYPE,
+} from "@/src/app/common/enums";
 
 import styles from "./successView.module.scss";
-import WorkoutHandler, {
-  WORKOUT_TYPE,
-} from "@/src/app/dashboard/components/workoutHandler/workoutHandler";
+import WorkoutHandler from "@/src/app/dashboard/components/workoutHandler/workoutHandler";
 import { useDispatch } from "react-redux";
 import {
   resetWorkout,
@@ -44,10 +47,8 @@ enum WORKOUT_STATUS {
 }
 
 export default function SuccessView({
-  data,
   resetOnEdit,
 }: {
-  data: WorkoutData;
   resetOnEdit: () => void;
 }) {
   const { user } = useAuth();
@@ -197,25 +198,31 @@ export default function SuccessView({
                       total={totalWeight}
                     />
                   </div>
-                  <div className="mt-5">
-                    <h2 className="text-xl md:text-2xl font-medium">Musle Groups</h2>
-                    <div className="flex mt-2">
-                      {affectedMuscleGroups.map((muscle, index) => (
-                        <Badge
-                          key={muscle}
-                          color={
-                            BADGE_COLORS[index % affectedMuscleGroups.length]
-                          }
-                          className="w-fit text-base md:text-xl mb-2 mr-2 px-3 py-2"
-                        >
-                          {muscle}
-                        </Badge>
-                      ))}
+                  {affectedMuscleGroups?.length ? (
+                    <div className="mt-5">
+                      <h2 className="text-xl md:text-2xl font-medium">
+                        Musle Groups
+                      </h2>
+                      <div className="flex mt-2">
+                        {affectedMuscleGroups.map((muscle, index) => (
+                          <Badge
+                            key={muscle}
+                            color={
+                              BADGE_COLORS[index % affectedMuscleGroups.length]
+                            }
+                            className="w-fit text-base md:text-xl mb-2 mr-2 px-3 py-2"
+                          >
+                            {muscle}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  ) : null}
                   <div className="mt-5">
                     {" "}
-                    <h2 className="text-xl md:text-2xl font-medium">Exercises </h2>{" "}
+                    <h2 className="text-xl md:text-2xl font-medium">
+                      Exercises
+                    </h2>
                     <div className="mt-5 flex flex-col md:flex-row md:flex-wrap">
                       {exercises.map(
                         (
@@ -227,6 +234,7 @@ export default function SuccessView({
                             title,
                             duration = 0,
                             type: exerciseType,
+                            measurmentType,
                           },
                           index
                         ) => {
@@ -236,7 +244,10 @@ export default function SuccessView({
                             `Weight (${weightUnit})`,
                           ];
 
-                          if (exerciseType === EXERCISE_TYPES.CARDIO) {
+                          if (
+                            measurmentType ===
+                            EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE
+                          ) {
                             tableHeaders = [
                               "#",
                               `Duration (Min)`,
@@ -285,8 +296,8 @@ export default function SuccessView({
                                           let tableCells = [reps, weight];
 
                                           if (
-                                            exerciseType ===
-                                            EXERCISE_TYPES.CARDIO
+                                            measurmentType ===
+                                            EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE
                                           ) {
                                             tableCells = [duration, distance];
                                           }

@@ -60,7 +60,6 @@ export default function CreateEmailPassword() {
       await linkWithCredential(auth.currentUser, credential)
         .then((usercred) => {
           const user = usercred.user;
-          console.log("Account linking success", user);
           sendEmailVerification(auth.currentUser as User)
             .then(() => {
               setApiStatus(API_STATUS.SUCCESS);

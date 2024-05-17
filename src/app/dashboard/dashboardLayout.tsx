@@ -11,6 +11,7 @@ import Header from "../common/components/header";
 import Menu from "./components/menu";
 import LoadingView from "./components/loadingView/loadingView";
 import MobileMenu from "./components/menu/mobileMenu";
+import { usePathname } from "next/navigation";
 
 export default function DashboardLayout({
   children,
@@ -20,6 +21,7 @@ export default function DashboardLayout({
   const { user } = useAuth();
 
   const dispatch = useAppDispatch();
+  const pathname = usePathname();
 
   const userProfile = useAppSelector((store) => store.userProfile);
   const workoutsHistory = useAppSelector((store) => store.workoutsHistory);
@@ -28,13 +30,17 @@ export default function DashboardLayout({
     if (user?.uid && userProfile.apiStatus === API_STATUS.IDLE) {
       dispatch(fetchUserData(user.uid));
     }
-  }, [user?.uid, userProfile.apiStatus]);
+  }, [dispatch, user?.uid, userProfile.apiStatus]);
 
   useEffect(() => {
-    if (user?.uid && workoutsHistory.apiStatus === API_STATUS.IDLE) {
+    if (
+      user?.uid &&
+      workoutsHistory.apiStatus === API_STATUS.IDLE &&
+      (pathname === "/dashboard/history" || pathname === "/dashboard/overview")
+    ) {
       dispatch(fetchWorkoutsHistory(user.uid));
     }
-  }, [user, workoutsHistory.apiStatus, dispatch]);
+  }, [user, workoutsHistory.apiStatus, dispatch, pathname]);
 
   const isLoading =
     workoutsHistory.apiStatus === API_STATUS.LOADING ||

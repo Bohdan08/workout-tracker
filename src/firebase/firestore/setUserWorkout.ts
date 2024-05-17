@@ -2,7 +2,6 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { database, usersCollection, workoutsCollection } from "../config";
 import parseFirebaseErorrMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
 import { WorkoutData } from "@/src/app/common/interfaces";
-// import formatDate from "@/src/app/lib/utils/formatDate";
 import { v4 as uuid } from "uuid";
 
 export default async function setWorkout(

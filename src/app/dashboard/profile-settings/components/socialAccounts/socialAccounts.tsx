@@ -50,8 +50,6 @@ export default function SocialAccounts() {
       ({ providerId }) => providerId === "google.com"
     ) !== -1;
 
-  console.log(user?.providerData, "user.providerData");
-
   let isGoogleOnlyProvider = null;
 
   if (user) {
@@ -59,8 +57,6 @@ export default function SocialAccounts() {
       user.providerData.filter(({ providerId }) => providerId !== "google.com")
         ?.length === 0;
   }
-
-  console.log(user, isGoogleOnlyProvider, "isGoogleOnlyProvider");
 
   return user ? (
     <div>

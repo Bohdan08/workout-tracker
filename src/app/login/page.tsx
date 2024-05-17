@@ -44,7 +44,6 @@ export default function Page() {
         if (userData.exists()) {
           router.push("/dashboard/overview");
         } else {
-          console.log("HERE");
           const newUser = userCred.user;
           const userSocialData = newUser.providerData[0];
           // add user to firestore
@@ -94,9 +93,6 @@ export default function Page() {
       const userToken = await currUser?.getIdToken();
 
       addUserToken(userToken).then(() => router.push("/dashboard/overview"));
-      // console.log(userToken, "userToken");
-      // redirect user to dashboard
-      // router.push("/dashboard/overview");
     }
   };
 

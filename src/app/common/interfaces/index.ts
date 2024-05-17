@@ -1,4 +1,9 @@
-import { DISTANCE_METRICS, EXERCISE_TYPES, WEIGHT_METRICS } from "../enums";
+import {
+  DISTANCE_METRICS,
+  EXERCISE_TYPES,
+  WEIGHT_METRICS,
+  WORKOUT_TYPE,
+} from "../enums";
 
 export interface ExerciseSet {
   id: string;
