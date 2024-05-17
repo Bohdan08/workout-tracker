@@ -59,6 +59,7 @@ const userProfileSlice = createSlice({
     setEmail(state, action: PayloadAction<string>) {
       state.data.email = action.payload;
     },
+    resetUser: () => initialState,
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUserData.pending, (state) => {
@@ -88,7 +89,8 @@ export const {
   setDistanceUnit,
   setFirstName,
   setLastName,
-  setEmail
+  setEmail,
+  resetUser,
 } = userProfileSlice.actions;
 
 export default userProfileSlice.reducer;

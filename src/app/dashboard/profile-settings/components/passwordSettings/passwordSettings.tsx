@@ -70,7 +70,13 @@ export default function PasswordSettings() {
     }
   };
 
-  return user ? (
+  const userHasEmailPasswordProvider =
+    user?.providerData.findIndex(
+      ({ providerId }) => providerId === "password"
+    ) !== -1;
+
+  // only allow changes if user has account with password/email
+  return user && userHasEmailPasswordProvider ? (
     <div>
       <Card className="bg-gray-100 w-full">
         <div className="flex justify-between">
@@ -148,7 +154,10 @@ export default function PasswordSettings() {
 
               <div>
                 <div className="mb-2 block">
-                  <Label htmlFor="current-password" value="Current Password *" />
+                  <Label
+                    htmlFor="current-password"
+                    value="Current Password *"
+                  />
                 </div>
                 <div>
                   <TextInput
@@ -163,7 +172,7 @@ export default function PasswordSettings() {
               </div>
               {triedToSubmit && !newPasswordsMatch ? (
                 <div className="mt-5">
-                  <p className="text-red-500">Passwords don't match</p>
+                  <p className="text-red-500">Passwords don&apos;t match</p>
                 </div>
               ) : null}
               <div className="flex space-x-5 mt-5">

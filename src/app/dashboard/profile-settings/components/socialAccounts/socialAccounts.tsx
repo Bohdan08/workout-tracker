@@ -50,11 +50,23 @@ export default function SocialAccounts() {
       ({ providerId }) => providerId === "google.com"
     ) !== -1;
 
+  console.log(user?.providerData, "user.providerData");
+
+  let isGoogleOnlyProvider = null;
+
+  if (user) {
+    isGoogleOnlyProvider =
+      user.providerData.filter(({ providerId }) => providerId !== "google.com")
+        ?.length === 0;
+  }
+
+  console.log(user, isGoogleOnlyProvider, "isGoogleOnlyProvider");
+
   return user ? (
     <div>
       <Card className="bg-gray-100 w-full">
         <div className="flex justify-between">
-          <h2 className="text-xl font-medium">Linked Accounts</h2>
+          <h2 className="text-xl font-medium">Social Accounts</h2>
         </div>
 
         {apiStatus === API_STATUS.SUCCESS ? (
@@ -74,12 +86,16 @@ export default function SocialAccounts() {
             <TiSocialGooglePlus size={28} />
             <span className="font-medium text-lg">Google</span>
           </div>
-          {isGoogleLinked ? (
-            <Button onClick={unLinkGoogleProvider} color="failure">
-              Unlink Account
-            </Button>
+          {!isGoogleOnlyProvider ? (
+            isGoogleLinked ? (
+              <Button onClick={unLinkGoogleProvider} color="failure">
+                Unlink Account
+              </Button>
+            ) : (
+              <Button onClick={linkGoogleProvider}>Link Account</Button>
+            )
           ) : (
-            <Button onClick={linkGoogleProvider}>Link Account</Button>
+            <span className="font-medium">{user.providerData[0].email}</span>
           )}
         </div>
       </Card>

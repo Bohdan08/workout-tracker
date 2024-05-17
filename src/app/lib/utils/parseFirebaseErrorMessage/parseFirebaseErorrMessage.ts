@@ -17,6 +17,8 @@ const parseFirebaseErorrMessage = (errorMessage: string) => {
     return "Email already in use.";
   } else if (errorMessage.includes("auth/invalid-credential")) {
     return "Invalid credentials.";
+  } else if (errorMessage.includes("auth/credential-already-in-use")) {
+    return "Credentials already in use.";
   }
 
   return errorMessage;

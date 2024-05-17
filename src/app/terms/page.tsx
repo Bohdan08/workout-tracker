@@ -13,142 +13,122 @@ export default async function ContactPage() {
               Terms and Conditions
             </h1>
             <div className="mt-10">
-              {/* intro */}
+              {/* acceptance */}
               <div>
-                <strong>1.Introduction</strong>
+                <strong>1.Acceptance of Terms</strong>
                 <p className="mt-2">
-                  Welcome to Privacy Policy Page. We respect your privacy and
-                  are committed to protecting your personal data. This Privacy
-                  Policy will inform you about how we look after your personal
-                  data when you visit our website (workout-tracker.com) or use
-                  our services and tell you about your privacy rights and how
-                  the law protects you.
+                  By accessing and using the Workout Tracker website at
+                  workouttracker.com (the &quot;Website&quot;) and any services
+                  provided by Venturekit (collectively, the
+                  &quot;Service&quot;), you agree to comply with and be bound by
+                  these Terms of Service (the &quot;Terms&quot;). Please review
+                  these Terms carefully. If you do not agree with these Terms,
+                  you must not use our Service.
                 </p>
               </div>
-              {/* data we collect */}
+              {/* description */}
               <div className="mt-8">
-                <strong>2. Data We Collect</strong>
+                <strong>2. Description of Service</strong>
                 <p className="mt-2">
-                  We may collect, use, store, and transfer different kinds of
-                  personal data about you as follows:
+                  The workout tracker offers the capability to save and monitor
+                  your exercise routines.
+                </p>
+              </div>
+              {/* data protection */}
+              <div className="mt-8">
+                <strong>3. Privacy and Data Protection</strong>
+                <p className="mt-2">
+                  Your privacy is critically important to us. We do not share
+                  your data with anyone. For more detailed information on how we
+                  collect and use information, please refer to our Privacy
+                  Policy available on the Website.
+                </p>
+              </div>
+
+              {/* responsibilities */}
+              <div className="mt-8">
+                <strong>4. User Conduct and Responsibilities</strong>
+                <p className="mt-2">
+                  You agree to use the Service in compliance with all applicable
+                  local, state, national, and international laws, rules, and
+                  regulations. You shall not, shall not agree to, and shall not
+                  authorize or encourage any third party to:
                 </p>
                 <ul className="mt-2 flex flex-col gap-5 list-disc relative left-4">
+                  <li>Use the Service for any illegal purpose.</li>
                   <li>
-                    <p>
-                      <strong>Identity Data</strong>: Includes first name, last
-                      name, username, or similar identifier.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <strong>Inputted Data</strong>: Includes data you enter on
-                      our website, like your workout details.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <strong>Contact Data</strong>: Includes email address.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <strong>Usage Data</strong>: Includes information about
-                      how you use our website and services.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <strong>Technical Data</strong>: Includes IP address, your
-                      login data, browser type and version, time zone setting
-                      and location, browser plug-in types and versions,
-                      operating system and platform, and other technology on the
-                      devices you use to access this website.
-                    </p>
+                    Attempt to decipher, decompile, delete, alter or reverse
+                    engineer any of the software comprising or in any way making
+                    up a part of the Service.
                   </li>
                 </ul>
               </div>
-              {/* retention */}
+
+              {/* disclaimers */}
               <div className="mt-8">
-                <strong>3. Data Retention</strong>
+                <strong>5. Disclaimers</strong>
                 <p className="mt-2">
-                  We will only retain your personal data for as long as
-                  necessary to fulfill the purposes we collected it for,
-                  including for the purposes of satisfying any legal,
-                  accounting, or reporting requirements.
+                  The Service is provided &quot;as-is&quot; and &quot;as
+                  available&quot;. Workout Tracker makes no warranty that the
+                  Service will be uninterrupted, timely, secure, or error-free.
                 </p>
               </div>
 
-              {/* sharing */}
+              {/* liability */}
               <div className="mt-8">
-                <strong>4. Sharing Your Data</strong>
+                <strong>6. Limitation of Liability</strong>
                 <p className="mt-2">
-                  We want to reassure our users:
-                  <strong> We do not share your data with anyone.</strong> The
-                  only exceptions would be to comply with a legal obligation or
-                  to protect our rights, privacy, safety, or property, and/or
-                  that of our affiliates, you, or others, and to prevent fraud
-                  and other prohibited or illegal activities.
+                  To the fullest extent permitted by law, Workout Tracker shall
+                  not be liable for any indirect, incidental, special,
+                  consequential, or exemplary damages, including but not limited
+                  to, damages for loss of profits, goodwill, use, data, or other
+                  intangible losses, resulting from the use or the inability to
+                  use the Service.
                 </p>
               </div>
 
-              {/* rights */}
+              {/* modifications */}
               <div className="mt-8">
-                <strong>5. Your Rights</strong>
-                <p className="mt-2">You have the right to:</p>
-                <ul className="mt-2 flex flex-col gap-5 list-disc relative left-4">
-                  <li>Request access to your personal data.</li>
-                  <li>
-                    Request correction of the personal data we hold about you.
-                  </li>
-                  <li>Request erasure of your personal data.</li>
-                  <li>Object to processing of your personal data.</li>
-                  <li>Request the transfer of your personal data.</li>
-                  <li>Withdraw consent.</li>
-                </ul>
-              </div>
-
-              {/* security */}
-              <div className="mt-8">
-                <strong>6. Security</strong>
+                <strong>7. Modifications to Terms of Service</strong>
                 <p className="mt-2">
-                  We have put in place appropriate security measures to prevent
-                  your personal data from being accidentally lost, used, or
-                  accessed in an unauthorized way. In addition, we limit access
-                  to your personal data to those employees and other third
-                  parties who have a business need to know.
+                  Workout Tracker reserves the right to modify these Terms from
+                  time to time. You should review these Terms periodically to
+                  ensure familiarity with its then-current terms and conditions.
+                  Your continued use of the Service shall constitute acceptance
+                  of any modifications.
                 </p>
               </div>
 
-              {/* third party */}
+              {/* termination */}
               <div className="mt-8">
-                <strong>7. Third-party Links</strong>
+                <strong>8. Termination</strong>
                 <p className="mt-2">
-                  Our website Privacy Policy does not apply to other advertisers
-                  or websites. Thus, we are advising you to consult the
-                  respective Privacy Policies of these third-party services
-                  providers for more detailed information. It may include their
-                  practices and instructions on how to opt-out of certain
-                  options.
+                  Workout Tracker reserves the right to terminate or restrict
+                  your access to the Service, without notice, for conduct that
+                  we believe violates these Terms or is harmful to other users,
+                  us, third parties, or for any other reason.
                 </p>
               </div>
 
-              {/* changes */}
+              {/* governing */}
               <div className="mt-8">
-                <strong>8. Changes to This Privacy Policy</strong>
+                <strong>9. Governing Law and Jurisdiction</strong>
                 <p className="mt-2">
-                  We may update this Privacy Policy from time to time. Any
-                  changes will be posted on this page with an updated revision
-                  date.
+                  These Terms and your use of Workout Tracker shall be governed
+                  by and construed in accordance with the laws of Canada,
+                  without regard to its conflict of law provisions.
                 </p>
               </div>
-
-              {/* contact */}
+              {/* governing */}
               <div className="mt-8">
-                <strong>9. Contact Us</strong>
+                <strong>10. Contact Information</strong>
                 <p className="mt-2">
-                  If you have any questions, comments, or concerns about this
-                  Privacy Policy or our privacy practices, please contact us
-                  through the contact information provided on our website.
+                  For any queries regarding these Terms, please contact us via
+                  the contact information provided on the Website.
+                </p>
+                <p className="mt-2">
+                  By using Workout Tracker, you signify your acceptance of these
+                  Terms.
                 </p>
               </div>
             </div>

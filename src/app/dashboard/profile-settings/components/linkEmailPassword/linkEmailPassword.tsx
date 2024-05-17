@@ -7,6 +7,7 @@ import { auth } from "@/src/firebase/config";
 import {
   EmailAuthProvider,
   User,
+  linkWithCredential,
   reauthenticateWithCredential,
   sendEmailVerification,
   updateEmail,
@@ -16,12 +17,13 @@ import React, { useState } from "react";
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 
-export default function EmailSettings() {
+export default function CreateEmailPassword() {
   const { user } = useAuth();
 
   const [cardStatus, setCardStatus] = useState(CARD_ACTION_STATUS.READ);
   const [newEmail, setNewEmail] = useState(user?.email || "");
   const [currentPassword, setCurrentPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const [apiStatus, setApiStatus] = useState(API_STATUS.IDLE);
   const [apiErrorMessage, setApiErrorMessage] = useState<string | null>(null);
@@ -43,33 +45,27 @@ export default function EmailSettings() {
     setApiErrorMessage(parseFirebaseErrorMessage(error.message));
   };
 
-  const onChangeEmail = async (event: React.FormEvent) => {
+  const onLinkEmailWithPassword = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (
-      auth?.currentUser &&
-      user?.uid &&
-      newEmail &&
-      newEmail !== user?.email &&
-      auth.currentUser.email
-    ) {
-      // retauthenticate user to assure they typed the correct current password
-      const credential = EmailAuthProvider.credential(
-        auth.currentUser.email,
-        currentPassword
-      );
+    if (currentPassword !== confirmPassword) {
+      setApiStatus(API_STATUS.ERROR);
+      setApiErrorMessage("Passwords don't match.");
+      return;
+    }
 
-      await reauthenticateWithCredential(auth.currentUser, credential)
-        .then(async () => {
-          await updateEmail(auth.currentUser as User, newEmail)
+    const credential = EmailAuthProvider.credential(newEmail, currentPassword);
+
+    if (auth?.currentUser) {
+      await linkWithCredential(auth.currentUser, credential)
+        .then((usercred) => {
+          const user = usercred.user;
+          console.log("Account linking success", user);
+          sendEmailVerification(auth.currentUser as User)
             .then(() => {
-              sendEmailVerification(auth.currentUser as User)
-                .then(() => {
-                  setApiStatus(API_STATUS.SUCCESS);
-                  setCardStatus(CARD_ACTION_STATUS.READ);
-                  dispatch(setEmail(newEmail as string));
-                })
-                .catch(handleApiError);
+              setApiStatus(API_STATUS.SUCCESS);
+              setCardStatus(CARD_ACTION_STATUS.READ);
+              dispatch(setEmail(newEmail as string));
             })
             .catch(handleApiError);
         })
@@ -77,18 +73,18 @@ export default function EmailSettings() {
     }
   };
 
-  const userHasEmailPasswordProvider =
+  const noEmailPasswordProvider =
     user?.providerData.findIndex(
       ({ providerId }) => providerId === "password"
-    ) !== -1;
+    ) === -1;
 
   // only allow changes if user has account with password/email
-  return user && userHasEmailPasswordProvider ? (
+  return user && noEmailPasswordProvider ? (
     <div>
       <Card className="bg-gray-100 w-full">
-        <form onSubmit={onChangeEmail}>
+        <form onSubmit={onLinkEmailWithPassword}>
           <div className="flex justify-between">
-            <h2 className="text-xl font-medium">Email</h2>
+            <h2 className="text-xl font-medium">Create Email and Password</h2>
             <div>
               {cardStatus === CARD_ACTION_STATUS.READ ? (
                 <button
@@ -123,21 +119,15 @@ export default function EmailSettings() {
               {apiErrorMessage || "Plese try again later."}
             </Alert>
           ) : null}
-
-          <div className="mt-5 bg-white rounded-lg py-5 px-3">
-            <div>
-              {cardStatus === CARD_ACTION_STATUS.READ ? (
-                <p className="font-medium">{user.email}</p>
-              ) : null}
-            </div>
-            {cardStatus === CARD_ACTION_STATUS.EDIT ? (
+          {cardStatus === CARD_ACTION_STATUS.EDIT ? (
+            <div className="mt-5 bg-white rounded-lg py-5 px-3">
               <div>
                 <div>
                   <div className="mb-2 block">
-                    <Label htmlFor="new-email" value="New Email *" />
+                    <Label htmlFor="email" value="Email *" />
                   </div>
                   <TextInput
-                    id="new-email"
+                    id="email"
                     type="email"
                     value={newEmail || ""}
                     onChange={({ target }) => setNewEmail(target.value)}
@@ -146,13 +136,10 @@ export default function EmailSettings() {
                 </div>
                 <div className="mt-5">
                   <div className="mb-2 block">
-                    <Label
-                      htmlFor="confirm-password"
-                      value="Confirm Your Password *"
-                    />
+                    <Label htmlFor="password" value="Your Password *" />
                   </div>
                   <TextInput
-                    id="confirm-password"
+                    id="password"
                     type="password"
                     value={currentPassword}
                     minLength={8}
@@ -160,18 +147,32 @@ export default function EmailSettings() {
                     required
                   />
                 </div>
+                <div className="mt-5">
+                  <div className="mb-2 block">
+                    <Label
+                      htmlFor="confirm-password"
+                      value="Confirm Password *"
+                    />
+                  </div>
+                  <TextInput
+                    id="confirm-password"
+                    type="password"
+                    value={confirmPassword}
+                    minLength={8}
+                    onChange={({ target }) => setConfirmPassword(target.value)}
+                    required
+                  />
+                </div>
 
                 <div className="flex space-x-5 mt-5">
-                  <Button type="submit" disabled={newEmail === user.email}>
-                    Save
-                  </Button>
+                  <Button type="submit">Save</Button>
                   <Button type="button" color="light" onClick={cancelChanges}>
                     Cancel{" "}
                   </Button>
                 </div>
               </div>
-            ) : null}
-          </div>
+            </div>
+          ) : null}
         </form>
       </Card>
     </div>

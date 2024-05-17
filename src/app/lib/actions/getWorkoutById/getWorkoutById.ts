@@ -18,10 +18,10 @@ export async function getWorkoutById(userId: string, workoutId: string) {
   const userRef = db.collection(usersCollection).doc(userId);
   const listCollections = await userRef.listCollections();
 
-  const userSubCollection = await listCollections[0].get();
+  const userSubCollection = await listCollections?.[0]?.get();
 
-  return userSubCollection.docs
-    .filter((doc) => doc.id === workoutId)
+  return userSubCollection?.docs
+    ?.filter((doc) => doc.id === workoutId)
     .map((doc) => {
       // transform server timestamp to date format
       const formattedData = Object.values(doc.data()).map((data) => ({

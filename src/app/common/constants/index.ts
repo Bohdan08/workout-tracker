@@ -15,3 +15,5 @@ export const MAX_EXERCISES = 20;
 export const MAX_REPS = 100;
 export const MIN_REPS = 0;
 export const MAX_MIN_DURATION = 1000;
+
+export const USER_TOKEN = "wt-user-token";

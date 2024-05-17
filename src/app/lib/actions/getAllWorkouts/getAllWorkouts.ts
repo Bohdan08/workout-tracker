@@ -20,11 +20,11 @@ export async function getAllUserWorkouts(userId: string) {
   // .doc(userId || "pY8FgcjJrMXKeIO1mSB1ysTLoRl1");
   const listCollections = await userRef.listCollections();
 
-  const userSubCollection = await listCollections[0].get();
+  const userSubCollection = await listCollections?.[0]?.get();
 
   // convert it to an array of obj
-  return userSubCollection.docs
-    .map((doc) => {
+  return userSubCollection?.docs
+    ?.map((doc) => {
       // transform server timestamp to date format
       const formattedData = Object.values(doc.data()).map((data) => ({
         ...data,

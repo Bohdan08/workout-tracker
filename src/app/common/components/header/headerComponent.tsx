@@ -44,16 +44,20 @@ export default function HeaderComponent({
           {!userAuthenticated ? (
             <>
               <div className="flex space-x-4">
-                <Button
-                  color="light"
-                  className="border-none"
-                  onClick={() => router.push("/login")}
-                >
-                  Login
-                </Button>
-                <Button onClick={() => router.push("/register")}>
-                  Sign Up
-                </Button>
+                {pathname !== "/login" ? (
+                  <Button
+                    color={`${pathname === "/register" ? "info" : "light"}`}
+                    className="border-none"
+                    onClick={() => router.push("/login")}
+                  >
+                    Login
+                  </Button>
+                ) : null}
+                {pathname !== "/register" ? (
+                  <Button onClick={() => router.push("/register")}>
+                    Sign Up
+                  </Button>
+                ) : null}
               </div>{" "}
             </>
           ) : null}

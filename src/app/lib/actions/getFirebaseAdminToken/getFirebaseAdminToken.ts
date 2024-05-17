@@ -1,15 +1,12 @@
 "use server";
 
+import { USER_TOKEN } from "@/src/app/common/constants";
 import { firebaseAdmin } from "@/src/firebase/adminConfig";
-import { error } from "console";
 import { cookies } from "next/headers";
-import { headers } from "next/headers";
-
-// import { USER_EMAIL_TOKEN_NAME } from "../constants";
 
 export async function getFirebaseAdminToken() {
   try {
-    const cookieToken = cookies().get("token")?.value;
+    const cookieToken = cookies().get(USER_TOKEN)?.value;
 
     if (!cookieToken || cookieToken === "") {
       return false;

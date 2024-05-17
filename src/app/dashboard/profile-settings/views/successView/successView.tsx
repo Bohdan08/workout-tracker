@@ -11,6 +11,8 @@ import { useAuth } from "@/src/app/context/authContext";
 import { User, sendEmailVerification } from "firebase/auth";
 import { auth } from "@/src/firebase/config";
 import SocialAccounts from "../../components/socialAccounts";
+import LinkEmailPassword from "../../components/linkEmailPassword";
+import DeleteAccount from "../../components/deleteAccount";
 
 const checkIfneedsEmailVerification = (authUser: User) =>
   authUser &&
@@ -84,7 +86,7 @@ export default function SuccessView() {
       {needsEmailVerification && !user?.emailVerified && errorEmailSent ? (
         <Alert color="failure" className="mt-5">
           <span className="block font-medium text-lg mb-1">
-            We couldn't send you a confrimation e-mail
+            We couldn&apos;t send you a confrimation e-mail
           </span>
           <p>{errorEmailSent || "Please try again later."}</p>
         </Alert>
@@ -112,10 +114,16 @@ const TABS_ITEMS = [
         <div>
           <EmailSettings />
           <div className="mt-8">
+            <LinkEmailPassword />
+          </div>
+          <div className="mt-8">
             <PasswordSettings />
           </div>
           <div className="mt-8">
             <SocialAccounts />
+          </div>
+          <div className="mt-8">
+            <DeleteAccount />
           </div>
         </div>
       </>

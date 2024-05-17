@@ -19,6 +19,10 @@ import { usePathname, useRouter } from "next/navigation";
 import { auth } from "@/src/firebase/config";
 import Image from "next/image";
 import logo from "../../../../../public/logo.svg";
+import useAppDispatch from "@/src/app/hooks/useAppDispatch";
+import { resetWorkouts } from "@/src/app/lib/store/features/workoutsHistory/workoutsHistorySlice";
+import { resetWorkout } from "@/src/app/lib/store/features/workout/workoutSlice";
+import { resetUser } from "@/src/app/lib/store/features/userProfile/userProfileSlice";
 
 const MENU_ITEMS = [
   {
@@ -53,6 +57,7 @@ export default function Menu() {
 
   const [menuOpen, setMenuOpen] = useState(true);
 
+  const dispatch = useAppDispatch();
   // const handleClose = () => setMenuOpen(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -61,6 +66,11 @@ export default function Menu() {
 
   const handleSignOut = async () => {
     return await auth.signOut().then(() => {
+      // reset all data
+      dispatch(resetWorkouts());
+      dispatch(resetWorkout());
+      dispatch(resetUser());
+
       router.push("/");
     });
   };
@@ -75,7 +85,8 @@ export default function Menu() {
         ${styles.menu}`}
       >
         <div className="mt-5">
-          <div
+          <Link
+            href="/"
             className={`flex items-center ${
               menuOpen ? "justify-start" : "justify-center"
             }`}
@@ -84,7 +95,7 @@ export default function Menu() {
             {menuOpen ? (
               <span className="text-sm relative left-2">Workout Tracker</span>
             ) : null}
-          </div>
+          </Link>
           <nav>
             <ul className="flex flex-col space-y-3 py-4">
               {MENU_ITEMS.map(({ id, label, link, Icon }) => (

@@ -20,9 +20,6 @@ export const AuthContext = createContext<UserContextType>({
   loadingUser: false,
 });
 
-// // Custom hook to access the authentication context
-// export const useAuthContext = () => useContext(AuthContext);
-
 interface AuthContextProviderProps {
   children: ReactNode;
 }
