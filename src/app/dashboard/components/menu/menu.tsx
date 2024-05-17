@@ -1,15 +1,13 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { Button, Drawer } from "flowbite-react";
+import { Button } from "flowbite-react";
 import styles from "./menu.module.scss";
 import {
-  HiBars2,
   HiTableCells,
   HiChartPie,
   HiSquaresPlus,
   HiOutlineAdjustmentsVertical,
-  HiOutlineTableCells,
   HiOutlineChevronDoubleLeft,
   HiOutlineChevronDoubleRight,
   HiArrowLeftOnRectangle,
@@ -24,7 +22,7 @@ import { resetWorkouts } from "@/src/app/lib/store/features/workoutsHistory/work
 import { resetWorkout } from "@/src/app/lib/store/features/workout/workoutSlice";
 import { resetUser } from "@/src/app/lib/store/features/userProfile/userProfileSlice";
 
-const MENU_ITEMS = [
+export const MENU_ITEMS = [
   {
     id: "overview",
     label: "Overview",
@@ -58,7 +56,6 @@ export default function Menu() {
   const [menuOpen, setMenuOpen] = useState(true);
 
   const dispatch = useAppDispatch();
-  // const handleClose = () => setMenuOpen(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -79,7 +76,8 @@ export default function Menu() {
     <>
       <aside
         className={`
-        flex flex-col justify-between 
+        hidden
+        md:flex flex-col justify-between 
         pb-4 border-r bg-gray-100 px-2 sm:px-4 sticky 
         ${menuOpen ? "w-60" : "w-auto"}
         ${styles.menu}`}

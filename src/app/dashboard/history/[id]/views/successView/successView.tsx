@@ -182,13 +182,13 @@ export default function SuccessView({
             </div>
             {workoutStatus === WORKOUT_STATUS.VIEW ? (
               <>
-                <h1 className="text-3xl font-medium">
+                <h1 className="text-xl md:text-3xl font-medium">
                   {" "}
                   Workout Summary for {workoutDate as string}
                 </h1>
 
                 <div>
-                  <div className="mt-5 flex space-x-5">
+                  <div className="mt-5 flex flex-col space-y-5 sm:space-y-0 sm:space-x-5 sm:flex-row">
                     <TotalCard title="Exercises" total={exercises.length} />
                     <TotalCard title="Sets" total={totalSets} />
                     <TotalCard title="Reps" total={totalReps} />
@@ -198,7 +198,7 @@ export default function SuccessView({
                     />
                   </div>
                   <div className="mt-5">
-                    <h2 className="text-2xl font-medium">Musle Groups</h2>
+                    <h2 className="text-xl md:text-2xl font-medium">Musle Groups</h2>
                     <div className="flex mt-2">
                       {affectedMuscleGroups.map((muscle, index) => (
                         <Badge
@@ -206,7 +206,7 @@ export default function SuccessView({
                           color={
                             BADGE_COLORS[index % affectedMuscleGroups.length]
                           }
-                          className="w-fit text-xl mb-2 mr-2 px-3 py-2"
+                          className="w-fit text-base md:text-xl mb-2 mr-2 px-3 py-2"
                         >
                           {muscle}
                         </Badge>
@@ -215,8 +215,8 @@ export default function SuccessView({
                   </div>
                   <div className="mt-5">
                     {" "}
-                    <h2 className="text-2xl font-medium">Exercises </h2>{" "}
-                    <div className="mt-5 flex flex-wrap">
+                    <h2 className="text-xl md:text-2xl font-medium">Exercises </h2>{" "}
+                    <div className="mt-5 flex flex-col md:flex-row md:flex-wrap">
                       {exercises.map(
                         (
                           {
@@ -247,11 +247,11 @@ export default function SuccessView({
                           return (
                             <Card
                               key={exerciseId}
-                              className={`md:w-[350px] relative h-fit mr-5 mb-5 ${styles.exerciseCard}`}
+                              className={`md:w-[350px] relative h-fit md:mr-5 mb-5 ${styles.exerciseCard}`}
                             >
                               <div className="flex h-full flex-col space-y-5 items-start">
                                 <div className="flex justify-between w-full px-4">
-                                  <h3 className="text-xl font-medium relative">
+                                  <h3 className="text-lg md:text-xl font-medium relative">
                                     {index + 1}. {title}
                                   </h3>
                                 </div>

@@ -136,7 +136,7 @@ export default function MetricsPreferences() {
         ) : null}
 
         {/* WEIGHT UNITS */}
-        <div className="mt-5 bg-white rounded-lg py-5 px-3">
+        <div className="md:mt-5 bg-white rounded-lg py-5 px-3">
           <div className="flex justify-between items-center">
             <div>
               <p>Weight Units</p>

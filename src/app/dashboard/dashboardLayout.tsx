@@ -10,6 +10,7 @@ import { useAuth } from "../context/authContext";
 import Header from "../common/components/header";
 import Menu from "./components/menu";
 import LoadingView from "./components/loadingView/loadingView";
+import MobileMenu from "./components/menu/mobileMenu";
 
 export default function DashboardLayout({
   children,
@@ -42,11 +43,11 @@ export default function DashboardLayout({
   return (
     <div className="flex min-h-screen flex-col">
       {" "}
-      {/* <Header /> */}
       <main className="grow">
-        <div className="flex space-x-2 pr-4 sm:pr-6">
+        <div className="md:flex md:space-x-2">
+          <MobileMenu />
           <Menu />
-          <div className="w-full px-4 pt-4 pb-10">
+          <div className="w-full px-2 md:px-4 pt-4 pb-10">
             {isLoading ? (
               <LoadingView title="Retrieving your account" />
             ) : (

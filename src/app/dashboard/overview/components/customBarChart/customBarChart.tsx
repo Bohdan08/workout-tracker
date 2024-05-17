@@ -18,7 +18,7 @@ export default function CustomBarChart({
 }) {
   return (
     <Card className="p-4 h-[400px] lg:w-[400px] xl:w-[500px] 2xl:w-[600px] max-w-full">
-      <h2 className="text-2xl font-medium mb-5">{title}</h2>
+      <h2 className="text-lg sm:text-lg md:text-2xl font-medium mb-5">{title}</h2>
       {data?.length ? (
         <ResponsiveContainer width="100%" height="100%">
           <BarChart

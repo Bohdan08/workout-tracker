@@ -31,7 +31,7 @@ export default function TotalCards() {
 
   return (
     <div className="mt-5">
-      <div className="mb-5 flex flex-col md:flex-row md:space-x-5 space-y-5 md:space-y-0">
+      <div className="mb-5 flex flex-col sm:flex-row sm:space-x-5 space-y-5 sm:space-y-0">
         <TotalCard title="Workouts" total={totalWorkouts} />
         <TotalCard title="Exercises" total={totalExercises} />
         <TotalCard title="Sets" total={totalSets} />

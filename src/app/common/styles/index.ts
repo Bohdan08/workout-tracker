@@ -4,4 +4,4 @@ export const AUTH_LINK_STYLE =
 export const AUTH_HEADING_STYLE = "text-center text-3xl font-semibold";
 export const AUTH_FORM_STYLE = "flex max-w-md w-full flex-col gap-4 mt-10";
 
-export const DASHBOARD_MENU_HEADER = "text-2xl md:text-3xl font-medium";
+export const DASHBOARD_MENU_HEADER = "text-2xl md:text-3xl font-medium text-center md:text-left";
