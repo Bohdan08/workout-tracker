@@ -46,7 +46,6 @@ export default function Page({
     }
 
     setApiStatus(API_STATUS.SUCCESS);
-    setData(result);
     dispatch(setWorkout(result));
   };
 
