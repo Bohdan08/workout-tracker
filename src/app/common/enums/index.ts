@@ -31,8 +31,12 @@ export enum CARD_ACTION_STATUS {
 }
 
 export enum EXERCISE_MEASURMENT_TYPES {
-  REPS_WEIGHTS = "Reps/Weights",
-  DURATION_DISTANCE = "Duration/Distance",
+  REPS = "REPS",
+  WEIGHT = "WEIGHT",
+  DURATION = "DURATION",
+  DISTANCE = "DISTANCE",
+  // REPS_WEIGHTS = "Reps/Weights",
+  // DURATION_DISTANCE = "Duration/Distance",
 }
 
 export enum WORKOUT_TYPE {

@@ -1,0 +1,962 @@
+[
+  {
+    "name": "Bench Press",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Incline Bench Press",
+    "muscle_gps": ["Upper Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Decline Bench Press",
+    "muscle_gps": ["Lower Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Push-Up",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Dumbbell Flyes",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Crossovers",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Pec Deck Machine",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Pull-Up",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Chin-Up",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Lat Pulldown",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Seated Row",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Bent Over Row",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "One-Arm Dumbbell Row",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Deadlift",
+    "muscle_gps": ["Back", "Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Romanian Deadlift",
+    "muscle_gps": ["Hamstrings"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "T-Bar Row",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Hyperextension",
+    "muscle_gps": ["Lower Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Barbell Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Front Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Leg Press",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Lunges",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Leg Extension",
+    "muscle_gps": ["Quadriceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Leg Curl",
+    "muscle_gps": ["Hamstrings"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Standing Calf Raise",
+    "muscle_gps": ["Calves"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Seated Calf Raise",
+    "muscle_gps": ["Calves"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Hip Thrust",
+    "muscle_gps": ["Glutes"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Glute Bridge",
+    "muscle_gps": ["Glutes"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Shoulder Press",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Arnold Press",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Lateral Raise",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Front Raise",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Reverse Flyes",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Shrugs",
+    "muscle_gps": ["Traps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Triceps Dip",
+    "muscle_gps": ["Triceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Triceps Pushdown",
+    "muscle_gps": ["Triceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Skull Crushers",
+    "muscle_gps": ["Triceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Triceps Extension",
+    "muscle_gps": ["Triceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Biceps Curl",
+    "muscle_gps": ["Biceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Hammer Curl",
+    "muscle_gps": ["Biceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Preacher Curl",
+    "muscle_gps": ["Biceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Concentration Curl",
+    "muscle_gps": ["Biceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Forearm Curl",
+    "muscle_gps": ["Forearms"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Wrist Curl",
+    "muscle_gps": ["Forearms"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Crunches",
+    "muscle_gps": ["Core"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Leg Raises",
+    "muscle_gps": ["Core"],
+    "measurement_types": ["Reps"]
+  },
+
+  {
+    "name": "Plank",
+    "muscle_gps": ["Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Side Plank",
+    "muscle_gps": ["Core"],
+    "measurement_types": ["Duration"]
+  },
+
+  {
+    "name": "Hanging Leg Raise",
+    "muscle_gps": ["Core"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Ab Rollout",
+    "muscle_gps": ["Core"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Battle Ropes",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Farmer's Walk",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Distance"]
+  },
+  {
+    "name": "Kettlebell Swing",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Box Jump",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Medicine Ball Slam",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Wall Ball",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Tire Flip",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Rope Climb",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Sled Push",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Distance"]
+  },
+  {
+    "name": "Sled Pull",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Distance"]
+  },
+  {
+    "name": "Clean and Jerk",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Snatch",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Thruster",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Burpee",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Reps"]
+  },
+  {
+    "name": "Dumbbell Deadlift",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Goblet Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Sumo Deadlift",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Hack Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Single-Leg Deadlift",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Good Mornings",
+    "muscle_gps": ["Hamstrings"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Step-Up",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Calf Press on Leg Press Machine",
+    "muscle_gps": ["Calves"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Reverse Lunge",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Walking Lunge",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Bulgarian Split Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Smith Machine Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Smith Machine Bench Press",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Smith Machine Shoulder Press",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Smith Machine Row",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Pallof Press",
+    "muscle_gps": ["Core"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Landmine Press",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Landmine Row",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Landmine Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Landmine Twist",
+    "muscle_gps": ["Core"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Face Pull",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Bicep Curl",
+    "muscle_gps": ["Biceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Tricep Extension",
+    "muscle_gps": ["Triceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Lateral Raise",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Front Raise",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Crunch",
+    "muscle_gps": ["Core"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Standing Cable Row",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Chest Press",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Fly",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Pulldown",
+    "muscle_gps": ["Back"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Kickback",
+    "muscle_gps": ["Glutes"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Cable Pull-Through",
+    "muscle_gps": ["Glutes"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Smith Machine Calf Raise",
+    "muscle_gps": ["Calves"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Reverse Pec Deck Fly",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Incline Dumbbell Press",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Decline Dumbbell Press",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Flat Dumbbell Press",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Pullover",
+    "muscle_gps": ["Chest"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Lateral Raise",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Front Raise",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Rear Delt Fly",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Shrug",
+    "muscle_gps": ["Trapezius"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Upright Row",
+    "muscle_gps": ["Shoulders"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Curl",
+    "muscle_gps": ["Biceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Hammer Curl",
+    "muscle_gps": ["Biceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Preacher Curl",
+    "muscle_gps": ["Biceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Concentration Curl",
+    "muscle_gps": ["Biceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Overhead Tricep Extension",
+    "muscle_gps": ["Triceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Tricep Kickback",
+    "muscle_gps": ["Triceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Skull Crusher",
+    "muscle_gps": ["Triceps"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Deadlift",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Lunge",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Step-Up",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Reverse Lunge",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Walking Lunge",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Goblet Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Sumo Squat",
+    "muscle_gps": ["Legs"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+  {
+    "name": "Dumbbell Romanian Deadlift",
+    "muscle_gps": ["Hamstrings"],
+    "measurement_types": ["Reps", "Weight"]
+  },
+
+  {
+    "name": "Running",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Jogging",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Sprinting",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Cycling",
+    "muscle_gps": ["Quadriceps", "Hamstrings", "Calves", "Glutes"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Mountain Biking",
+    "muscle_gps": ["Quadriceps", "Hamstrings", "Calves", "Glutes"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Swimming",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Rowing",
+    "muscle_gps": ["Back", "Shoulders", "Arms", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Hiking",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Walking",
+    "muscle_gps": ["Legs", "Glutes"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Jump Rope",
+    "muscle_gps": ["Legs", "Glutes", "Shoulders", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Stair Climbing",
+    "muscle_gps": ["Quadriceps", "Hamstrings", "Calves", "Glutes"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Rollerblading",
+    "muscle_gps": ["Quadriceps", "Hamstrings", "Calves", "Glutes"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Skateboarding",
+    "muscle_gps": ["Legs", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Soccer",
+    "muscle_gps": ["Legs", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Basketball",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Tennis",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Badminton",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+
+  {
+    "name": "Volleyball",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Baseball",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Softball",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Rugby",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "American Football",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Rock Climbing",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Parkour",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Dancing",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Ice Skating",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Skiing",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Snowboarding",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Surfing",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Stand-Up Paddleboarding",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Kayaking",
+    "muscle_gps": ["Arms", "Shoulders", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Canoeing",
+    "muscle_gps": ["Arms", "Shoulders", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Boxing",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Kickboxing",
+    "muscle_gps": ["Legs", "Core", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Martial Arts",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Zumba",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Aerobics",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Pilates",
+    "muscle_gps": ["Core", "Legs", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+
+  {
+    "name": "Yoga",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "High-Intensity Interval Training (HIIT)",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Elliptical Training",
+    "muscle_gps": ["Legs", "Glutes", "Arms"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Treadmill Running",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Stairmaster",
+    "muscle_gps": ["Legs", "Glutes"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Stationary Biking",
+    "muscle_gps": ["Quadriceps", "Hamstrings", "Calves", "Glutes"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Biking",
+    "muscle_gps": ["Quadriceps", "Hamstrings", "Calves", "Glutes"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Rowing Machine",
+    "muscle_gps": ["Back", "Shoulders", "Arms", "Core"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Stepper Machine",
+    "muscle_gps": ["Legs", "Glutes"],
+    "measurement_types": ["Duration", "Distance"]
+  },
+  {
+    "name": "Battle Ropes",
+    "muscle_gps": ["Shoulders", "Arms", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Burpees",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Jumping Jacks",
+    "muscle_gps": ["Legs", "Core", "Shoulders"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Mountain Climbers",
+    "muscle_gps": ["Core", "Shoulders", "Legs"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Skipping",
+    "muscle_gps": ["Legs", "Core", "Shoulders"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "High Knees",
+    "muscle_gps": ["Legs", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Butt Kicks",
+    "muscle_gps": ["Legs", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Speed Skaters",
+    "muscle_gps": ["Legs", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Box Jumps",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Tuck Jumps",
+    "muscle_gps": ["Legs", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Lateral Shuffles",
+    "muscle_gps": ["Legs", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Bear Crawls",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Frog Jumps",
+    "muscle_gps": ["Legs", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Side Plank with Leg Lift",
+    "muscle_gps": ["Core", "Legs"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Jump Squats",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Lunge Jumps",
+    "muscle_gps": ["Legs", "Glutes", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Inchworms",
+    "muscle_gps": ["Core", "Shoulders", "Legs"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Crab Walks",
+    "muscle_gps": ["Core", "Shoulders", "Legs"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Agility Ladder Drills",
+    "muscle_gps": ["Legs", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Boxing Punches",
+    "muscle_gps": ["Shoulders", "Arms", "Core"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Shadow Boxing",
+    "muscle_gps": ["Full Body"],
+    "measurement_types": ["Duration"]
+  },
+  {
+    "name": "Medicine Ball Slams",
+    "muscle_gps": ["Core", "Shoulders", "Arms"],
+    "measurement_types": ["Duration"]
+  }
+]

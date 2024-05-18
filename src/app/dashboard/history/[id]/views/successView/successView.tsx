@@ -234,7 +234,7 @@ export default function SuccessView({
                             title,
                             duration = 0,
                             type: exerciseType,
-                            measurmentType,
+                            measurementType,
                           },
                           index
                         ) => {
@@ -245,7 +245,7 @@ export default function SuccessView({
                           ];
 
                           if (
-                            measurmentType ===
+                            measurementType ===
                             EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE
                           ) {
                             tableHeaders = [
@@ -296,7 +296,7 @@ export default function SuccessView({
                                           let tableCells = [reps, weight];
 
                                           if (
-                                            measurmentType ===
+                                            measurementType ===
                                             EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE
                                           ) {
                                             tableCells = [duration, distance];

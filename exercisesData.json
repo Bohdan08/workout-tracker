@@ -3299,5 +3299,65 @@
   {
     "name": "Walking backward",
     "muscle_gp": "Quadriceps"
+  },
+  {
+    "name": "Running",
+    "muscle_gp": "Legs"
+  },
+  {
+    "name": "Cycling",
+    "muscle_gp": "Legs"
+  },
+  {
+    "name": "Jump Rope",
+    "muscle_gp": "Full Body"
+  },
+  {
+    "name": "Swimming",
+    "muscle_gp": "Full Body"
+  },
+  {
+    "name": "Rowing",
+    "muscle_gp": "Back, Arms, Legs"
+  },
+  {
+    "name": "Elliptical Trainer",
+    "muscle_gp": "Legs, Arms"
+  },
+  {
+    "name": "High-Intensity Interval Training (HIIT)",
+    "muscle_gp": "Full Body"
+  },
+  {
+    "name": "Stair Climbing",
+    "muscle_gp": "Legs, Glutes"
+  },
+  {
+    "name": "Dancing",
+    "muscle_gp": "Full Body"
+  },
+  {
+    "name": "Hiking",
+    "muscle_gp": "Legs"
+  },
+  {
+    "name": "Kickboxing",
+    "muscle_gp": "Full Body"
+  },
+  {
+    "name": "Brisk Walking",
+    "muscle_gp": "Legs"
+  },
+  {
+    "name": "Zumba",
+    "muscle_gp": "Full Body"
+  },
+  {
+    "name": "Aerobic Classes",
+    "muscle_gp": "Full Body"
+  },
+  {
+    "name": "Rollerblading",
+    "muscle_gp": "Legs"
   }
 ]

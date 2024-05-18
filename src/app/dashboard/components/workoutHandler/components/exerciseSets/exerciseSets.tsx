@@ -1,9 +1,6 @@
 import ActionModal from "@/src/app/common/components/actionModal";
 import { MAX_SETS } from "@/src/app/common/constants";
-import {
-  EXERCISE_MEASURMENT_TYPES,
-  EXERCISE_TYPES,
-} from "@/src/app/common/enums";
+import { ExerciseSet } from "@/src/app/common/interfaces";
 import useAppDispatch from "@/src/app/hooks/useAppDispatch";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
 import {
@@ -60,11 +57,17 @@ export default function ExerciseSets({
 
   const sets = exercises[exerciseIndex].sets;
 
+  console.log(currWorkout, "currWorkout");
+  const additionalDetails = {
+    weight: weightUnit,
+    distance: distanceUnit,
+    duration: "Minutes",
+  };
+
   return (
     <>
       <div>
-        {/* WEIGHTS SETS */}
-        {currWorkout.measurmentType ===
+        {/* {currWorkout.measurementType ===
           EXERCISE_MEASURMENT_TYPES.REPS_WEIGHTS && sets?.length
           ? sets.map(({ id: setId, reps, weight }, index) => (
               <div key={setId} className="mt-5">
@@ -123,9 +126,7 @@ export default function ExerciseSets({
             ))
           : null}
 
-        {/* DURATION SETS */}
-
-        {currWorkout.measurmentType ===
+        {currWorkout.measurementType ===
           EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE && sets?.length
           ? sets.map(({ id: setId, duration, distance }, index) => (
               <div key={setId} className="mt-5">
@@ -184,10 +185,71 @@ export default function ExerciseSets({
                 </div>
               </div>
             ))
+          : null} */}
+
+        {sets?.length
+          ? sets.map((setData, index) => {
+              const { id: setId } = setData;
+              const onlyOneMeasurement =
+                currWorkout.measurementTypes?.length === 1;
+
+              return (
+                <div key={setId} className="mt-5">
+                  <div className="flex justify-between mb-2">
+                    <h2>Set {index + 1}</h2>
+                    <Tooltip content="Delete this set">
+                      <button
+                        onClick={() => {
+                          setDeleteSetModal(setId);
+                        }}
+                      >
+                        <HiTrash color="red" />
+                      </button>
+                    </Tooltip>
+                  </div>
+                  <div
+                    className={`grid grid-cols-1 ${
+                      onlyOneMeasurement ? "" : "md:grid-cols-2"
+                    } gap-4`}
+                  >
+                    {currWorkout.measurementTypes?.map((mT: string) => {
+                      // convert Reps, Weigh, Duration to lowercase
+                      const setKeyName = mT.toLocaleLowerCase();
+                      const details = (additionalDetails as any)[setKeyName];
+                      return (
+                        <div key={mT} className="w-full">
+                          <div>
+                            <Label htmlFor={`${setKeyName}-${setId}`}>
+                              {mT}
+                              {details ? ` (${details})` : null}{" "}
+                            </Label>
+                          </div>
+                          <TextInput
+                            id={`${setKeyName}-${setId}`}
+                            type="number"
+                            value={(setData as any)[setKeyName]}
+                            min={0}
+                            max={1000}
+                            required
+                            onChange={({ target }) => {
+                              handleModifySet(exerciseId, setId, {
+                                [setKeyName]: target.value,
+                              });
+                            }}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })
           : null}
 
         <Button
-          disabled={!currWorkout.measurmentType || sets?.length === MAX_SETS}
+          disabled={
+            !currWorkout.measurementTypes?.length || sets?.length === MAX_SETS
+          }
           className="mt-5 w-full"
           color="blue"
           onClick={() => handleAddSet(exerciseId)}
@@ -200,9 +262,9 @@ export default function ExerciseSets({
             You reached a maximum of {MAX_SETS} sets per exercise.
           </p>
         ) : null}
-        {!currWorkout.measurmentType ? (
+        {!currWorkout.measurementTypes?.length ? (
           <p className="mt-3 text-red-600">
-            Select <span className="font-medium">Measurment Type </span> in
+            Select <span className="font-medium">Measurment Types </span> in
             order to add sets.
           </p>
         ) : null}

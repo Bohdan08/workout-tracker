@@ -1,67 +1,42 @@
 "use client";
+import React from "react";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
 import { Label } from "flowbite-react";
-import React from "react";
-import exercisesData from "../../../../../../../exercisesData.json";
+import exercisesData from "../../../../../../../exercisesDataV2.json";
 import ReactSelect, { MultiValue } from "react-select";
 import useAppDispatch from "@/src/app/hooks/useAppDispatch";
 import { modifyExercise } from "@/src/app/lib/store/features/workout/workoutSlice";
-import {
-  EXERCISE_MEASURMENT_TYPES,
-  EXERCISE_TYPES,
-} from "@/src/app/common/enums";
-import CreatableSelect, { useCreatable } from "react-select/creatable";
+import { EXERCISE_MEASURMENT_TYPES } from "@/src/app/common/enums";
+import CreatableSelect from "react-select/creatable";
 import createExerciseSetTemplate from "@/src/app/lib/utils/createExerciseSetTemplate";
+import { ExerciseSet } from "@/src/app/common/interfaces";
 
 const MAIN_MUSCLE_GROUPS = [
-  "Abdominals",
-  "Biceps",
-  "Calves",
   "Chest",
-  "Forearm",
-  "Glutes",
-  "Hamstrings",
+  "Back",
+  "Upper Back",
+  "Middle Back",
   "Lower Back",
-  "Neck",
-  "Quadriceps",
-  "Shoulder",
-  "Trapezius",
+  "Legs",
+  "Shoulders",
+  "Biceps",
   "Triceps",
-  "Middle/Upper Back",
+  "Forearm",
+  "Abs",
+  "Core",
+  "Glutes",
+  "Calves",
+  "Full Body",
+  "Hamstrings",
+  "Quadriceps",
 ];
-
-const identifyExerciseType = (exerciseName: string) => {
-  const formattedExerciseName = exerciseName.toLocaleLowerCase();
-
-  if (
-    formattedExerciseName.includes("running") ||
-    formattedExerciseName.includes("walking") ||
-    formattedExerciseName.includes("bike")
-  ) {
-    return EXERCISE_TYPES.CARDIO;
-  }
-
-  return EXERCISE_TYPES.STRENGTH;
-};
-
-const identifyMeasurmentType = (exerciseName: string) => {
-  const formattedExerciseName = exerciseName.toLocaleLowerCase();
-
-  if (
-    formattedExerciseName.includes("running") ||
-    formattedExerciseName.includes("walking") ||
-    formattedExerciseName.includes("bike")
-  ) {
-    return EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE;
-  }
-
-  return EXERCISE_MEASURMENT_TYPES.REPS_WEIGHTS;
-};
 
 const MEASURMENT_SET_TYPES = [
-  EXERCISE_MEASURMENT_TYPES.REPS_WEIGHTS,
-  EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE,
-];
+  EXERCISE_MEASURMENT_TYPES.REPS,
+  EXERCISE_MEASURMENT_TYPES.WEIGHT,
+  EXERCISE_MEASURMENT_TYPES.DURATION,
+  EXERCISE_MEASURMENT_TYPES.DISTANCE,
+].map((v) => `${v[0]}${v.slice(1).toLowerCase()}`);
 
 export default function SelectExerciseField({
   exerciseIndex,
@@ -94,10 +69,13 @@ export default function SelectExerciseField({
       label,
     }));
 
-  const convertStringToSelectValue = (label: string) => ({
-    value: label.toLowerCase().split(" ").join("-"),
-    label,
-  });
+  const convertStringToSelectValue = (label: string | null) =>
+    label
+      ? {
+          value: label.toLowerCase().split(" ").join("-"),
+          label,
+        }
+      : null;
 
   const handleExercise = (exerciseId: string, options: Record<string, any>) =>
     dispatch(modifyExercise({ exerciseId, options }));
@@ -106,14 +84,22 @@ export default function SelectExerciseField({
   const optionsMuscleData =
     convertArrayStringsToSelectOptions(MAIN_MUSCLE_GROUPS);
 
-  const optionsMeasurmentData =
+  const optionsMeasurementData =
     convertArrayStringsToSelectOptions(MEASURMENT_SET_TYPES);
 
   const currExercise = exercises[exerciseIndex];
 
   const valuesMuscleGroups = currExercise.muscleGroups?.length
-    ? currExercise.muscleGroups.map((m) => convertStringToSelectValue(m))
+    ? currExercise.muscleGroups.map((mG) => convertStringToSelectValue(mG))
     : [];
+
+  const valuesMeasurmentTypes = currExercise.measurementTypes?.length
+    ? currExercise.measurementTypes.map((mT) => convertStringToSelectValue(mT))
+    : [];
+
+  console.log(valuesMeasurmentTypes, "valuesMeasurmentTypes");
+
+  console.log(currExercise, "currExercise");
 
   return (
     <div>
@@ -122,57 +108,29 @@ export default function SelectExerciseField({
           <Label htmlFor="exercise-name">Exercise Name</Label>
         </div>
 
-        {/* <ReactSelect
-        id="exercise"
-        placeholder="Select exercise"
-        className="custom-react-select"
-        value={convertStringToSelectValue(currExercise.title)}
-        options={optionsExercisesData}
-        onChange={(newValue) => {
-          if (newValue?.label) {
-            handleExercise(exerciseId, {
-              title: newValue.label,
-              // muscleGroups: (newValue as any).muscle_gp,
-              type: identifyExerciseType(newValue.label),
-            });
-          }
-        }}
-      /> */}
-
         <CreatableSelect
           id="exercise-name"
           className="custom-react-select"
           placeholder="Select or create exercise"
           isClearable
-          value={
-            currExercise.title
-              ? convertStringToSelectValue(currExercise.title)
-              : null
-          }
+          value={convertStringToSelectValue(currExercise.title)}
           options={optionsExercisesData}
           onChange={(newValue: Record<string, any>) => {
             if (newValue?.label) {
               handleExercise(exerciseId, {
                 title: newValue.label,
-                muscleGroups: newValue.muscle_gp ? [newValue.muscle_gp] : [],
-                measurmentType: newValue.muscle_gp
-                  ? identifyMeasurmentType(newValue.label)
-                  : null,
-                // create set if musle group is known and sets haven't been created by user
-                ...(newValue.muscle_gp &&
-                  !currExercise.sets?.length && {
-                    sets: [
-                      createExerciseSetTemplate(
-                        identifyMeasurmentType(newValue.muscle_gp)
-                      ),
-                    ],
-                  }),
+                muscleGroups: newValue.muscle_gps || [],
+                measurementTypes: newValue.measurement_types,
+                ...(!currExercise.sets?.length && {
+                  sets: [createExerciseSetTemplate(newValue.measurement_types)],
+                }),
               });
             } else {
+              // handle a newly created exercise, not from db
               handleExercise(exerciseId, {
                 title: "",
                 muscleGroups: [] as string[],
-                measurmentType: null,
+                measurementTypes: null,
               });
             }
           }}
@@ -191,9 +149,11 @@ export default function SelectExerciseField({
           isMulti
           isClearable
           options={optionsMuscleData}
-          onChange={(updatedMusleGroups: MultiValue<Record<string, any>>) => {
+          onChange={(
+            updatedMusleGroups: MultiValue<Record<string, any> | null>
+          ) => {
             const convertedMusclegroups = updatedMusleGroups?.length
-              ? updatedMusleGroups.map((m) => m.label)
+              ? updatedMusleGroups.map((mG: any) => mG.label)
               : [];
 
             handleExercise(exerciseId, {
@@ -203,37 +163,91 @@ export default function SelectExerciseField({
         />
       </div>
 
-      {/* type of set */}
+      {/* type of sets */}
       <div>
         <div className="mb-2 block">
-          <Label htmlFor="measurment-type" value="Measurment Type" />
+          <Label htmlFor="measurement-type" value="Measurment Types" />
         </div>
         <ReactSelect
-          id="measurment-type"
-          value={
-            currExercise.measurmentType
-              ? convertStringToSelectValue(currExercise.measurmentType)
-              : null
-          }
-          placeholder="Select measurment type"
+          id="measurement-type"
+          value={valuesMeasurmentTypes}
+          placeholder="Select measurement type"
           className="custom-react-select"
-          // isClearable
-          options={optionsMeasurmentData}
-          onChange={(newMeasurment) => {
-            if (
-              newMeasurment?.label &&
-              newMeasurment.label !== currExercise.measurmentType
-            ) {
-              handleExercise(exerciseId, {
-                sets: [
-                  createExerciseSetTemplate(
-                    newMeasurment.label as EXERCISE_MEASURMENT_TYPES
-                  ),
-                ],
-                measurmentType: newMeasurment.label,
-              });
+          isMulti
+          options={optionsMeasurementData}
+          onChange={(
+            updatedMeasurementData: MultiValue<Record<string, any> | null>
+          ) => {
+            const convertedMeasurementData = updatedMeasurementData?.length
+              ? updatedMeasurementData.map((mD: any) => mD.label)
+              : [];
+            let removedValues: string[] = [];
+
+            if (currExercise.measurementTypes?.length) {
+              removedValues = currExercise.measurementTypes.filter(
+                (x) => !convertedMeasurementData.includes(x)
+              );
             }
+
+            // console.log(removedValues, "removedValues");
+
+            // filter out if value has been removed
+            // if (
+            //   convertedMeasurementData.length < (currExercise.measurementTypes?.length || 0)
+            // ) {
+            //   handleExercise(exerciseId, {
+            //     sets: currExercise.sets?.map(set => {
+
+            //       return set;
+            //     })
+            //     // sets: [createExerciseSetTemplate(convertedMeasurementData)],
+            //     // measurementTypes: convertedMeasurementData,
+            //   });
+            // }
+
+            handleExercise(exerciseId, {
+              sets: currExercise.sets?.map((set: ExerciseSet) => {
+                let modifiedSet = { ...set } as any;
+                convertedMeasurementData.forEach((measurement) => {
+                  const formattedMeasurement = measurement.toLowerCase();
+                  // create if value doesn't exists
+                  if (modifiedSet[formattedMeasurement] === undefined) {
+                    modifiedSet[formattedMeasurement] = 0;
+                  }
+
+                  // removed values
+                  if (removedValues.length) {
+                    removedValues.forEach((removedValue) => {
+                      delete modifiedSet[removedValue.toLowerCase()];
+                    });
+                  }
+                });
+
+                return modifiedSet;
+              }),
+              // sets: [createExerciseSetTemplate(convertedMeasurementData)],
+              measurementTypes: convertedMeasurementData,
+            });
+
+            // handleExercise(exerciseId, {
+            //   muscleGroups: convertedMusclegroups,
+            // });
           }}
+          // onChange={(newMeasurment) => {
+          //   if (
+          //     newMeasurment?.label &&
+          //     newMeasurment.label !== currExercise.measurementType
+          //   ) {
+          // handleExercise(exerciseId, {
+          //   sets: [
+          //     createExerciseSetTemplate(
+          //       newMeasurment.label as EXERCISE_MEASURMENT_TYPES
+          //     ),
+          //   ],
+          //   measurementType: newMeasurment.label,
+          //     });
+          //   }
+          // }}
         />
       </div>
     </div>

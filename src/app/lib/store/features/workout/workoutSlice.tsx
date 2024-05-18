@@ -1,25 +1,19 @@
 import {
   DISTANCE_METRICS,
   EXERCISE_MEASURMENT_TYPES,
-  EXERCISE_TYPES,
   WEIGHT_METRICS,
-  WORKOUT_TYPE,
 } from "@/src/app/common/enums";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
 import createExerciseSetTemplate from "../../../utils/createExerciseSetTemplate";
-import {
-  ExerciseSet,
-  Exercise,
-  WorkoutData,
-} from "@/src/app/common/interfaces";
+import { WorkoutData } from "@/src/app/common/interfaces";
 import formatDate from "../../../utils/formatDate";
 
 const createExerciseTemplate = () => ({
   id: uuid(),
   hidden: false,
   type: null,
-  measurmentType: null,
+  measurementTypes: null,
   title: "",
   notes: "",
   muscleGroups: [],
@@ -64,9 +58,7 @@ const workoutSlice = createSlice({
               ...exercise,
               sets: [
                 ...(exercise.sets || []),
-                createExerciseSetTemplate(
-                  exercise.measurmentType as EXERCISE_MEASURMENT_TYPES
-                ) as any,
+                createExerciseSetTemplate(exercise.measurementTypes) as any,
               ],
             }
       );
@@ -79,7 +71,7 @@ const workoutSlice = createSlice({
       }>
     ) {
       const { exerciseId, options } = action.payload;
-
+      console.log(options, "NEW_OPTIONSNEW_OPTIONSNEW_OPTIONS");
       state.exercises = state.exercises.map((obj) =>
         obj.id !== exerciseId ? obj : { ...obj, ...options }
       );

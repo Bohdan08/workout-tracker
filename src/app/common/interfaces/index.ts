@@ -1,8 +1,8 @@
 import {
   DISTANCE_METRICS,
+  EXERCISE_MEASURMENT_TYPES,
   EXERCISE_TYPES,
   WEIGHT_METRICS,
-  WORKOUT_TYPE,
 } from "../enums";
 
 export interface ExerciseSet {
@@ -11,7 +11,7 @@ export interface ExerciseSet {
   weight?: number | undefined;
   duration?: number;
   distance?: number | undefined;
-}
+};
 
 export interface WeightsRepsSet {
   id: string;
@@ -28,9 +28,8 @@ export interface DurationDistanceSet {
 export interface Exercise {
   id: string;
   hidden: boolean;
-  // metrics: WEIGHT_METRICS;
   type: EXERCISE_TYPES | null;
-  measurmentType: string | null;
+  measurementTypes: EXERCISE_MEASURMENT_TYPES[] | null;
   title: string;
   notes: string;
   muscleGroups: string[];
@@ -48,7 +47,6 @@ export interface Workout {
 
 export interface WorkoutData {
   id?: string;
-  // metrics: WEIGHT_METRICS.LBS;
   workoutDate: Date | string;
   exercises: Exercise[];
   weightUnit: WEIGHT_METRICS | null;
