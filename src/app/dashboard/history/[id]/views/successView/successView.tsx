@@ -124,6 +124,12 @@ export default function SuccessView({
     router.push("/dashboard/history");
   };
 
+  const additionalDetails = {
+    weight: weightUnit,
+    distance: distanceUnit,
+    duration: "Minutes",
+  };
+
   return (
     <>
       <div>
@@ -234,26 +240,23 @@ export default function SuccessView({
                             title,
                             duration = 0,
                             type: exerciseType,
-                            measurementType,
+                            measurementTypes,
                           },
                           index
                         ) => {
-                          let tableHeaders = [
-                            "#",
-                            "Reps",
-                            `Weight (${weightUnit})`,
-                          ];
+                          let tableHeaders = ["#"];
 
-                          if (
-                            measurementType ===
-                            EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE
-                          ) {
-                            tableHeaders = [
-                              "#",
-                              `Duration (Min)`,
-                              `Distance (${distanceUnit})`,
+                          measurementTypes?.forEach((measurementType) => {
+                            const detail = (additionalDetails as any)[
+                              measurementType.toLocaleLowerCase()
                             ];
-                          }
+
+                            tableHeaders.push(
+                              `${measurementType}${
+                                detail ? ` (${detail})` : ""
+                              }`
+                            );
+                          });
 
                           return (
                             <Card
@@ -267,12 +270,12 @@ export default function SuccessView({
                                   </h3>
                                 </div>
                                 {/* <Badge
-                          color={BADGE_COLORS[index % exercises.length]}
-                          className="w-fit mb-2 mr-2"
-                          size="sm"
-                        >
-                          {muscleGroups.flat().join(",")}
-                        </Badge> */}
+                                  color={BADGE_COLORS[index % exercises.length]}
+                                  className="w-fit mb-2 mr-2"
+                                  size="sm"
+                                >
+                                  {muscleGroups.flat().join(",")}
+                                </Badge> */}
                                 {sets.length ? (
                                   <div className="mt-5 w-full">
                                     <Table className="w-full" striped>
@@ -285,22 +288,19 @@ export default function SuccessView({
                                       </TableHead>
                                       <TableBody className="divide-y">
                                         {sets.map((obj, index) => {
-                                          const {
-                                            id: setId,
-                                            reps,
-                                            weight,
-                                            duration,
-                                            distance,
-                                          } = obj;
+                                          const { id: setId } = obj;
 
-                                          let tableCells = [reps, weight];
+                                          let tableCells: string[] = [];
 
-                                          if (
-                                            measurementType ===
-                                            EXERCISE_MEASURMENT_TYPES.DURATION_DISTANCE
-                                          ) {
-                                            tableCells = [duration, distance];
-                                          }
+                                          measurementTypes?.forEach(
+                                            (measurementType) => {
+                                              tableCells.push(
+                                                (obj as any)[
+                                                  measurementType.toLocaleLowerCase()
+                                                ]
+                                              );
+                                            }
+                                          );
 
                                           return (
                                             <TableRow key={setId}>
