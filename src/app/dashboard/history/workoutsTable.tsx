@@ -48,7 +48,9 @@ export default function WorkoutsTable() {
                 className="cursor-pointer hover:bg-gray-100"
                 onClick={() => {
                   // set workout
-                  dispatch(setWorkout(workouts[index]));
+                  if (workouts[index]) {
+                    dispatch(setWorkout(workouts[index]));
+                  }
                   //
                   router.push(`/dashboard/history/${id}`);
                 }}

@@ -97,10 +97,6 @@ export default function SelectExerciseField({
     ? currExercise.measurementTypes.map((mT) => convertStringToSelectValue(mT))
     : [];
 
-  console.log(valuesMeasurmentTypes, "valuesMeasurmentTypes");
-
-  console.log(currExercise, "currExercise");
-
   return (
     <div>
       <div className="mb-5">
@@ -188,22 +184,6 @@ export default function SelectExerciseField({
                 (x) => !convertedMeasurementData.includes(x)
               );
             }
-
-            // console.log(removedValues, "removedValues");
-
-            // filter out if value has been removed
-            // if (
-            //   convertedMeasurementData.length < (currExercise.measurementTypes?.length || 0)
-            // ) {
-            //   handleExercise(exerciseId, {
-            //     sets: currExercise.sets?.map(set => {
-
-            //       return set;
-            //     })
-            //     // sets: [createExerciseSetTemplate(convertedMeasurementData)],
-            //     // measurementTypes: convertedMeasurementData,
-            //   });
-            // }
 
             handleExercise(exerciseId, {
               sets: currExercise.sets?.map((set: ExerciseSet) => {

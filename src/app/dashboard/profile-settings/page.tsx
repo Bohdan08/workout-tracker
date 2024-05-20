@@ -7,6 +7,7 @@ import useAppDispatch from "../../hooks/useAppDispatch";
 import { API_STATUS } from "../../common/enums";
 import LoadingView from "../components/loadingView/loadingView";
 import SuccessView from "./views/successView/successView";
+import ErrorView from "../components/errorView";
 
 export default function Settings() {
   const { user } = useAuth();
@@ -24,6 +25,9 @@ export default function Settings() {
 
   return (
     <div>
+      {apiStatus === API_STATUS.ERROR ? (
+        <ErrorView message={userProfile.apiErrorMessage} />
+      ) : null}
       {apiStatus === API_STATUS.LOADING ? (
         <LoadingView title="Retrieving your profile" />
       ) : null}

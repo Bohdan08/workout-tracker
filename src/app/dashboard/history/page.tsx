@@ -1,31 +1,18 @@
 "use client";
 import React, { useEffect } from "react";
-import {
-  Alert,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeadCell,
-  TableRow,
-} from "flowbite-react";
-import { useRouter } from "next/navigation";
+import { Alert } from "flowbite-react";
 import { useAuth } from "../../context/authContext";
-import getWeekdayName from "../../lib/utils/getWeekdayName";
-import formatDate from "../../lib/utils/formatDate";
 import { fetchWorkoutsHistory } from "../../lib/store/features/workoutsHistory/workoutsHistorySlice";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import useAppSelector from "../../hooks/useAppSelector";
 import LoadingView from "../components/loadingView/loadingView";
 import ErrorView from "../components/errorView/errorView";
-import { setWorkout } from "../../lib/store/features/workout/workoutSlice";
 import { API_STATUS } from "../../common/enums";
 import WorkoutsTable from "./workoutsTable";
 import { DASHBOARD_MENU_HEADER } from "../../common/styles";
 
 export default function History() {
   const { user } = useAuth();
-  const router = useRouter();
 
   const { workouts, apiStatus, apiErrorMessage } = useAppSelector(
     (store) => store.workoutsHistory

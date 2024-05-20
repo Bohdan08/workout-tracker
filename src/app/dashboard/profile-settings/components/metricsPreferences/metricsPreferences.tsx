@@ -51,8 +51,7 @@ const DISTANCE_UNITS = [
 
 export default function MetricsPreferences() {
   const { user } = useAuth();
-  const { data } = useAppSelector((store) => store.userProfile);
-
+  const { data = {} } = useAppSelector((store) => store.userProfile);
   const [cardStatus, setCardStatus] = useState(CARD_ACTION_STATUS.READ);
   const { weightUnit, distanceUnit } = data;
 
@@ -136,7 +135,7 @@ export default function MetricsPreferences() {
         ) : null}
 
         {/* WEIGHT UNITS */}
-        <div className="md:mt-5 bg-white rounded-lg py-5 px-3">
+        <div className="md:mt-1 bg-white rounded-lg py-5 px-3">
           <div className="flex justify-between items-center">
             <div>
               <p>Weight Units</p>

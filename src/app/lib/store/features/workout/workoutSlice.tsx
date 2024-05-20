@@ -31,7 +31,7 @@ const workoutSlice = createSlice({
   initialState,
   reducers: {
     setWorkout(state, action: PayloadAction<WorkoutData>) {
-      state.id = action.payload.id || "id";
+      state.id = action.payload?.id || "";
       state.workoutDate = action.payload.workoutDate;
       state.distanceUnit = action.payload.distanceUnit;
       state.weightUnit = action.payload.weightUnit;
@@ -71,7 +71,7 @@ const workoutSlice = createSlice({
       }>
     ) {
       const { exerciseId, options } = action.payload;
-      console.log(options, "NEW_OPTIONSNEW_OPTIONSNEW_OPTIONS");
+
       state.exercises = state.exercises.map((obj) =>
         obj.id !== exerciseId ? obj : { ...obj, ...options }
       );

@@ -121,8 +121,6 @@ export default function SuccessView({
     duration: "Minutes",
   };
 
-  console.log(exercises, "exercises");
-
   return (
     <>
       <div>

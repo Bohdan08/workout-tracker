@@ -45,8 +45,10 @@ export default function Page({
       return;
     }
 
-    setApiStatus(API_STATUS.SUCCESS);
-    dispatch(setWorkout(result));
+    if (result) {
+      setApiStatus(API_STATUS.SUCCESS);
+      dispatch(setWorkout(result));
+    }
   };
 
   useEffect(() => {

@@ -1,6 +1,5 @@
 "use server";
 
-import parseFirebaseErorrMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage/parseFirebaseErorrMessage";
 import { firebaseAdmin } from "@/src/firebase/adminConfig";
 import { usersCollection } from "@/src/firebase/config";
 import { Timestamp } from "firebase/firestore";

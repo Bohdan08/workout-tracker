@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import MetricsPreferences from "../../components/metricsPreferences";
 import PersonalInfo from "../../components/personalInfo";
-import { Alert, Button, Tabs } from "flowbite-react";
+import { Alert, Button, Card, Tabs } from "flowbite-react";
 import EmailSettings from "../../components/emailSettings";
 import PasswordSettings from "../../components/passwordSettings";
 
@@ -13,6 +13,7 @@ import { auth } from "@/src/firebase/config";
 import SocialAccounts from "../../components/socialAccounts";
 import LinkEmailPassword from "../../components/linkEmailPassword";
 import DeleteAccount from "../../components/deleteAccount";
+import useAppSelector from "@/src/app/hooks/useAppSelector";
 
 const checkIfneedsEmailVerification = (authUser: User) =>
   authUser &&
@@ -25,6 +26,7 @@ export default function SuccessView() {
   const { user } = useAuth();
   const [confirmEmailSent, setConfirmEmailSent] = useState(false);
   const [errorEmailSent, setErrorEmailtSent] = useState("");
+  const { created } = useAppSelector((store) => store.userProfile.data);
 
   const [activeTab, setActiveTab] = useState(0);
 
@@ -39,6 +41,52 @@ export default function SuccessView() {
   };
 
   const needsEmailVerification = checkIfneedsEmailVerification(user as User);
+
+  const TABS_ITEMS = [
+    {
+      icon: null,
+      label: "Prefrences",
+      Component: <MetricsPreferences />,
+    },
+    {
+      icon: null,
+      label: "Personal",
+      Component: <PersonalInfo />,
+    },
+    {
+      icon: null,
+      label: "Account",
+      Component: (
+        <>
+          <div>
+            <Card className="bg-gray-100 w-full">
+              <p>Joined on {created}</p>
+            </Card>
+            <div className="mt-8">
+              <EmailSettings />
+            </div>
+            <div className="mt-8">
+              <LinkEmailPassword />
+            </div>
+            <div className="mt-8">
+              <PasswordSettings />
+            </div>
+            <div className="mt-8">
+              <SocialAccounts />
+            </div>
+            <div className="mt-8">
+              <DeleteAccount />
+            </div>
+          </div>
+        </>
+      ),
+    },
+    // {
+    //   icon: null,
+    //   label: "Linked Accounts",
+    //   Component: <SocialAccounts />,
+    // },
+  ];
 
   return (
     <div className="max-w-lg">
@@ -94,44 +142,3 @@ export default function SuccessView() {
     </div>
   );
 }
-
-const TABS_ITEMS = [
-  {
-    icon: null,
-    label: "Prefrences",
-    Component: <MetricsPreferences />,
-  },
-  {
-    icon: null,
-    label: "Personal",
-    Component: <PersonalInfo />,
-  },
-  {
-    icon: null,
-    label: "Account",
-    Component: (
-      <>
-        <div>
-          <EmailSettings />
-          <div className="mt-8">
-            <LinkEmailPassword />
-          </div>
-          <div className="mt-8">
-            <PasswordSettings />
-          </div>
-          <div className="mt-8">
-            <SocialAccounts />
-          </div>
-          <div className="mt-8">
-            <DeleteAccount />
-          </div>
-        </div>
-      </>
-    ),
-  },
-  // {
-  //   icon: null,
-  //   label: "Linked Accounts",
-  //   Component: <SocialAccounts />,
-  // },
-];

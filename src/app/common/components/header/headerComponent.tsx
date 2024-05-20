@@ -47,7 +47,7 @@ export default function HeaderComponent({
                 {pathname !== "/login" ? (
                   <Button
                     color={`${pathname === "/register" ? "info" : "light"}`}
-                    className="border-none"
+                    className={`${pathname === "/register" ? "border-none" : "border"}`}
                     onClick={() => router.push("/login")}
                   >
                     Login
