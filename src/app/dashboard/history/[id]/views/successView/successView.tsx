@@ -17,21 +17,12 @@ import {
 import { BADGE_COLORS } from "@/src/app/common/constants";
 import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
-import { WorkoutData } from "@/src/app/common/interfaces";
-import {
-  API_STATUS,
-  EXERCISE_MEASURMENT_TYPES,
-  EXERCISE_TYPES,
-  WORKOUT_TYPE,
-} from "@/src/app/common/enums";
+import { API_STATUS, WORKOUT_TYPE } from "@/src/app/common/enums";
 
 import styles from "./successView.module.scss";
 import WorkoutHandler from "@/src/app/dashboard/components/workoutHandler/workoutHandler";
 import { useDispatch } from "react-redux";
-import {
-  resetWorkout,
-  setWorkout,
-} from "@/src/app/lib/store/features/workout/workoutSlice";
+import { resetWorkout } from "@/src/app/lib/store/features/workout/workoutSlice";
 import useAppSelector from "@/src/app/hooks/useAppSelector";
 import ActionModal from "@/src/app/common/components/actionModal";
 import deleteUserWorkout from "@/src/firebase/firestore/deleteUserWorkout";
@@ -130,6 +121,8 @@ export default function SuccessView({
     duration: "Minutes",
   };
 
+  console.log(exercises, "exercises");
+
   return (
     <>
       <div>
@@ -212,7 +205,7 @@ export default function SuccessView({
                       <div className="flex mt-2">
                         {affectedMuscleGroups.map((muscle, index) => (
                           <Badge
-                            key={muscle}
+                            key={index}
                             color={
                               BADGE_COLORS[index % affectedMuscleGroups.length]
                             }
@@ -260,8 +253,8 @@ export default function SuccessView({
 
                           return (
                             <Card
-                              key={exerciseId}
-                              className={`md:w-[350px] relative h-fit md:mr-5 mb-5 ${styles.exerciseCard}`}
+                              key={index}
+                              className={`lg:w-[350px] relative h-fit md:mr-5 mb-5 ${styles.exerciseCard}`}
                             >
                               <div className="flex h-full flex-col space-y-5 items-start">
                                 <div className="flex justify-between w-full px-4">
@@ -303,13 +296,17 @@ export default function SuccessView({
                                           );
 
                                           return (
-                                            <TableRow key={setId}>
+                                            <TableRow key={index}>
                                               <TableCell>{index + 1}</TableCell>
-                                              {tableCells.map((tableCell) => (
-                                                <TableCell key={tableCell}>
-                                                  {tableCell || "N/A"}
-                                                </TableCell>
-                                              ))}
+                                              {tableCells.map(
+                                                (tableCell, index) => (
+                                                  <TableCell key={index}>
+                                                    {tableCell !== undefined
+                                                      ? tableCell
+                                                      : "N/A"}
+                                                  </TableCell>
+                                                )
+                                              )}
                                             </TableRow>
                                           );
                                         })}

@@ -27,7 +27,7 @@ export async function updateWorkoutById(
     ),
   ];
 
-  return await neededWorkout.set(
+  const res = await neededWorkout.set(
     {
       data: {
         ...updatedWorkoutData,
@@ -37,4 +37,6 @@ export async function updateWorkoutById(
     },
     { merge: true }
   );
+
+  return JSON.stringify(res);
 }

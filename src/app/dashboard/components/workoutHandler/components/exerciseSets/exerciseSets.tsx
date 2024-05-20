@@ -263,7 +263,7 @@ export default function ExerciseSets({
           </p>
         ) : null}
         {!currWorkout.measurementTypes?.length ? (
-          <p className="mt-3 text-red-600">
+        <p className="mt-3 text-red-600 text-xs md:text-base">
             Select <span className="font-medium">Measurment Types </span> in
             order to add sets.
           </p>

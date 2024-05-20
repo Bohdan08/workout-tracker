@@ -4,6 +4,7 @@ import { updateWorkoutById } from "@/src/app/lib/actions/updateWorkoutById/updat
 import parseFirebaseErrorMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage";
 
 const updateUserWorkout = async (userId: string, workoutData: WorkoutData) => {
+  console.log("INSIDE_UPDATE");
   let result = null;
   let error = false;
   let errorMessage = "";
