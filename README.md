@@ -35,8 +35,6 @@ customized to fit individual needs.
 
 ## Repo Structure
 
-Want to just poke around? Here's a quick overview of the repo structure. Most sub-folders have their own README for more in-depth explanations.
-
 ```
 ├── public/           # Assets
 ├── src/              # Source folder of the application (containing all main logic)
