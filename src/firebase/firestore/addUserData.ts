@@ -13,6 +13,9 @@ export default async function addUserData(
   try {
     result = await setDoc(doc(database, usersCollection, id), data, {
       merge: true, // Merge the new data with existing document data
+    }).catch((apiError) => {
+      error = true;
+      errorMessage = parseFirebaseErorrMessage(apiError.message);
     });
   } catch (apiError) {
     error = true;

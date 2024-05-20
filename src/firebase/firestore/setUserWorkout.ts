@@ -57,7 +57,10 @@ export default async function setWorkout(
         },
       },
       { merge: true }
-    );
+    ).catch((apiError) => {
+      error = true;
+      errorMessage = parseFirebaseErorrMessage(apiError.message);
+    });
   } catch (apiError) {
     error = true;
     errorMessage = parseFirebaseErorrMessage((apiError as Error).message);

@@ -72,6 +72,7 @@ export default function WorkoutHandler({
     if (error) {
       setApiStatus(API_STATUS.ERROR);
       setApiError(errorMessage);
+      return;
     }
 
     dispatch(resetWorkout());

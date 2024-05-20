@@ -16,12 +16,12 @@ export default async function AboutPage() {
           <div className="container flex flex-col items-center justify-center gap-8 py-12 md:py-20 max-w-3xl">
             <h1 className="text-2xl md:text-3xl font-medium">About</h1>
             <p>
-              <span className="font-semibold"> Workout Tracker</span> is
-              committed to providing a seamless tracking experience for users
-              who are looking to monitor their workout progress. Our platform
-              eliminates the hassle of manual tracking by offering an intuitive
-              and user-friendly interface that can be easily customized to fit
-              individual needs.
+              <span className="font-semibold"> Workout Tracker</span> is a web
+              application committed to providing a seamless tracking experience
+              for users who are looking to monitor their workout progress. The
+              platform eliminates the hassle of manual tracking by offering an
+              intuitive and user-friendly interface that can be easily
+              customized to fit individual needs.
             </p>
             <div className="flex space-x-2">
               <div className="rounded shadow-xl border w-full md:w-[600px]">
