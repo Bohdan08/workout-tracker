@@ -39,7 +39,7 @@ export default function TopExercises() {
       name: `${key.slice(0, XAXIS_LABEL_LENGTH)}${
         key.length > XAXIS_LABEL_LENGTH ? "..." : ""
       }`,
-      number: (value as any) * Math.floor(Math.random() * 100)
+      number: value,
     };
   }) as { name: string; number: number }[];
 
