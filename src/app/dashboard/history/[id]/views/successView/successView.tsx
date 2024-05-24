@@ -118,7 +118,7 @@ export default function SuccessView({
   const additionalDetails = {
     weight: weightUnit,
     distance: distanceUnit,
-    duration: "Minutes",
+    // duration: "Minutes",
   };
 
   return (

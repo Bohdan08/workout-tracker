@@ -60,7 +60,7 @@ export default function ExerciseSets({
   const additionalDetails = {
     weight: weightUnit,
     distance: distanceUnit,
-    duration: "Minutes",
+    // duration: "Minutes",
   };
 
   return (
@@ -215,6 +215,7 @@ export default function ExerciseSets({
                       // convert Reps, Weigh, Duration to lowercase
                       const setKeyName = mT.toLocaleLowerCase();
                       const details = (additionalDetails as any)[setKeyName];
+                      const isDuration = setKeyName.includes("duration");
                       return (
                         <div key={mT} className="w-full">
                           <div>
@@ -225,7 +226,7 @@ export default function ExerciseSets({
                           </div>
                           <TextInput
                             id={`${setKeyName}-${setId}`}
-                            type="number"
+                            type={isDuration ? "text" : "number"}
                             value={(setData as any)[setKeyName]}
                             min={0}
                             max={1000}
