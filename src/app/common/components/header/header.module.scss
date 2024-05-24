@@ -3,3 +3,14 @@
 .header {
   height: $nav-offset;
 }
+
+@media screen and (max-width: 420px) {
+  .button {
+    position: relative;
+    top: 2px;
+    height: 35px;
+    span {
+      padding: 0.3rem 0.2rem !important;
+    }
+  }
+}

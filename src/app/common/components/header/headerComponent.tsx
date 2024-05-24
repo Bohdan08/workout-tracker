@@ -4,6 +4,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import logo from "../../../../../public/logo.svg";
+import styles from "./header.module.scss";
 
 const NAVS_LIST = [
   {
@@ -43,18 +44,23 @@ export default function HeaderComponent({
         <div className="flex md:order-2">
           {!userAuthenticated ? (
             <>
-              <div className="flex space-x-4">
+              <div className="flex space-x-2 md:space-x-4 mr-2 md:mr-0">
                 {pathname !== "/login" ? (
                   <Button
                     color={`${pathname === "/register" ? "info" : "light"}`}
-                    className={`${pathname === "/register" ? "border-none" : "border"}`}
+                    className={`${styles.button} ${
+                      pathname === "/register" ? "border-none" : "border"
+                    }`}
                     onClick={() => router.push("/login")}
                   >
                     Login
                   </Button>
                 ) : null}
                 {pathname !== "/register" ? (
-                  <Button onClick={() => router.push("/register")}>
+                  <Button
+                    className={styles.button}
+                    onClick={() => router.push("/register")}
+                  >
                     Sign Up
                   </Button>
                 ) : null}

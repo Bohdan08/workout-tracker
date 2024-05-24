@@ -31,7 +31,7 @@ export default async function Home() {
         <div className="container flex justify-center items-center flex-col">
           {/* HERO */}
           <div className="flex flex-col gap-5 py-20 md:py-36 text-center">
-            <h1 className="text-4xl font-medium leading-[50px]">
+            <h1 className="text-3xl md:text-4xl font-medium leading-widest md:leading-[50px]">
               Effortless Tracking. <br />
               Empowering Progress.
             </h1>
