@@ -127,7 +127,7 @@ const SectionWrapper = ({
           <div className="z-20 relative m-auto w-full md:w-auto">
             <Image
               src={imageSrc}
-              className="md:rounded-xl shadow-lg border"
+              className="rounded md:rounded-xl shadow-lg border"
               alt=""
             />
           </div>
