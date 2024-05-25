@@ -18,7 +18,10 @@ export default function FaqSection() {
         hover:bg-transparent text-gray-900 border-t border-b-0 border-l-0 border-r-0 rounded-none w-full mt-10`}
       >
         {FAQ_DATA.map(({ id, title, description }) => (
-          <AccordionPanel key={id} className={`hover:bg-transparent w-full ${styles.accordionPanel}`}>
+          <AccordionPanel
+            key={id}
+            className={`hover:bg-transparent w-full ${styles.accordionPanel}`}
+          >
             <AccordionTitle className="text-gray-900">{title}</AccordionTitle>
             <AccordionContent>
               {description}
@@ -38,6 +41,11 @@ const FAQ_DATA = [
     id: "description",
     title: "What is Workout Tracker?",
     description: `Workout Tracker is a platform that allows users to easily record and monitor their workouts. Our platform offers a simple and customizable solution to monitor fitness progress efficiently. `,
+  },
+  {
+    id: "free",
+    title: "Is Workout Tracker free?",
+    description: `Yes, we offer a free membership.`,
   },
   {
     id: "support",
