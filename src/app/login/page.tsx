@@ -50,13 +50,14 @@ export default function Page() {
           });
         } else {
           const newUser = userCred.user;
+          console.log(newUser, "newUsernewUser");
           const userSocialData = newUser.providerData[0];
           // add user to firestore
           // create user in firestore
           const initData = {
             created: serverTimestamp(),
             firstName: userSocialData.displayName || "",
-            email: userSocialData.email?.toLocaleLowerCase().trim(),
+            email: userSocialData.email?.toLocaleLowerCase().trim() || "",
             // add init miles and pounds - later can be changed in settings
             distanceUnit: DISTANCE_METRICS.MI,
             weightUnit: WEIGHT_METRICS.LBS,

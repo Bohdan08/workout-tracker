@@ -89,7 +89,7 @@ export default function Page() {
 
         setLoading(true);
         // check if user already exists
-        if (userCred.user.providerData?.length > 1) {
+        if (userCred.user.providerData?.length > 0) {
           // setApiError("Email already in use.");
 
           // redirect user to dashboard
