@@ -83,6 +83,7 @@ export default function Page() {
 
   useEffect(() => {
     handleRedirect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleForm = async (event: FormEvent) => {

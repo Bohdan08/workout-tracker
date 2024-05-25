@@ -85,15 +85,20 @@ export default function Page() {
       const userCred = await getRedirectResult(auth);
 
       if (userCred) {
+        const userToken = await userCred?.user.getIdToken();
+
         setLoading(true);
         // check if user already exists
         if (userCred.user.providerData?.length > 1) {
-          setApiError("Email already in use.");
-          setLoading(false);
+          // setApiError("Email already in use.");
+
+          // redirect user to dashboard
+          await addUserToken(userToken).then(() => {
+            router.push("/dashboard/overview");
+          });
         } else {
           const newUser = userCred.user;
           const userSocialData = userCred.user.providerData[0];
-          const userToken = await userCred?.user.getIdToken();
 
           // create a user in firestore
           const initData = {
