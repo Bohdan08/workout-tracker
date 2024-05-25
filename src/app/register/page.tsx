@@ -40,13 +40,14 @@ export default function Page() {
     const { result, error, errorMessage } = await signUp(email, password);
 
     if (error) {
+      setLoading(false);
       setApiError(errorMessage);
       return;
     }
 
     if (result) {
       const newUser = result.user;
-
+      const userToken = await newUser.getIdToken();
       // send verification email
       sendEmailVerification(newUser);
 
@@ -63,12 +64,15 @@ export default function Page() {
       const newUserResult = await addData(newUser.uid, initData);
 
       if (newUserResult.error) {
+        setLoading(false);
         setApiError(newUserResult.errorMessage);
         return;
       }
 
       // redirect user to dashboard
-      router.push("/dashboard/profile-settings");
+      await addUserToken(userToken).then(() => {
+        router.push("/dashboard/profile-settings");
+      });
     }
   };
 
@@ -104,9 +108,8 @@ export default function Page() {
             setApiError(newUserResult.errorMessage);
             return;
           }
-
           // redirect user to dashboard
-          addUserToken(userToken).then(() => {
+          await addUserToken(userToken).then(() => {
             router.push("/dashboard/profile-settings");
           });
         }

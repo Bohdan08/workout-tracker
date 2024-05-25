@@ -70,7 +70,7 @@ export default function Page() {
             return;
           }
 
-          addUserToken(userToken).then(() => {
+          await addUserToken(userToken).then(() => {
             router.push("/dashboard/profile-settings");
           });
         }
