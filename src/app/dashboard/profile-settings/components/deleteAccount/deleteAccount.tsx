@@ -7,7 +7,7 @@ import parseFirebaseErrorMessage from "@/src/app/lib/utils/parseFirebaseErrorMes
 import deleteUserData from "@/src/firebase/firestore/deleteUserData";
 import { deleteUser } from "firebase/auth";
 import { Alert, Button, Card } from "flowbite-react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export default function DeleteAccount() {
