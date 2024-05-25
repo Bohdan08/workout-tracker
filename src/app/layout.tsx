@@ -10,7 +10,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Workout tracker",
-  description: "Effortless Tracking. Empowering Progress.",
+  description: `Track your fitness journey with Workout Tracker, 
+                the free web app designed to help you achieve your health goals. 
+                Log workouts, monitor progress, 
+                and stay motivated with our easy-to-use fitness tracking tools. 
+                Start for free today!`,
 };
 
 export default async function RootLayout({
