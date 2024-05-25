@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { AuthContextProvider } from "./context/authContext";
 import StoreProvider from "./lib/store/storeProvider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.scss";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +26,7 @@ export default async function RootLayout({
           <AuthContextProvider>{children}</AuthContextProvider>
         </StoreProvider>
       </body>
+      <GoogleAnalytics gaId="G-3TEHJYQVX7" />
     </html>
   );
 }

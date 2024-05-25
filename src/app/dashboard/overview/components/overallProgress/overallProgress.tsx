@@ -4,15 +4,11 @@ import {
   LineChart,
   Line,
   XAxis,
-  YAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   BarChart,
   Bar,
 } from "recharts";
-
-// const OVERALL_PROGRESS = [];
 
 const data = [
   {

@@ -56,7 +56,7 @@ export default function Page() {
         created: serverTimestamp(),
         email: email?.toLocaleLowerCase().trim(),
         // add init miles and pounds - later can be changed in settings
-        distanceUnit: DISTANCE_METRICS.MIL,
+        distanceUnit: DISTANCE_METRICS.MI,
         weightUnit: WEIGHT_METRICS.LBS,
       };
 
@@ -97,7 +97,7 @@ export default function Page() {
             firstName: userSocialData.displayName || "",
             email: userSocialData.email?.toLocaleLowerCase().trim(),
             // add init miles and pounds - later can be changed in settings
-            distanceUnit: DISTANCE_METRICS.MIL,
+            distanceUnit: DISTANCE_METRICS.MI,
             weightUnit: WEIGHT_METRICS.LBS,
           };
 

@@ -5,7 +5,7 @@ export enum WEIGHT_METRICS {
 
 export enum DISTANCE_METRICS {
   KM = "KM",
-  MIL = "MIL",
+  MI = "MI",
 }
 
 export enum ACTION_ITEMS {
