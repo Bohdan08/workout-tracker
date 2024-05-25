@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import logo from "../../../../../public/logo.svg";
 import styles from "./header.module.scss";
+import { useAuth } from "@/src/app/context/authContext";
 
 const NAVS_LIST = [
   {
@@ -29,6 +30,9 @@ export default function HeaderComponent({
 }: {
   userAuthenticated?: boolean;
 }) {
+  const { user } = useAuth();
+  console.log(user, "userAuth");
+  console.log(userAuthenticated, "userAuthenticatedSERVER");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -82,60 +86,6 @@ export default function HeaderComponent({
           ))}
         </Navbar.Collapse>
       </Navbar>
-
-      {/* <nav className="flex justify-between items-center">
-        <div className="flex items-center space-x-8">
-          <div>
-            <Link
-              href="/"
-              aria-label="home page"
-              className="flex items-center space-x-2"
-            >
-              <Image src={logo} width={40} height={40} alt="" />
-              <span className="text-sm">Workout Tracker</span>
-            </Link>
-          </div>
-        </div>
-        <div>
-          <nav>
-            <ul className="flex space-x-4">
-              <li>
-                <Link href="/dashboard/overview">Dashboard</Link>
-              </li>
-              <li>
-                <Link href="/dashboard/overview">Dashboard</Link>
-              </li>
-              <li>
-                <Link href="/dashboard/about">About</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        {!loadingUser && (
-          <div className="flex space-x-4">
-            {user ? (
-              <button
-                onClick={async () => {
-                  await auth.signOut().then(() => {
-                    router.push("/");
-                  });
-                }}
-              >
-                Sign out
-              </button>
-            ) : (
-              <>
-                {!pathname.includes("login") && (
-                  <Link href="/login">Log in</Link>
-                )}
-                {!pathname.includes("register") && (
-                  <Link href="/register">Sign Up</Link>
-                )}
-              </>
-            )}
-          </div>
-        )}
-      </nav> */}
     </header>
   );
 }

@@ -74,6 +74,7 @@ export default function Page() {
 
   useEffect(() => {
     handleRedirect();
+    console.log("HANDLE_REDIRECT");
   }, []);
 
   const handleForm = async (event: FormEvent) => {

@@ -15,6 +15,16 @@ export default async function ContactPage() {
               contact details here and we&apos;ll get back to you as soon as
               possible.
             </p>
+            <div className="w-full">
+              <p className="font-medium mb-1 text-lg">Support</p>
+              <a
+                href="mailto:support@fittrackmate.com"
+                className="hover:underline"
+              >
+                {" "}
+                support@fittrackmate.com
+              </a>
+            </div>
           </div>
         </section>
       </main>

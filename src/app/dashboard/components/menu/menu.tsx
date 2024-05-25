@@ -67,7 +67,7 @@ export default function Menu() {
       dispatch(resetWorkouts());
       dispatch(resetWorkout());
       dispatch(resetUser());
-
+      
       router.push("/");
     });
   };
