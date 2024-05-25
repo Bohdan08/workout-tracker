@@ -68,8 +68,8 @@ export default function Menu() {
       dispatch(resetWorkouts());
       dispatch(resetWorkout());
       dispatch(resetUser());
-      addUserToken("");
-      router.push("/");
+      // clear up user token
+      addUserToken("").then(() => router.push("/"));
     });
   };
 
