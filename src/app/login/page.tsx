@@ -42,7 +42,9 @@ export default function Page() {
 
         // just send user to dashboard if data exists
         if (userData.exists()) {
-          router.push("/dashboard/overview");
+          addUserToken(userCred?.user.uid).then(() => {
+            router.push("/dashboard/overview");
+          });
         } else {
           const newUser = userCred.user;
           const userSocialData = newUser.providerData[0];
@@ -64,7 +66,11 @@ export default function Page() {
             return;
           }
 
-          router.push("/dashboard/profile-settings");
+          addUserToken(userCred?.user.uid).then(() => {
+            router.push("/dashboard/profile-settings");
+          });
+
+          // router.push("/dashboard/profile-settings");
         }
       }
     } catch (error: any) {
