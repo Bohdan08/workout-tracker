@@ -2,14 +2,16 @@
 import ActionModal from "@/src/app/common/components/actionModal";
 import { API_STATUS } from "@/src/app/common/enums";
 import { useAuth } from "@/src/app/context/authContext";
+import { addUserToken } from "@/src/app/lib/actions/addUserToken/addUserToken";
 import parseFirebaseErrorMessage from "@/src/app/lib/utils/parseFirebaseErrorMessage";
-import { auth } from "@/src/firebase/config";
 import deleteUserData from "@/src/firebase/firestore/deleteUserData";
-import { User, deleteUser, unlink } from "firebase/auth";
+import { deleteUser } from "firebase/auth";
 import { Alert, Button, Card } from "flowbite-react";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 export default function DeleteAccount() {
+  const router = useRouter();
   const [deleteAccountModal, setDeleteAccountModal] = useState(false);
   const { user } = useAuth();
 
@@ -34,11 +36,12 @@ export default function DeleteAccount() {
 
     if (userId) {
       // delete user and their data
-      await deleteUser(user)
+      await deleteUserData(userId)
         .then(async () => {
-          await deleteUserData(userId)
+          await deleteUser(user)
             .then(() => {
               setApiStatus(API_STATUS.SUCCESS);
+              addUserToken("").then(() => router.push("/"));
             })
             .catch(handleApiError);
         })

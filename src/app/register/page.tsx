@@ -2,7 +2,7 @@
 import signUp from "@/src/firebase/auth/signUp";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useEffect, useState } from "react";
-import { Button, Alert, Label, TextInput } from "flowbite-react";
+import { Button, Alert, Label, TextInput, Spinner } from "flowbite-react";
 import { HiInformationCircle } from "react-icons/hi";
 import Link from "next/link";
 import { AUTH_LINK_STYLE, AUTH_WRAPPER_STYLE } from "../common/styles";
@@ -17,13 +17,15 @@ import { serverTimestamp } from "firebase/firestore";
 import { auth } from "@/src/firebase/config";
 import parseFirebaseErrorMessage from "../lib/utils/parseFirebaseErrorMessage";
 import { DISTANCE_METRICS, WEIGHT_METRICS } from "../common/enums";
+import { addUserToken } from "../lib/actions/addUserToken/addUserToken";
 
 const MIN_PASSWORD_LENGTH = 8;
 
 export default function Page() {
-  const [email, setEmail] = useState("bohdan.martyniuk19@gmail.com");
-  const [password, setPassword] = useState("ChocoPie11");
-  const [repeatPassword, setRepeatPassword] = useState("ChocoPie11");
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
   const [apiError, setApiError] = useState("");
   const router = useRouter();
 
@@ -75,12 +77,15 @@ export default function Page() {
       const userCred = await getRedirectResult(auth);
 
       if (userCred) {
+        setLoading(true);
         // check if user already exists
         if (userCred.user.providerData?.length > 1) {
           setApiError("Email already in use.");
+          setLoading(false);
         } else {
           const newUser = userCred.user;
           const userSocialData = userCred.user.providerData[0];
+          const userToken = await userCred?.user.getIdToken();
 
           // create a user in firestore
           const initData = {
@@ -95,15 +100,19 @@ export default function Page() {
           const newUserResult = await addData(newUser.uid, initData);
 
           if (newUserResult.error) {
+            setLoading(false);
             setApiError(newUserResult.errorMessage);
             return;
           }
 
           // redirect user to dashboard
-          router.push("/dashboard/profile-settings");
+          addUserToken(userToken).then(() => {
+            router.push("/dashboard/profile-settings");
+          });
         }
       }
     } catch (error: any) {
+      setLoading(false);
       setApiError(parseFirebaseErrorMessage(error.message));
     }
   };
@@ -115,6 +124,7 @@ export default function Page() {
   const onSignUpWithGoogle = async () => {
     const googleProvider = new GoogleAuthProvider();
     signInWithRedirect(auth, googleProvider).catch((error) => {
+      setLoading(false);
       setApiError(parseFirebaseErrorMessage(error.message));
     });
   };
@@ -196,10 +206,11 @@ export default function Page() {
         <p className="font-semibold"> Or sign up using:</p>
         <div className="mt-2">
           <button
-            className="w-12 h-12 rounded bg-white hover:bg-gray-100 border border-black flex items-center justify-center"
+            className="w-fit h-fit p-4 rounded bg-white hover:bg-gray-100 border border-black flex items-center justify-center"
             onClick={onSignUpWithGoogle}
           >
             <GoogleIcon />
+            {loading ? <Spinner size="sm" className="relative left-2" /> : null}
           </button>
         </div>
       </div>

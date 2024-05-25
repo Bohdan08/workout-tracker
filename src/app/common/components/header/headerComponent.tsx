@@ -31,8 +31,6 @@ export default function HeaderComponent({
   userAuthenticated?: boolean;
 }) {
   const { user } = useAuth();
-  console.log(user, "userAuth");
-  console.log(userAuthenticated, "userAuthenticatedSERVER");
   const router = useRouter();
   const pathname = usePathname();
 

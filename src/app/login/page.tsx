@@ -2,7 +2,7 @@
 import signIn from "@/src/firebase/auth/signIn";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useEffect, useState } from "react";
-import { Button, Alert, Label, TextInput } from "flowbite-react";
+import { Button, Alert, Label, TextInput, Spinner } from "flowbite-react";
 import { HiInformationCircle } from "react-icons/hi";
 import Link from "next/link";
 import {
@@ -18,15 +18,15 @@ import {
   signInWithRedirect,
 } from "firebase/auth";
 import parseFirebaseErrorMessage from "../lib/utils/parseFirebaseErrorMessage";
-import { Auth } from "firebase-admin/auth";
 import { auth, database, usersCollection } from "@/src/firebase/config";
 import addUserData from "@/src/firebase/firestore/addUserData";
 import { DISTANCE_METRICS, WEIGHT_METRICS } from "../common/enums";
 import { doc, getDoc, serverTimestamp } from "firebase/firestore";
 
 export default function Page() {
-  const [email, setEmail] = useState("bohdan.martyniuk19@gmail.com");
-  const [password, setPassword] = useState("ChocoPie11");
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [password, setPassword] = useState("");
   const [apiError, setApiError] = useState("");
 
   const router = useRouter();
@@ -34,8 +34,9 @@ export default function Page() {
   const handleRedirect = async () => {
     try {
       const userCred = await getRedirectResult(auth);
-      console.log(userCred, "userCred");
+
       if (userCred) {
+        setLoading(true);
         const userData = await getDoc(
           doc(database, usersCollection, userCred.user.uid)
         );
@@ -64,6 +65,7 @@ export default function Page() {
           const newUserResult = await addUserData(newUser.uid, initData);
 
           if (newUserResult.error) {
+            setLoading(false);
             setApiError(newUserResult.errorMessage);
             return;
           }
@@ -71,18 +73,16 @@ export default function Page() {
           addUserToken(userToken).then(() => {
             router.push("/dashboard/profile-settings");
           });
-
-          // router.push("/dashboard/profile-settings");
         }
       }
     } catch (error: any) {
+      setLoading(false);
       setApiError(parseFirebaseErrorMessage(error.message));
     }
   };
 
   useEffect(() => {
     handleRedirect();
-    console.log("HANDLE_REDIRECT");
   }, []);
 
   const handleForm = async (event: FormEvent) => {
@@ -152,10 +152,11 @@ export default function Page() {
         <p className="font-semibold"> Or sign in using:</p>
         <div className="mt-2">
           <button
-            className="w-12 h-12 rounded bg-white hover:bg-gray-100 border border-black flex items-center justify-center"
+            className="w-fit h-fit p-4 rounded bg-white hover:bg-gray-100 border border-black flex items-center justify-center"
             onClick={onSignInWithGoogle}
           >
             <GoogleIcon />
+            {loading ? <Spinner size="sm" className="relative left-2" /> : null}
           </button>
         </div>
       </div>
