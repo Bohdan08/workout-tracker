@@ -12,7 +12,7 @@ import {
 import resetPassword from "@/src/firebase/auth/resetPassword";
 
 export default function Page() {
-  const [email, setEmail] = useState("bohdan.martyniuk19@gmail.com");
+  const [email, setEmail] = useState("");
   const [requestFinished, setRequestFinished] = useState(false);
 
   const [apiError, setApiError] = useState("");
