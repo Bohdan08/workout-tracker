@@ -34,15 +34,17 @@ export default function Page() {
   const handleRedirect = async () => {
     try {
       const userCred = await getRedirectResult(auth);
-
+      console.log(userCred, "userCred");
       if (userCred) {
         const userData = await getDoc(
           doc(database, usersCollection, userCred.user.uid)
         );
 
+        const userToken = await userCred?.user.getIdToken();
+
         // just send user to dashboard if data exists
         if (userData.exists()) {
-          addUserToken(userCred?.user.uid).then(() => {
+          addUserToken(userToken).then(() => {
             router.push("/dashboard/overview");
           });
         } else {
@@ -66,7 +68,7 @@ export default function Page() {
             return;
           }
 
-          addUserToken(userCred?.user.uid).then(() => {
+          addUserToken(userToken).then(() => {
             router.push("/dashboard/profile-settings");
           });
 
