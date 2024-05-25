@@ -1,4 +1,4 @@
-export const AUTH_WRAPPER_STYLE = "mx-auto mt-10 w-full md:w-[450px] max-w-md";
+export const AUTH_WRAPPER_STYLE = "mx-auto mt-10 my-5 w-full md:w-[450px] max-w-md";
 export const AUTH_LINK_STYLE =
   "text-blue-800 font-semibold underline hover:no-underline";
 export const AUTH_HEADING_STYLE = "text-center text-3xl font-semibold";
