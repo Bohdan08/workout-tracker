@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useAuth } from "../../context/authContext";
 import useAppSelector from "../../hooks/useAppSelector";
 import { fetchUserData } from "../../lib/store/features/userProfile/userProfileSlice";
@@ -21,6 +21,7 @@ export default function Settings() {
     if (user?.uid && apiStatus === API_STATUS.IDLE) {
       dispatch(fetchUserData(user.uid));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.uid]);
 
   return (

@@ -59,6 +59,7 @@ export default function Page({
     ) {
       fetchWorkoutData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiStatus, user?.uid, workoutData, workoutId]);
 
   if (apiStatus === API_STATUS.ERROR) {

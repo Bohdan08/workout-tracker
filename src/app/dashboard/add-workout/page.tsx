@@ -25,6 +25,7 @@ export default function Page() {
     if (workoutData.id) {
       dispatch(resetWorkout());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

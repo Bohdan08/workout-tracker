@@ -1,5 +1,7 @@
 <div>
-  <img src="./public/banner.png" alt="" />
+  <a href="https://www.fittrackmate.com">
+    <img src="./public/banner.png" alt="" />
+  </a>
 </div>
 
 # Workout Tracker
@@ -16,6 +18,7 @@ customized to fit individual needs.
   - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Repo Structure](#repo-structure)
+- [Domain](#domain)
 
 ## About Workout Tracker
 
@@ -41,3 +44,7 @@ customized to fit individual needs.
 ├── src/firebase      # Firebase configuration and utility functions
 ├── src/app           # App router that primarily contains all UI logic
 ```
+
+## Domain
+
+For more details, visit <a href="https://www.fittrackmate.com">https://www.fittrackmate.com</a>.

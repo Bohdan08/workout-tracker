@@ -5,7 +5,6 @@ import StoreProvider from "./lib/store/storeProvider";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.scss";
-import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 

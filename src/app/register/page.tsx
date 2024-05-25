@@ -5,7 +5,11 @@ import React, { FormEvent, useEffect, useState } from "react";
 import { Button, Alert, Label, TextInput, Spinner } from "flowbite-react";
 import { HiInformationCircle } from "react-icons/hi";
 import Link from "next/link";
-import { AUTH_LINK_STYLE, AUTH_WRAPPER_STYLE } from "../common/styles";
+import {
+  AUTH_FORM_STYLE,
+  AUTH_LINK_STYLE,
+  AUTH_WRAPPER_STYLE,
+} from "../common/styles";
 import {
   GoogleAuthProvider,
   getRedirectResult,
@@ -122,6 +126,7 @@ export default function Page() {
 
   useEffect(() => {
     handleRedirect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onSignUpWithGoogle = async () => {
@@ -135,10 +140,7 @@ export default function Page() {
   return (
     <div className={`mx-auto mt-10 flex flex-col ${AUTH_WRAPPER_STYLE}`}>
       <h1 className="text-center text-3xl font-semibold">Create Account</h1>
-      <form
-        className="flex max-w-md w-full flex-col gap-4 mt-10"
-        onSubmit={handleForm}
-      >
+      <form className={AUTH_FORM_STYLE} onSubmit={handleForm}>
         <div>
           <div className="mb-2 block">
             <Label htmlFor="email" value="Your email" />
