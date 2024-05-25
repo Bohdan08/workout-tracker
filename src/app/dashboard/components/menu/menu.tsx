@@ -21,6 +21,7 @@ import useAppDispatch from "@/src/app/hooks/useAppDispatch";
 import { resetWorkouts } from "@/src/app/lib/store/features/workoutsHistory/workoutsHistorySlice";
 import { resetWorkout } from "@/src/app/lib/store/features/workout/workoutSlice";
 import { resetUser } from "@/src/app/lib/store/features/userProfile/userProfileSlice";
+import { addUserToken } from "@/src/app/lib/actions/addUserToken/addUserToken";
 
 export const MENU_ITEMS = [
   {
@@ -67,7 +68,7 @@ export default function Menu() {
       dispatch(resetWorkouts());
       dispatch(resetWorkout());
       dispatch(resetUser());
-      
+      addUserToken("");
       router.push("/");
     });
   };
