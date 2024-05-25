@@ -141,12 +141,13 @@ export default function Page() {
       >
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="email1" value="Your email" />
+            <Label htmlFor="email" value="Your email" />
           </div>
           <TextInput
             value={email}
-            id="email1"
+            id="email"
             type="email"
+            placeholder="name@email.com"
             required
             onChange={(e) => setEmail(e.target.value)}
           />

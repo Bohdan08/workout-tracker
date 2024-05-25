@@ -41,6 +41,7 @@ export default function Page() {
             value={email}
             id="email"
             type="email"
+            placeholder="name@email.com"
             required
             onChange={(e) => setEmail(e.target.value)}
           />

@@ -123,6 +123,7 @@ export default function Page() {
           <TextInput
             value={email}
             id="email"
+            placeholder="name@email.com"
             type="email"
             required
             onChange={(e) => setEmail(e.target.value)}
