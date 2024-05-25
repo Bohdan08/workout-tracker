@@ -26,7 +26,7 @@ export default async function RootLayout({
           <AuthContextProvider>{children}</AuthContextProvider>
         </StoreProvider>
       </body>
-      <GoogleAnalytics gaId="G-3TEHJYQVX7" />
+      <GoogleAnalytics gaId="G-ZDTQECX3QP" />
     </html>
   );
 }
