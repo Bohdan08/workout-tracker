@@ -78,7 +78,7 @@ export default function Menu() {
       <aside
         className={`
         hidden
-        md:flex flex-col justify-between 
+        lg:flex flex-col justify-between 
         pb-4 border-r bg-gray-100 px-2 sm:px-4 sticky 
         ${menuOpen ? "w-60" : "w-auto"}
         ${styles.menu}`}

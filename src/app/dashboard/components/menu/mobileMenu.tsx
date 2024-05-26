@@ -29,7 +29,7 @@ export default function MobileMenu() {
   };
 
   return (
-    <Navbar fluid rounded className="md:hidden bg-transparent">
+    <Navbar fluid rounded className="lg:hidden bg-transparent">
       <Navbar.Brand href="/">
         <Image src={logo} width={40} height={40} alt="" />
         {/* <span className="text-sm relative left-2">Workout Tracker</span> */}
@@ -46,7 +46,7 @@ export default function MobileMenu() {
             {label}
           </Navbar.Link>
         ))}
-        <div className="w-full border border-gray-300 mb-5" />
+        <div className="md:hidden w-full border border-gray-300 mb-5" />
         {/* <Button className="w-full" onClick={handleSignOut}>
           <span className="relative left-1"> Sign Out</span>
         </Button> */}

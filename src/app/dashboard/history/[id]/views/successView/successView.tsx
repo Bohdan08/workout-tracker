@@ -200,7 +200,7 @@ export default function SuccessView({
                       <h2 className="text-xl md:text-2xl font-medium">
                         Musle Groups
                       </h2>
-                      <div className="flex mt-2">
+                      <div className="flex mt-2 flex-wrap">
                         {affectedMuscleGroups.map((muscle, index) => (
                           <Badge
                             key={index}
@@ -220,7 +220,7 @@ export default function SuccessView({
                     <h2 className="text-xl md:text-2xl font-medium">
                       Exercises
                     </h2>
-                    <div className="mt-5 flex flex-col md:flex-row md:flex-wrap">
+                    <div className="mt-5 flex flex-wrap">
                       {exercises.map(
                         (
                           {
@@ -252,7 +252,7 @@ export default function SuccessView({
                           return (
                             <Card
                               key={index}
-                              className={`lg:w-[350px] relative h-fit md:mr-5 mb-5 ${styles.exerciseCard}`}
+                              className={`w-full sm:w-72 xl:w-[300px] relative h-fit sm:mr-5 mb-5 ${styles.exerciseCard}`}
                             >
                               <div className="flex h-full flex-col space-y-5 items-start">
                                 <div className="flex justify-between w-full px-4">

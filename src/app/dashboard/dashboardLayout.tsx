@@ -50,7 +50,7 @@ export default function DashboardLayout({
     <div className="flex min-h-screen flex-col">
       {" "}
       <main className="grow">
-        <div className="md:flex md:space-x-2">
+        <div className="lg:flex lg:space-x-2">
           <MobileMenu />
           <Menu />
           <div className="w-full px-2 md:px-4 pt-4 pb-10">
