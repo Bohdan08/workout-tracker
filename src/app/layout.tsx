@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Workout tracker",
   description: `Track your fitness journey with Workout Tracker, 
-                the free web app designed to help you achieve your fitness goals. 
+                the free web app designed to help you achieve your goals. 
                 Log workouts, monitor progress, 
                 and stay motivated with our easy-to-use fitness tracking tools. 
                 Start for free today!`,
