@@ -186,7 +186,7 @@ export default function SuccessView({
                 </h1>
 
                 <div>
-                  <div className="mt-5 flex flex-col space-y-5 sm:space-y-0 sm:space-x-5 sm:flex-row">
+                  <div className="mt-5 flex flex-wrap gap-5 sm:flex-nowrap justify-start">
                     <TotalCard title="Exercises" total={exercises.length} />
                     <TotalCard title="Sets" total={totalSets} />
                     <TotalCard title="Reps" total={totalReps} />
