@@ -113,12 +113,12 @@ const SectionWrapper = ({
   description: string;
 }) => {
   return (
-    <section className="py-12 sm:py-20">
+    <section className="pb-12 sm:pb-20">
       <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
         <div
           className={`${
-            isReverse ? "md:order-last" : ""
-          } absolute h-[400px] sm:h-full w-screen sm:w-auto left-[-1rem] sm:left-0 px-5 py-5 sm:relative flex items-center md:px-10 md:py-5 border bg-teal-600 md:rounded-xl relative overflow-hidden`}
+            isReverse ? "xl:order-last" : ""
+          } absolute h-[400px] sm:h-full w-screen sm:w-auto left-[-1rem] sm:left-0 px-5 py-5 sm:relative flex items-center md:px-10 md:py-5 border bg-teal-600 sm:rounded-xl relative overflow-hidden`}
         >
           <div
             className="absolute z-10 -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-teal-300 opacity-20 ring-1 ring-inset ring-white"
