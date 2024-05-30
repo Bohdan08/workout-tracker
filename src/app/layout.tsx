@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { AuthContextProvider } from "./context/authContext";
 import StoreProvider from "./lib/store/storeProvider";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 import "./globals.scss";
 
@@ -30,6 +30,7 @@ export default async function RootLayout({
         </StoreProvider>
       </body>
       <GoogleAnalytics gaId="G-ZDTQECX3QP" />
+      <GoogleTagManager gtmId="AW-16583476397"/>
     </html>
   );
 }
